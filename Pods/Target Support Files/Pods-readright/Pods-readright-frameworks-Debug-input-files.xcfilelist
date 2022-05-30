@@ -1,0 +1,10 @@
+${PODS_ROOT}/Target Support Files/Pods-readright/Pods-readright-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework
+${BUILT_PRODUCTS_DIR}/LKAlertController/LKAlertController.framework
+${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/RNActivityView/RNActivityView.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework
+${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework

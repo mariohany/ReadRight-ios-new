@@ -2,13 +2,14 @@
 //  SceneDelegate.swift
 //  readright
 //
-//  Created by concarsadmin-mh on 27/11/2021.
+//  Created by concarsadmin-mh on 01/01/2022.
 //
 
+import Foundation
 import UIKit
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
 
 
@@ -47,6 +48,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-

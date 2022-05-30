@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "therapy_therapy_BBC_tab_btn_BBC_live.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "therapy_therapy_BBC_tab_btn_BBC_live@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

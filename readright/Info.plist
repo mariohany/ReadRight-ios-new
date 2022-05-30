@@ -21,5 +21,14 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>Main</string>
+    <key>UIAppFonts</key>
+    <array>
+        <string>AdobeArabic-Bold.otf</string>
+        <string>AdobeArabic-BoldItalic.otf</string>
+        <string>AdobeArabic-Italic.otf</string>
+        <string>AdobeArabic-Regular.otf</string>
+    </array>
 </dict>
 </plist>

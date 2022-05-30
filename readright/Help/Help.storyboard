@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AdobeArabic-Bold.otf">
+            <string>AdobeArabic-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--HelpVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="HelpVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="3DQ-dZ-tQV">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTB-6W-xRA" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="44" width="976" height="684"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OI-Vq-OKD">
+                                        <rect key="frame" x="18" y="18" width="707" height="648"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIp-k5-LAu" userLabel="video view">
+                                        <rect key="frame" x="18" y="18" width="707" height="648"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Vn-X5-ddS">
+                                        <rect key="frame" x="743" y="77" width="217" height="530"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN5-Oj-Vae" userLabel="About">
+                                                <rect key="frame" x="0.0" y="0.0" width="217" height="50"/>
+                                                <state key="normal" image="AboutButton">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="AboutSelected"/>
+                                                <connections>
+                                                    <action selector="pressAbout" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XqS-8z-gHG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqc-oc-SEZ" userLabel="Fac">
+                                                <rect key="frame" x="0.0" y="60" width="217" height="50"/>
+                                                <state key="normal" image="FaqButton">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="FaqBtnSelected"/>
+                                                <connections>
+                                                    <action selector="pressFac" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ggZ-7A-GkY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="des-Wr-bdG" userLabel="Therapy">
+                                                <rect key="frame" x="0.0" y="120" width="217" height="50"/>
+                                                <state key="normal" image="TherapyButton">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="TherapyHelpSelected"/>
+                                                <connections>
+                                                    <action selector="pressTherapy" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WwH-LA-TLM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vf-WQ-0iG" userLabel="ReadingTest">
+                                                <rect key="frame" x="0.0" y="180" width="217" height="50"/>
+                                                <state key="normal" image="ReadingTestHelpBtn">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="ReadingHelpSelected"/>
+                                                <connections>
+                                                    <action selector="pressReading" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eaF-ji-W9K"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DM-pb-OyM" userLabel="Visual">
+                                                <rect key="frame" x="0.0" y="240" width="217" height="50"/>
+                                                <state key="normal" image="FieldHelpButton">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="FieldHelpSelected"/>
+                                                <connections>
+                                                    <action selector="pressVisual" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HnI-EZ-CEA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyH-IM-7wN" userLabel="Neglect">
+                                                <rect key="frame" x="0.0" y="300" width="217" height="50"/>
+                                                <state key="normal" image="NeglectHelpButton">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="NelglectHelpSelected"/>
+                                                <connections>
+                                                    <action selector="pressNeglect" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5QX-XC-rpC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOb-FC-7Yx" userLabel="ADL">
+                                                <rect key="frame" x="0.0" y="360" width="217" height="50"/>
+                                                <state key="normal" image="ADLHelpButton">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="ADLHelpSelected"/>
+                                                <connections>
+                                                    <action selector="pressAdl" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aa1-KI-RDH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtM-oo-c8B" userLabel="Desktop">
+                                                <rect key="frame" x="0.0" y="420" width="217" height="50"/>
+                                                <state key="normal" image="SearchHelpButton">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="SearchHelpSelected"/>
+                                                <connections>
+                                                    <action selector="pressDesktop" destination="Y6W-OH-hqX" eventType="touchUpInside" id="r3F-81-vAy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfp-7N-pQr" userLabel="ContactUs">
+                                                <rect key="frame" x="0.0" y="480" width="217" height="50"/>
+                                                <state key="normal" image="help_button">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="selected" image="SearchHelpSelected"/>
+                                                <connections>
+                                                    <action selector="pressContactUs" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rrT-4D-VQL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuT-CU-s2H" userLabel="about view">
+                                        <rect key="frame" x="18" y="18" width="707" height="648"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rounded_logo" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-1K-Sof">
+                                                <rect key="frame" x="303.5" y="12" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="6ti-Yf-Agf"/>
+                                                    <constraint firstAttribute="height" constant="100" id="ix3-3O-gRZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إقرأ لتكون" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg0-6S-auU">
+                                                <rect key="frame" x="288" y="120" width="131" height="44.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="38"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Uve-XH-xar">
+                                                <rect key="frame" x="18" y="218.5" width="671" height="172"/>
+                                                <string key="text">هذا التطبيق هو تطبيق علاجي مخصص لمرضى العمى الشقي الكسيا. العمى الشقي هو ضرر يصيب نصف مجال الابصار في احدى او كلتا العينين. العمى الشقي الكسيا هو حالة اضطراب في القراءة بسبب سكتة دماغية أو اصابة في الرأس. من أجل القراءة، يجب أن يقوم الشخص بتحريك عينيه على طول سطر من الكلمات في اتجاه اللغة التي يقرأها. بالنسبة لقارئي اللغة العربية يقوم بتحريك عينيه في اتجاه اليسار مع السطر.  ويتم حرمان مرضى العمى الشقي الكسيا من الكثير من هذه المعلومات. مما يؤثر على سرعة القراءة ويمنعهم من القراءة بكفائة بهدف العمل او الاستمتاع. سوف يقوم هذا التطبيق بتقييم وإعادة تأهيل المرضى القارئين باللغة العربية الذين يعانون من اصابة بالرأس. الجزء المخصص للعلاج هو النصوص المتحركة (حركة افقية) بإستخدام نصوص عربية من مصادر مختلفة. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kfas_logo" translatesAutoresizingMaskIntoConstraints="NO" id="fPh-gB-MTm">
+                                                <rect key="frame" x="249.5" y="506" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="3gW-Iw-Fei"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ddq-kA-zNX"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Ge1-yW-jJN"/>
+                                                    <constraint firstAttribute="height" constant="100" id="jOJ-m5-tGf"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_2" translatesAutoresizingMaskIntoConstraints="NO" id="kWF-2O-7Dk">
+                                                <rect key="frame" x="357.5" y="506" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="C5W-SA-fYL"/>
+                                                    <constraint firstAttribute="width" constant="100" id="nm8-55-ruh"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="kWF-2O-7Dk" firstAttribute="leading" secondItem="fPh-gB-MTm" secondAttribute="trailing" constant="8" id="13v-8E-w1v"/>
+                                            <constraint firstItem="NmP-1K-Sof" firstAttribute="top" secondItem="FuT-CU-s2H" secondAttribute="top" constant="12" id="68i-ya-AcR"/>
+                                            <constraint firstItem="Uve-XH-xar" firstAttribute="leading" secondItem="FuT-CU-s2H" secondAttribute="leading" constant="18" id="8hi-cr-MTM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uve-XH-xar" secondAttribute="trailing" constant="18" id="Sbu-qz-WWb"/>
+                                            <constraint firstItem="yg0-6S-auU" firstAttribute="top" secondItem="NmP-1K-Sof" secondAttribute="bottom" constant="8" id="Yzl-TA-Bnx"/>
+                                            <constraint firstAttribute="centerX" secondItem="fPh-gB-MTm" secondAttribute="trailing" constant="4" id="dA3-jp-aR2"/>
+                                            <constraint firstAttribute="bottom" secondItem="kWF-2O-7Dk" secondAttribute="bottom" constant="42" id="dzJ-e3-bKK"/>
+                                            <constraint firstItem="NmP-1K-Sof" firstAttribute="centerX" secondItem="FuT-CU-s2H" secondAttribute="centerX" id="g4s-s5-eu5"/>
+                                            <constraint firstItem="Uve-XH-xar" firstAttribute="top" secondItem="yg0-6S-auU" secondAttribute="bottom" constant="54" id="idN-rV-PqW"/>
+                                            <constraint firstItem="NmP-1K-Sof" firstAttribute="centerX" secondItem="FuT-CU-s2H" secondAttribute="centerX" id="ifL-xV-Ag1"/>
+                                            <constraint firstItem="yg0-6S-auU" firstAttribute="centerX" secondItem="FuT-CU-s2H" secondAttribute="centerX" id="myu-WO-8Z2"/>
+                                            <constraint firstAttribute="bottom" secondItem="fPh-gB-MTm" secondAttribute="bottom" constant="42" id="pmK-te-0VV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iIp-k5-LAu" firstAttribute="top" secondItem="xTB-6W-xRA" secondAttribute="top" constant="18" id="1ML-EU-caf"/>
+                                    <constraint firstItem="4Vn-X5-ddS" firstAttribute="leading" secondItem="2OI-Vq-OKD" secondAttribute="trailing" constant="18" id="5Yw-yj-mbi"/>
+                                    <constraint firstItem="2OI-Vq-OKD" firstAttribute="leading" secondItem="xTB-6W-xRA" secondAttribute="leading" constant="18" id="7ha-XN-KPn"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Vn-X5-ddS" secondAttribute="trailing" constant="16" id="81a-s2-FdX"/>
+                                    <constraint firstItem="4Vn-X5-ddS" firstAttribute="leading" secondItem="iIp-k5-LAu" secondAttribute="trailing" constant="18" id="C5A-9F-km4"/>
+                                    <constraint firstItem="FuT-CU-s2H" firstAttribute="leading" secondItem="xTB-6W-xRA" secondAttribute="leading" constant="18" id="GLG-0o-LC0"/>
+                                    <constraint firstAttribute="bottom" secondItem="iIp-k5-LAu" secondAttribute="bottom" constant="18" id="S9U-z4-Pde"/>
+                                    <constraint firstAttribute="bottom" secondItem="FuT-CU-s2H" secondAttribute="bottom" constant="18" id="UYi-9V-fdf"/>
+                                    <constraint firstItem="4Vn-X5-ddS" firstAttribute="leading" secondItem="FuT-CU-s2H" secondAttribute="trailing" constant="18" id="Vj2-xC-sX7"/>
+                                    <constraint firstItem="FuT-CU-s2H" firstAttribute="top" secondItem="xTB-6W-xRA" secondAttribute="top" constant="18" id="Y18-Sc-L2f"/>
+                                    <constraint firstItem="4Vn-X5-ddS" firstAttribute="centerY" secondItem="xTB-6W-xRA" secondAttribute="centerY" id="YJJ-q5-eRr"/>
+                                    <constraint firstAttribute="bottom" secondItem="2OI-Vq-OKD" secondAttribute="bottom" constant="18" id="a9K-oy-Nzp"/>
+                                    <constraint firstItem="iIp-k5-LAu" firstAttribute="leading" secondItem="xTB-6W-xRA" secondAttribute="leading" constant="18" id="kBj-bl-lna"/>
+                                    <constraint firstItem="2OI-Vq-OKD" firstAttribute="top" secondItem="xTB-6W-xRA" secondAttribute="top" constant="18" id="rNs-bF-cd2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3DQ-dZ-tQV" firstAttribute="bottom" secondItem="xTB-6W-xRA" secondAttribute="bottom" constant="40" id="0Tw-ly-bjg"/>
+                            <constraint firstAttribute="trailing" secondItem="xTB-6W-xRA" secondAttribute="trailing" constant="24" id="0cC-wN-crI"/>
+                            <constraint firstItem="3DQ-dZ-tQV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Qru-0F-dEq"/>
+                            <constraint firstItem="xTB-6W-xRA" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="24" id="aLY-Fj-9Jq"/>
+                            <constraint firstItem="3DQ-dZ-tQV" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="dCM-R4-2y8"/>
+                            <constraint firstItem="xTB-6W-xRA" firstAttribute="top" secondItem="3DQ-dZ-tQV" secondAttribute="top" constant="24" id="dKT-mt-eua"/>
+                            <constraint firstItem="3DQ-dZ-tQV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wTu-wh-sdx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3DQ-dZ-tQV" secondAttribute="bottom" id="yyh-eg-We2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutBtn" destination="WN5-Oj-Vae" id="Ocu-qA-KHv"/>
+                        <outlet property="aboutView" destination="FuT-CU-s2H" id="pOH-WD-zmf"/>
+                        <outlet property="adlBtn" destination="oOb-FC-7Yx" id="zsX-2O-j30"/>
+                        <outlet property="contactUsBtn" destination="bfp-7N-pQr" id="bCz-GR-lgl"/>
+                        <outlet property="desktopBtn" destination="gtM-oo-c8B" id="foe-GU-Uew"/>
+                        <outlet property="faqBtn" destination="iqc-oc-SEZ" id="boF-1F-JxX"/>
+                        <outlet property="neglectBtn" destination="jyH-IM-7wN" id="oJQ-gE-Uzl"/>
+                        <outlet property="readingBtn" destination="3vf-WQ-0iG" id="lL5-xS-dus"/>
+                        <outlet property="therapyBtn" destination="des-Wr-bdG" id="rWd-lV-UgK"/>
+                        <outlet property="videoView" destination="iIp-k5-LAu" id="fbV-WU-R3z"/>
+                        <outlet property="visualBtn" destination="5DM-pb-OyM" id="hpB-OZ-1wD"/>
+                        <outlet property="webview" destination="2OI-Vq-OKD" id="wZk-gq-dtm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.48190644307149" y="115.3225806451613"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ADLHelpButton" width="217" height="50"/>
+        <image name="ADLHelpSelected" width="217" height="50"/>
+        <image name="AboutButton" width="217" height="50"/>
+        <image name="AboutSelected" width="217" height="50"/>
+        <image name="FaqBtnSelected" width="217" height="50"/>
+        <image name="FaqButton" width="217" height="50"/>
+        <image name="FieldHelpButton" width="217" height="50"/>
+        <image name="FieldHelpSelected" width="217" height="50"/>
+        <image name="LoginBackground" width="1024" height="768"/>
+        <image name="NeglectHelpButton" width="217" height="50"/>
+        <image name="NelglectHelpSelected" width="217" height="50"/>
+        <image name="ReadingHelpSelected" width="217" height="50"/>
+        <image name="ReadingTestHelpBtn" width="217" height="50"/>
+        <image name="SearchHelpButton" width="217" height="50"/>
+        <image name="SearchHelpSelected" width="217" height="50"/>
+        <image name="TherapyButton" width="217" height="50"/>
+        <image name="TherapyHelpSelected" width="217" height="50"/>
+        <image name="help_button" width="217" height="50"/>
+        <image name="image_2" width="100.5" height="125.5"/>
+        <image name="kfas_logo" width="505.5" height="310.5"/>
+        <image name="rounded_logo" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

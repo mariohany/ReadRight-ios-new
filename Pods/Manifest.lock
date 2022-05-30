@@ -1,0 +1,58 @@
+PODS:
+  - Alamofire (5.4.4)
+  - JWTDecode (2.6.3)
+  - LKAlertController (1.12.2)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - RNActivityView (0.0.8)
+  - RxCocoa (5.1.3):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxGesture (3.0.2):
+    - RxCocoa (~> 5.1)
+    - RxSwift (~> 5.1)
+  - RxRelay (5.1.3):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.3)
+
+DEPENDENCIES:
+  - JWTDecode (~> 2.6)
+  - LKAlertController
+  - Moya (= 14.0.0)
+  - Moya/RxSwift
+  - RNActivityView
+  - RxCocoa (~> 5.1)
+  - RxGesture
+  - RxSwift (~> 5.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - JWTDecode
+    - LKAlertController
+    - Moya
+    - RNActivityView
+    - RxCocoa
+    - RxGesture
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  JWTDecode: 33e5e26e5ddbd21b2065820894c08fef0cad9509
+  LKAlertController: 10c7e8627e5d4757d03b4f53469f35ded14c378f
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  RNActivityView: a47d2fd9ae790369dddc8d878bfea359135fceac
+  RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
+  RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
+  RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
+  RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
+
+PODFILE CHECKSUM: 941eab5227ca75b7f800654fd273078573df7d37
+
+COCOAPODS: 1.11.2

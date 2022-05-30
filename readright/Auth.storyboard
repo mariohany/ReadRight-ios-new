@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AdobeArabic-Bold.otf">
+            <string>AdobeArabic-Bold</string>
+        </array>
+        <array key="AdobeArabic-Regular.otf">
+            <string>AdobeArabic-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--RegisterVC-->
+        <scene sceneID="7bC-ah-Hmr">
+            <objects>
+                <viewController storyboardIdentifier="RegisterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3g0-wk-iKR" customClass="RegisterVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RTs-jT-0bj">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="WfL-Ob-uhM">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="ROm-SG-YwL" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="36" width="976" height="708"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zH-ev-ZUu">
+                                        <rect key="frame" x="363" y="634" width="250" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="8C7-Nl-hhN"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Itc-gn-CJw"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="تسجيل" cornerStyle="medium">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.79785239699999999" green="0.4893290401" blue="0.25483426450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="36"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressRegisterBtn" destination="3g0-wk-iKR" eventType="touchUpInside" id="nEv-oi-Seu"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wzx-jt-A1B">
+                                        <rect key="frame" x="544" y="154.5" width="400" height="399"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" borderStyle="line" placeholder="البريد الألكتروني" minimumFontSize="17" background="OrangeField" translatesAutoresizingMaskIntoConstraints="NO" id="vLq-Tp-XEF" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="I88-gd-41E"/>
+                                                </constraints>
+                                                <attributedString key="attributedText"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سيتم استخدام هذا البريد الإلكتروني للدخول لحسابك لاحقاً" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="PCa-YQ-hzR">
+                                                <rect key="frame" x="0.0" y="57" width="400" height="20"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="18"/>
+                                                <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="كلمة السر" minimumFontSize="17" background="OrangeField" translatesAutoresizingMaskIntoConstraints="NO" id="0ih-af-656" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="89" width="400" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Dzj-AJ-3wM"/>
+                                                </constraints>
+                                                <attributedString key="attributedText"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الحد الأدنى ٦ آحرف" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="yhk-ax-M7b">
+                                                <rect key="frame" x="0.0" y="146" width="400" height="20"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="18"/>
+                                                <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="آعد كتابة كلمة السر" minimumFontSize="17" background="OrangeField" translatesAutoresizingMaskIntoConstraints="NO" id="Jaj-SO-unZ" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="178" width="400" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="VEa-Cj-xGe"/>
+                                                </constraints>
+                                                <attributedString key="attributedText"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="الاسم المفضل" minimumFontSize="17" background="OrangeField" translatesAutoresizingMaskIntoConstraints="NO" id="aUZ-v3-LCt" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="235" width="400" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="MIu-xg-ES3"/>
+                                                </constraints>
+                                                <attributedString key="attributedText"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5XQ-mL-IdX">
+                                                <rect key="frame" x="0.0" y="292" width="400" height="50"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="OrangeAsterik" translatesAutoresizingMaskIntoConstraints="NO" id="0qw-Hh-XBH">
+                                                        <rect key="frame" x="384.5" y="0.0" width="15.5" height="50"/>
+                                                    </imageView>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HD-7u-tAM" userLabel="femaleRadioButton">
+                                                        <rect key="frame" x="76.5" y="0.0" width="22.5" height="50"/>
+                                                        <state key="normal" image="OrangeUnCheck">
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="OrangeCheck"/>
+                                                        <connections>
+                                                            <action selector="femaleAction" destination="3g0-wk-iKR" eventType="touchUpInside" id="fbh-9e-uJI"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ذكر" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHb-0h-sZ6">
+                                                        <rect key="frame" x="149" y="0.0" width="21" height="50"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="22"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5TG-Ts-qcf" userLabel="maleRadioButton">
+                                                        <rect key="frame" x="172" y="0.0" width="22.5" height="50"/>
+                                                        <state key="normal" image="OrangeUnCheck"/>
+                                                        <state key="selected" image="OrangeCheck"/>
+                                                        <connections>
+                                                            <action selector="maleAction" destination="3g0-wk-iKR" eventType="touchUpInside" id="hiX-U9-rgP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أنثي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6r-8G-w9n">
+                                                        <rect key="frame" x="50" y="0.0" width="24.5" height="50"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="22"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="الجنس" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STd-Pq-EnV">
+                                                        <rect key="frame" x="344.5" y="0.0" width="38" height="50"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="22"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="5TG-Ts-qcf" firstAttribute="leading" secondItem="ZHb-0h-sZ6" secondAttribute="trailing" constant="2" id="6eT-4N-bTu"/>
+                                                    <constraint firstItem="H6r-8G-w9n" firstAttribute="leading" secondItem="5XQ-mL-IdX" secondAttribute="leading" constant="50" id="7hy-H1-wh7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0qw-Hh-XBH" secondAttribute="trailing" id="DYz-UI-z1p"/>
+                                                    <constraint firstItem="H6r-8G-w9n" firstAttribute="top" secondItem="5XQ-mL-IdX" secondAttribute="top" id="Dho-yW-YKD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ZHb-0h-sZ6" secondAttribute="bottom" id="Nn1-aM-0w2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="STd-Pq-EnV" secondAttribute="bottom" id="PnK-FU-J3b"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0HD-7u-tAM" secondAttribute="bottom" id="Pyr-50-PBP"/>
+                                                    <constraint firstItem="ZHb-0h-sZ6" firstAttribute="top" secondItem="5XQ-mL-IdX" secondAttribute="top" id="Tdq-yG-b6A"/>
+                                                    <constraint firstItem="5TG-Ts-qcf" firstAttribute="top" secondItem="5XQ-mL-IdX" secondAttribute="top" id="Tft-Gu-Cr5"/>
+                                                    <constraint firstItem="0HD-7u-tAM" firstAttribute="leading" secondItem="H6r-8G-w9n" secondAttribute="trailing" constant="2" id="WFW-RT-RIS"/>
+                                                    <constraint firstItem="ZHb-0h-sZ6" firstAttribute="leading" secondItem="0HD-7u-tAM" secondAttribute="trailing" constant="50" id="WQo-Y8-Zda"/>
+                                                    <constraint firstItem="0qw-Hh-XBH" firstAttribute="leading" secondItem="STd-Pq-EnV" secondAttribute="trailing" constant="2" id="WUo-n4-Uh6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5TG-Ts-qcf" secondAttribute="bottom" id="WeQ-ah-ASs"/>
+                                                    <constraint firstItem="STd-Pq-EnV" firstAttribute="top" secondItem="5XQ-mL-IdX" secondAttribute="top" id="gUa-XW-wk8"/>
+                                                    <constraint firstItem="0HD-7u-tAM" firstAttribute="top" secondItem="5XQ-mL-IdX" secondAttribute="top" id="hnt-HB-Ouk"/>
+                                                    <constraint firstItem="0qw-Hh-XBH" firstAttribute="top" secondItem="5XQ-mL-IdX" secondAttribute="top" id="klf-XQ-cSV"/>
+                                                    <constraint firstItem="STd-Pq-EnV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5TG-Ts-qcf" secondAttribute="trailing" constant="8" symbolic="YES" id="nZX-LS-7fT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0qw-Hh-XBH" secondAttribute="bottom" id="pzN-v4-mzM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="H6r-8G-w9n" secondAttribute="bottom" id="qvp-Xr-vFD"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="سنة الميلاد" minimumFontSize="17" background="PickerField" translatesAutoresizingMaskIntoConstraints="NO" id="5iy-4i-Vhg" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="354" width="400" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="fwz-Cb-5Zc"/>
+                                                </constraints>
+                                                <attributedString key="attributedText"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="vq8-o0-wfg"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7h-gp-N3q">
+                                        <rect key="frame" x="42" y="154.5" width="445" height="399"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="WQ0-Aa-7PF" userLabel="blined type">
+                                                <rect key="frame" x="0.0" y="0.0" width="445" height="23"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="لا أعرف" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="OzC-1V-MA5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="23"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="عمى أيمن" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="enl-b3-erD">
+                                                        <rect key="frame" x="181.5" y="0.0" width="52" height="23"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTw-bd-HTe" userLabel="leftBlindRadioBtn">
+                                                        <rect key="frame" x="141" y="0.0" width="22.5" height="23"/>
+                                                        <state key="normal" image="OrangeUnCheck">
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="OrangeCheck"/>
+                                                        <connections>
+                                                            <action selector="leftBlindRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="cBJ-fW-SUC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="نوع العمى" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="kxK-Um-Mh8">
+                                                        <rect key="frame" x="290" y="0.0" width="59" height="23"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="21"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Vh-kx-SxL" userLabel="rightBlindRadioBtn">
+                                                        <rect key="frame" x="235.5" y="0.0" width="22.5" height="23"/>
+                                                        <state key="normal" image="OrangeUnCheck"/>
+                                                        <state key="selected" image="OrangeCheck"/>
+                                                        <connections>
+                                                            <action selector="rightBlindRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="lX3-Az-0mc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="OrangeAsterik" translatesAutoresizingMaskIntoConstraints="NO" id="25v-26-yoe">
+                                                        <rect key="frame" x="353" y="0.0" width="92" height="23"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="عمى أيسر" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="IzU-zK-oK9">
+                                                        <rect key="frame" x="84.5" y="0.0" width="54.5" height="23"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gO7-ZR-kNo" userLabel="noBlindRadioBtn">
+                                                        <rect key="frame" x="44" y="0.0" width="22.5" height="23"/>
+                                                        <state key="normal" image="OrangeUnCheck">
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="OrangeCheck"/>
+                                                        <connections>
+                                                            <action selector="noBlindRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="x8O-Zm-W0o"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="enl-b3-erD" secondAttribute="bottom" id="3YX-pB-aQX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="25v-26-yoe" secondAttribute="bottom" id="6OG-MD-YPG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OTw-bd-HTe" secondAttribute="bottom" id="6id-tn-iez"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gO7-ZR-kNo" secondAttribute="bottom" id="ANo-KG-oGe"/>
+                                                    <constraint firstAttribute="trailing" secondItem="25v-26-yoe" secondAttribute="trailing" id="ELs-bk-kMT"/>
+                                                    <constraint firstAttribute="width" constant="445" id="G60-86-TQx"/>
+                                                    <constraint firstItem="3Vh-kx-SxL" firstAttribute="leading" secondItem="enl-b3-erD" secondAttribute="trailing" constant="2" id="GCK-48-NV0"/>
+                                                    <constraint firstItem="OTw-bd-HTe" firstAttribute="leading" secondItem="IzU-zK-oK9" secondAttribute="trailing" constant="2" id="Kch-F7-h6C"/>
+                                                    <constraint firstItem="enl-b3-erD" firstAttribute="top" secondItem="WQ0-Aa-7PF" secondAttribute="top" id="Ltr-pQ-NTU"/>
+                                                    <constraint firstItem="25v-26-yoe" firstAttribute="leading" secondItem="kxK-Um-Mh8" secondAttribute="trailing" constant="4" id="MWa-pt-H0o"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OzC-1V-MA5" secondAttribute="bottom" id="Mrf-9t-eAD"/>
+                                                    <constraint firstItem="enl-b3-erD" firstAttribute="leading" secondItem="OTw-bd-HTe" secondAttribute="trailing" constant="18" id="OaQ-gR-HgQ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="kxK-Um-Mh8" secondAttribute="bottom" id="OuA-0B-EDE"/>
+                                                    <constraint firstItem="kxK-Um-Mh8" firstAttribute="leading" secondItem="3Vh-kx-SxL" secondAttribute="trailing" constant="32" id="VB8-IW-Leu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3Vh-kx-SxL" secondAttribute="bottom" id="XI3-kV-de0"/>
+                                                    <constraint firstItem="IzU-zK-oK9" firstAttribute="leading" secondItem="gO7-ZR-kNo" secondAttribute="trailing" constant="18" id="afr-9H-jPX"/>
+                                                    <constraint firstItem="OzC-1V-MA5" firstAttribute="leading" secondItem="WQ0-Aa-7PF" secondAttribute="leading" id="cme-XT-4Em"/>
+                                                    <constraint firstItem="IzU-zK-oK9" firstAttribute="top" secondItem="WQ0-Aa-7PF" secondAttribute="top" id="dJo-gt-lTg"/>
+                                                    <constraint firstItem="OzC-1V-MA5" firstAttribute="top" secondItem="WQ0-Aa-7PF" secondAttribute="top" id="h9K-0a-Cka"/>
+                                                    <constraint firstItem="OTw-bd-HTe" firstAttribute="top" secondItem="WQ0-Aa-7PF" secondAttribute="top" id="hW2-rI-TiS"/>
+                                                    <constraint firstItem="gO7-ZR-kNo" firstAttribute="leading" secondItem="OzC-1V-MA5" secondAttribute="trailing" constant="2" id="j0g-xY-gdn"/>
+                                                    <constraint firstItem="25v-26-yoe" firstAttribute="top" secondItem="WQ0-Aa-7PF" secondAttribute="top" id="jeE-aL-HyM"/>
+                                                    <constraint firstItem="gO7-ZR-kNo" firstAttribute="top" secondItem="WQ0-Aa-7PF" secondAttribute="top" id="kPu-r4-3gG"/>
+                                                    <constraint firstItem="3Vh-kx-SxL" firstAttribute="top" secondItem="WQ0-Aa-7PF" secondAttribute="top" id="ll1-fC-4iv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="IzU-zK-oK9" secondAttribute="bottom" id="lrL-4I-R0M"/>
+                                                    <constraint firstItem="kxK-Um-Mh8" firstAttribute="top" secondItem="WQ0-Aa-7PF" secondAttribute="top" id="mCZ-JY-3DJ"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a62-xb-Jac">
+                                                <rect key="frame" x="0.0" y="35" width="445" height="54"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="أجد صعوبة في الرؤية ب:" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-PC-1JE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="445" height="23"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="21"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="ety-Co-BC1">
+                                                        <rect key="frame" x="0.0" y="31" width="445" height="23"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="JUI-nI-sDK">
+                                                                <rect key="frame" x="344.5" y="0.0" width="100.5" height="23"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7f-SQ-dt2" userLabel="rightVisionRadioBtn">
+                                                                        <rect key="frame" x="65.5" y="0.0" width="35" height="23"/>
+                                                                        <state key="normal" image="OrangeUnCheck"/>
+                                                                        <state key="selected" image="OrangeCheck"/>
+                                                                        <connections>
+                                                                            <action selector="rightVisionRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="abZ-wX-RnC"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="العين اليمني" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="l2W-1Z-RwL">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="23"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
+                                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="QfK-4A-Bxo">
+                                                                <rect key="frame" x="229.5" y="0.0" width="101" height="23"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-3a-Q3a" userLabel="leftVisionRadioBtn">
+                                                                        <rect key="frame" x="67.5" y="0.0" width="33.5" height="23"/>
+                                                                        <state key="normal" image="OrangeUnCheck"/>
+                                                                        <state key="selected" image="OrangeCheck"/>
+                                                                        <connections>
+                                                                            <action selector="leftVisionRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="woh-3B-0KS"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="العين اليسري" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="P4C-qR-b9I">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="23"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
+                                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="a17-BZ-pvg">
+                                                                <rect key="frame" x="115" y="0.0" width="100.5" height="23"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" verticalHuggingPriority="252" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDv-Im-Cka" userLabel="bothVisionRadioBtn">
+                                                                        <rect key="frame" x="60.5" y="0.0" width="40" height="23"/>
+                                                                        <state key="normal" image="OrangeUnCheck">
+                                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </state>
+                                                                        <state key="selected" image="OrangeCheck"/>
+                                                                        <connections>
+                                                                            <action selector="bothVisionRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="kJi-xi-F9c"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="كلا الجانبين" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="ncY-c2-8Wj">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="23"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
+                                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="bEu-rl-OBb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="101" height="23"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr9-yY-yXX" userLabel="notSureVisionRadioBtn">
+                                                                        <rect key="frame" x="63" y="0.0" width="38" height="23"/>
+                                                                        <state key="normal" image="OrangeUnCheck">
+                                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </state>
+                                                                        <state key="selected" image="OrangeCheck"/>
+                                                                        <connections>
+                                                                            <action selector="notSureVisionRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="fL9-Gu-v92"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="لست متأكد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="4Zb-mb-RsV">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="63" height="23"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
+                                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fcu-O3-5xP">
+                                                <rect key="frame" x="0.0" y="107" width="445" height="86"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متى بدأت المشكلة البصرية الخاصة بك؟" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKV-ut-dSe">
+                                                        <rect key="frame" x="230" y="0.0" width="215" height="23"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="21"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6US-V5-fHD">
+                                                        <rect key="frame" x="0.0" y="31" width="445" height="45"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="الشهر" minimumFontSize="17" background="HalfField" translatesAutoresizingMaskIntoConstraints="NO" id="17U-g8-sQF" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="214.5" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="HNB-TS-gOH"/>
+                                                                </constraints>
+                                                                <attributedString key="attributedText"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                                        <real key="value" value="25"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="العام" minimumFontSize="17" background="HalfField" translatesAutoresizingMaskIntoConstraints="NO" id="LZx-WU-dI6" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
+                                                                <rect key="frame" x="230.5" y="0.0" width="214.5" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="vbT-4Y-Dbz"/>
+                                                                </constraints>
+                                                                <attributedString key="attributedText"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                                        <real key="value" value="25"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="wKV-ut-dSe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fcu-O3-5xP" secondAttribute="leading" constant="20" symbolic="YES" id="87a-ho-UVi"/>
+                                                    <constraint firstItem="wKV-ut-dSe" firstAttribute="top" secondItem="Fcu-O3-5xP" secondAttribute="top" id="E6B-BY-m56"/>
+                                                    <constraint firstItem="6US-V5-fHD" firstAttribute="leading" secondItem="Fcu-O3-5xP" secondAttribute="leading" id="EeY-v0-VKS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6US-V5-fHD" secondAttribute="trailing" id="cZV-yd-WH5"/>
+                                                    <constraint firstItem="6US-V5-fHD" firstAttribute="top" secondItem="wKV-ut-dSe" secondAttribute="bottom" constant="8" id="lEP-RB-rFl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wKV-ut-dSe" secondAttribute="trailing" id="mBf-Ra-y0X"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6US-V5-fHD" secondAttribute="bottom" constant="10" id="sPe-k1-Jtd"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="euM-6H-bwo">
+                                                <rect key="frame" x="0.0" y="205" width="445" height="194"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="آسباب السكتة الدماغية ..." minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="21u-vn-bV2" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="23.5" width="223.5" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="215" id="Lkw-Xp-iO1"/>
+                                                            <constraint firstAttribute="height" constant="45" id="dCb-RF-BZQ"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXT-xL-eGR" userLabel="operationHeadRadioBtn">
+                                                        <rect key="frame" x="422.5" y="105" width="22.5" height="22"/>
+                                                        <state key="normal" image="OrangeUnCheck"/>
+                                                        <state key="selected" image="OrangeCheck"/>
+                                                        <connections>
+                                                            <action selector="headSurgeryRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="Rbh-2K-tD4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHF-yZ-9mZ" userLabel="otherRadioBtn">
+                                                        <rect key="frame" x="422.5" y="139" width="22.5" height="22"/>
+                                                        <state key="normal" image="OrangeUnCheck"/>
+                                                        <state key="selected" image="OrangeCheck"/>
+                                                        <connections>
+                                                            <action selector="otherRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="vOg-cX-cbx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="أخرى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jrF-iD-Jlo">
+                                                        <rect key="frame" x="375" y="137" width="43.5" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="23"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xDd-nV-5no" userLabel="headStrockRadioBtn">
+                                                        <rect key="frame" x="422.5" y="35" width="22.5" height="22"/>
+                                                        <state key="normal" image="OrangeUnCheck"/>
+                                                        <state key="selected" image="OrangeCheck"/>
+                                                        <connections>
+                                                            <action selector="headStrockRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="esH-hH-OLz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="السكتة الدماغية" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="KcH-Dw-nig">
+                                                        <rect key="frame" x="323.5" y="33.5" width="95" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="23"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zv0-BT-rVd" userLabel="headHurtRadioBtn">
+                                                        <rect key="frame" x="422.5" y="69" width="22.5" height="22"/>
+                                                        <state key="normal" image="OrangeUnCheck"/>
+                                                        <state key="selected" image="OrangeCheck"/>
+                                                        <connections>
+                                                            <action selector="headHurtRadio" destination="3g0-wk-iKR" eventType="touchUpInside" id="vnR-yW-ghz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ما سبب المشكلة البصرية الخاصة بك؟" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhI-3b-3zg">
+                                                        <rect key="frame" x="242.5" y="0.0" width="202.5" height="23"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="21"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عملية جراحية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="taM-40-HLF">
+                                                        <rect key="frame" x="336" y="103" width="82.5" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="23"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أصابة في الرأس" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="IHr-9U-gRu">
+                                                        <rect key="frame" x="332.5" y="67.5" width="86" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="23"/>
+                                                        <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="WwL-A2-Vlu" userLabel="other" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="127.5" width="215" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="8fa-lr-4T6"/>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="215" id="F7S-If-yvW"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="pXT-xL-eGR" firstAttribute="top" secondItem="IHr-9U-gRu" secondAttribute="bottom" constant="12" id="1ej-5c-D6w"/>
+                                                    <constraint firstItem="zv0-BT-rVd" firstAttribute="leading" secondItem="IHr-9U-gRu" secondAttribute="trailing" constant="4" id="2aY-hB-Z8k"/>
+                                                    <constraint firstItem="WwL-A2-Vlu" firstAttribute="centerY" secondItem="jrF-iD-Jlo" secondAttribute="centerY" id="3Sc-UG-xyn"/>
+                                                    <constraint firstItem="taM-40-HLF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="euM-6H-bwo" secondAttribute="leading" constant="20" symbolic="YES" id="632-ma-Afh"/>
+                                                    <constraint firstItem="zv0-BT-rVd" firstAttribute="top" secondItem="xDd-nV-5no" secondAttribute="bottom" constant="12" id="APw-7T-L8B"/>
+                                                    <constraint firstItem="UHF-yZ-9mZ" firstAttribute="top" secondItem="pXT-xL-eGR" secondAttribute="bottom" constant="12" id="Abf-Ko-6Ma"/>
+                                                    <constraint firstItem="WwL-A2-Vlu" firstAttribute="leading" secondItem="euM-6H-bwo" secondAttribute="leading" id="B2N-wa-tLA"/>
+                                                    <constraint firstItem="qhI-3b-3zg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="euM-6H-bwo" secondAttribute="leading" constant="20" symbolic="YES" id="B4J-Sn-Grn"/>
+                                                    <constraint firstItem="21u-vn-bV2" firstAttribute="leading" secondItem="euM-6H-bwo" secondAttribute="leading" id="BTg-29-VMb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pXT-xL-eGR" secondAttribute="trailing" id="BVc-Ov-PoM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zv0-BT-rVd" secondAttribute="trailing" id="PEu-Ie-arK"/>
+                                                    <constraint firstItem="taM-40-HLF" firstAttribute="centerY" secondItem="pXT-xL-eGR" secondAttribute="centerY" id="Pgc-ca-yIb"/>
+                                                    <constraint firstItem="KcH-Dw-nig" firstAttribute="leading" relation="lessThanOrEqual" secondItem="21u-vn-bV2" secondAttribute="trailing" constant="100" id="SEd-1U-9h6"/>
+                                                    <constraint firstItem="pXT-xL-eGR" firstAttribute="leading" secondItem="taM-40-HLF" secondAttribute="trailing" constant="4" id="WK0-jL-u6W"/>
+                                                    <constraint firstItem="xDd-nV-5no" firstAttribute="leading" secondItem="KcH-Dw-nig" secondAttribute="trailing" constant="4" id="XKJ-oR-UXU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="UHF-yZ-9mZ" secondAttribute="trailing" id="YeD-0U-Eyf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xDd-nV-5no" secondAttribute="trailing" id="aIK-ZM-xSn"/>
+                                                    <constraint firstItem="IHr-9U-gRu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="euM-6H-bwo" secondAttribute="leading" constant="20" symbolic="YES" id="aVZ-as-UCT"/>
+                                                    <constraint firstItem="21u-vn-bV2" firstAttribute="centerY" secondItem="KcH-Dw-nig" secondAttribute="centerY" id="agY-2b-QFS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qhI-3b-3zg" secondAttribute="trailing" id="em8-41-mRJ"/>
+                                                    <constraint firstItem="jrF-iD-Jlo" firstAttribute="centerY" secondItem="UHF-yZ-9mZ" secondAttribute="centerY" id="m4a-KC-cKe"/>
+                                                    <constraint firstItem="KcH-Dw-nig" firstAttribute="centerY" secondItem="xDd-nV-5no" secondAttribute="centerY" id="qRH-WE-4Zv"/>
+                                                    <constraint firstItem="qhI-3b-3zg" firstAttribute="top" secondItem="euM-6H-bwo" secondAttribute="top" id="qWX-6K-mtT"/>
+                                                    <constraint firstItem="jrF-iD-Jlo" firstAttribute="leading" secondItem="WwL-A2-Vlu" secondAttribute="trailing" constant="160" id="qWd-L8-ikI"/>
+                                                    <constraint firstItem="IHr-9U-gRu" firstAttribute="centerY" secondItem="zv0-BT-rVd" secondAttribute="centerY" id="vVX-9P-CDg"/>
+                                                    <constraint firstItem="xDd-nV-5no" firstAttribute="top" secondItem="qhI-3b-3zg" secondAttribute="bottom" constant="12" id="vtn-Ap-OYO"/>
+                                                    <constraint firstItem="UHF-yZ-9mZ" firstAttribute="leading" secondItem="jrF-iD-Jlo" secondAttribute="trailing" constant="4" id="xSx-Jy-3ey"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="a62-xb-Jac" firstAttribute="leading" secondItem="H7h-gp-N3q" secondAttribute="leading" id="31J-pz-iPC"/>
+                                            <constraint firstItem="Fcu-O3-5xP" firstAttribute="top" secondItem="a62-xb-Jac" secondAttribute="bottom" constant="18" id="8Lc-CA-zJB"/>
+                                            <constraint firstAttribute="bottom" secondItem="euM-6H-bwo" secondAttribute="bottom" id="Bfa-OA-nNG"/>
+                                            <constraint firstItem="WQ0-Aa-7PF" firstAttribute="leading" secondItem="H7h-gp-N3q" secondAttribute="leading" id="EpC-am-cZH"/>
+                                            <constraint firstItem="a62-xb-Jac" firstAttribute="top" secondItem="WQ0-Aa-7PF" secondAttribute="bottom" constant="12" id="J00-Re-7Bb"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fcu-O3-5xP" secondAttribute="trailing" id="NJf-DT-zpu"/>
+                                            <constraint firstAttribute="trailing" secondItem="euM-6H-bwo" secondAttribute="trailing" id="ZAD-oM-eKP"/>
+                                            <constraint firstItem="euM-6H-bwo" firstAttribute="leading" secondItem="Fcu-O3-5xP" secondAttribute="leading" id="cjq-q6-kzO"/>
+                                            <constraint firstAttribute="trailing" secondItem="a62-xb-Jac" secondAttribute="trailing" id="dFq-it-UFO"/>
+                                            <constraint firstItem="euM-6H-bwo" firstAttribute="top" secondItem="Fcu-O3-5xP" secondAttribute="bottom" constant="12" id="fDV-Tt-X81"/>
+                                            <constraint firstAttribute="trailing" secondItem="WQ0-Aa-7PF" secondAttribute="trailing" id="mti-yD-zBI"/>
+                                            <constraint firstItem="Fcu-O3-5xP" firstAttribute="leading" secondItem="H7h-gp-N3q" secondAttribute="leading" id="pV2-ei-ELY"/>
+                                            <constraint firstItem="WQ0-Aa-7PF" firstAttribute="top" secondItem="H7h-gp-N3q" secondAttribute="top" id="zxR-CX-weG"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="مريض جديد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeJ-qe-Oyr">
+                                        <rect key="frame" x="423" y="18" width="130.5" height="44"/>
+                                        <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="40"/>
+                                        <color key="textColor" red="0.80392156859999997" green="0.38823529410000002" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wzx-jt-A1B" firstAttribute="centerY" secondItem="ROm-SG-YwL" secondAttribute="centerY" id="3xD-xy-CYR"/>
+                                    <constraint firstItem="MeJ-qe-Oyr" firstAttribute="centerX" secondItem="ROm-SG-YwL" secondAttribute="centerX" id="488-0l-T5C"/>
+                                    <constraint firstItem="MeJ-qe-Oyr" firstAttribute="top" secondItem="ROm-SG-YwL" secondAttribute="top" constant="18" id="5o3-Dw-FxI"/>
+                                    <constraint firstAttribute="trailing" secondItem="wzx-jt-A1B" secondAttribute="trailing" constant="32" id="Azs-be-xey"/>
+                                    <constraint firstAttribute="centerX" secondItem="H7h-gp-N3q" secondAttribute="trailing" id="CRP-s9-l8I"/>
+                                    <constraint firstItem="H7h-gp-N3q" firstAttribute="centerY" secondItem="ROm-SG-YwL" secondAttribute="centerY" id="GzZ-Hh-Vd8"/>
+                                    <constraint firstItem="H7h-gp-N3q" firstAttribute="centerY" secondItem="ROm-SG-YwL" secondAttribute="centerY" id="Lxh-kn-2gk"/>
+                                    <constraint firstAttribute="bottom" secondItem="2zH-ev-ZUu" secondAttribute="bottom" constant="18" id="QxY-uT-HDU"/>
+                                    <constraint firstItem="H7h-gp-N3q" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wzx-jt-A1B" secondAttribute="bottom" id="Ss9-Vl-CUr"/>
+                                    <constraint firstItem="H7h-gp-N3q" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wzx-jt-A1B" secondAttribute="top" id="icd-mf-dkB"/>
+                                    <constraint firstItem="2zH-ev-ZUu" firstAttribute="centerX" secondItem="ROm-SG-YwL" secondAttribute="centerX" id="p6z-7Q-OLX"/>
+                                    <constraint firstItem="H7h-gp-N3q" firstAttribute="leading" secondItem="ROm-SG-YwL" secondAttribute="leading" constant="42" id="w33-dX-20k"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemOrangeColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i5l-Dm-IYq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="WfL-Ob-uhM" secondAttribute="bottom" id="4IU-h2-Xv8"/>
+                            <constraint firstItem="i5l-Dm-IYq" firstAttribute="bottom" secondItem="ROm-SG-YwL" secondAttribute="bottom" constant="24" id="EBz-lV-sJO"/>
+                            <constraint firstItem="WfL-Ob-uhM" firstAttribute="leading" secondItem="RTs-jT-0bj" secondAttribute="leading" id="L8k-VK-CB6"/>
+                            <constraint firstItem="i5l-Dm-IYq" firstAttribute="trailing" secondItem="ROm-SG-YwL" secondAttribute="trailing" constant="24" id="R8U-wR-Dyg"/>
+                            <constraint firstAttribute="trailing" secondItem="WfL-Ob-uhM" secondAttribute="trailing" id="dde-mk-dU3"/>
+                            <constraint firstItem="WfL-Ob-uhM" firstAttribute="top" secondItem="RTs-jT-0bj" secondAttribute="top" id="mHd-m4-dQI"/>
+                            <constraint firstItem="ROm-SG-YwL" firstAttribute="top" secondItem="i5l-Dm-IYq" secondAttribute="top" constant="16" id="s9j-gd-j1i"/>
+                            <constraint firstItem="ROm-SG-YwL" firstAttribute="leading" secondItem="i5l-Dm-IYq" secondAttribute="leading" constant="24" id="shW-6H-Kcp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZLF-HE-JJn"/>
+                    <connections>
+                        <outlet property="BothSidesRadioBtn" destination="iDv-Im-Cka" id="3Um-th-Mqu"/>
+                        <outlet property="HeadEnjuryRadiobtn" destination="zv0-BT-rVd" id="9kI-8V-bWq"/>
+                        <outlet property="HeadStrockRadioBtn" destination="xDd-nV-5no" id="NFX-zL-qbp"/>
+                        <outlet property="LeftBlindRadioBtn" destination="OTw-bd-HTe" id="jwz-Gc-wlu"/>
+                        <outlet property="LeftVisionRadioBtn" destination="1AP-3a-Q3a" id="Gvb-WB-7mB"/>
+                        <outlet property="NotSureRadioBtn" destination="yr9-yY-yXX" id="y0F-qw-X3r"/>
+                        <outlet property="OtherRadioBtn" destination="UHF-yZ-9mZ" id="HuE-FV-39q"/>
+                        <outlet property="RegisterEmailField" destination="vLq-Tp-XEF" id="uie-1Y-ARW"/>
+                        <outlet property="RegisterNickName" destination="aUZ-v3-LCt" id="O6a-BT-Rvz"/>
+                        <outlet property="RegisterPassword1Field" destination="0ih-af-656" id="oQs-Yg-KSc"/>
+                        <outlet property="RegisterPassword2Field" destination="Jaj-SO-unZ" id="Log-T6-VJw"/>
+                        <outlet property="RegisterProblemOtherCause" destination="WwL-A2-Vlu" id="L1m-hd-Orb"/>
+                        <outlet property="RegisterStartMonth" destination="17U-g8-sQF" id="niQ-h5-jlK"/>
+                        <outlet property="RegisterStartYear" destination="LZx-WU-dI6" id="4Gq-jl-fS0"/>
+                        <outlet property="RegisterStrokeCause" destination="21u-vn-bV2" id="sQy-dB-UYd"/>
+                        <outlet property="RegisterYearBirth" destination="5iy-4i-Vhg" id="kOJ-Vi-iXn"/>
+                        <outlet property="RightBlindRadioBtn" destination="3Vh-kx-SxL" id="Cy3-9x-MA0"/>
+                        <outlet property="RightVisionRadioBtn" destination="v7f-SQ-dt2" id="GTj-Gd-TwK"/>
+                        <outlet property="SurgeryRadioBtn" destination="pXT-xL-eGR" id="GXf-nq-flY"/>
+                        <outlet property="femaleRadioButton" destination="0HD-7u-tAM" id="FFa-hq-FJu"/>
+                        <outlet property="maleRadioButton" destination="5TG-Ts-qcf" id="HYY-wg-1bh"/>
+                        <outlet property="noBlindRadioBtn" destination="gO7-ZR-kNo" id="TXe-xI-Yhn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ot4-Yi-gdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462" y="-2338"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="hv0-H6-oTN">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cz5-c6-QD8" customClass="LoginVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4db-7p-Mnc">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="NX6-ql-55X">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-MZ-dc8" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="86" width="976" height="658"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFe-b1-Izu">
+                                        <rect key="frame" x="363" y="584" width="250" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Me1-Rx-qoM"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="mLW-5u-3GL"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="تسجيل الدخول" cornerStyle="medium">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.2274509804" green="0.33725490200000002" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="36"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressLoginBtn" destination="cz5-c6-QD8" eventType="touchUpInside" id="Xb3-1M-YrH"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="مريض سابق" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gji-n1-hG8">
+                                        <rect key="frame" x="424.5" y="18" width="127" height="44"/>
+                                        <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="40"/>
+                                        <color key="textColor" red="0.2274509804" green="0.33725490200000002" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0fE-RB-6Rj">
+                                        <rect key="frame" x="278" y="195.5" width="420" height="267.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="89b-d7-hXf">
+                                                <rect key="frame" x="0.0" y="0.0" width="420" height="216"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="يرجى تسجيل الدخول باستخدام عنوان البريد الإلكتروني " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npW-3P-Dg7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="420" height="26.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="bezel" placeholder="البريد الألكتروني" textAlignment="right" minimumFontSize="17" background="LoginField" translatesAutoresizingMaskIntoConstraints="NO" id="0q9-hh-sk3" customClass="CustomTextField" customModule="CustomViews">
+                                                        <rect key="frame" x="0.0" y="50.5" width="420" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="ub8-Pe-zYR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="bezel" placeholder="كلمة السر" textAlignment="right" minimumFontSize="17" background="LoginField" translatesAutoresizingMaskIntoConstraints="NO" id="5Ll-5O-ofP" customClass="CustomTextField" customModule="CustomViews">
+                                                        <rect key="frame" x="0.0" y="119.5" width="420" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="a25-JM-5lz"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRightAlign" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rTxtMargin">
+                                                                <real key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" text=" نسيت كلمة المرور؟ انقر هنا" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLB-uu-x3v">
+                                                        <rect key="frame" x="0.0" y="188.5" width="420" height="27.5"/>
+                                                        <gestureRecognizers/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="25"/>
+                                                        <color key="textColor" red="0.2274509804" green="0.33725490200000002" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zPt-28-fBp">
+                                                <rect key="frame" x="0.0" y="240" width="420" height="27.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جديد في اقرأ لتكون؟" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u76-yi-DYr">
+                                                        <rect key="frame" x="289.5" y="0.0" width="130.5" height="27.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="25"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="اشترك الآن !" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ug2-zU-gJd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="281.5" height="27.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="25"/>
+                                                        <color key="textColor" red="0.79785239699999999" green="0.4893290401" blue="0.25483426450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="420" id="iGq-tw-lCg"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jFe-b1-Izu" secondAttribute="bottom" constant="18" id="GdX-kz-N5H"/>
+                                    <constraint firstItem="0fE-RB-6Rj" firstAttribute="centerY" secondItem="cHg-MZ-dc8" secondAttribute="centerY" id="PSB-Xt-djB"/>
+                                    <constraint firstItem="0fE-RB-6Rj" firstAttribute="centerX" secondItem="cHg-MZ-dc8" secondAttribute="centerX" id="YXT-6M-ypT"/>
+                                    <constraint firstItem="gji-n1-hG8" firstAttribute="top" secondItem="cHg-MZ-dc8" secondAttribute="top" constant="18" id="ahB-YR-N9c"/>
+                                    <constraint firstItem="jFe-b1-Izu" firstAttribute="centerX" secondItem="cHg-MZ-dc8" secondAttribute="centerX" id="cqS-xE-wlo"/>
+                                    <constraint firstItem="gji-n1-hG8" firstAttribute="centerX" secondItem="cHg-MZ-dc8" secondAttribute="centerX" id="flX-6z-sZv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.61885166170000006" green="0.71677130460000005" blue="0.48623567820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FfD-8o-nNx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cHg-MZ-dc8" firstAttribute="top" secondItem="FfD-8o-nNx" secondAttribute="top" constant="16" id="1GJ-J9-OAO"/>
+                            <constraint firstItem="FfD-8o-nNx" firstAttribute="bottom" secondItem="cHg-MZ-dc8" secondAttribute="bottom" constant="24" id="EdT-kI-5H4"/>
+                            <constraint firstItem="NX6-ql-55X" firstAttribute="top" secondItem="4db-7p-Mnc" secondAttribute="top" id="WPB-Rh-hXm"/>
+                            <constraint firstItem="FfD-8o-nNx" firstAttribute="trailing" secondItem="cHg-MZ-dc8" secondAttribute="trailing" constant="24" id="Zhi-uG-Jvf"/>
+                            <constraint firstItem="NX6-ql-55X" firstAttribute="leading" secondItem="4db-7p-Mnc" secondAttribute="leading" id="jee-Ev-B6A"/>
+                            <constraint firstAttribute="bottom" secondItem="NX6-ql-55X" secondAttribute="bottom" id="mNJ-Bg-XVh"/>
+                            <constraint firstItem="FfD-8o-nNx" firstAttribute="trailing" secondItem="NX6-ql-55X" secondAttribute="trailing" id="ozJ-n6-KmG"/>
+                            <constraint firstItem="cHg-MZ-dc8" firstAttribute="leading" secondItem="FfD-8o-nNx" secondAttribute="leading" constant="24" id="xaa-Fg-9aK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="B2n-Wt-aZi"/>
+                    <connections>
+                        <outlet property="LoginEmailField" destination="0q9-hh-sk3" id="gqu-hO-TMa"/>
+                        <outlet property="LoginPasswordField" destination="5Ll-5O-ofP" id="wjg-vb-ztV"/>
+                        <outlet property="forgetPasswordBtn" destination="cLB-uu-x3v" id="SXB-gu-HQH"/>
+                        <outlet property="registerBtn" destination="Ug2-zU-gJd" id="i5G-Ly-Cge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ufq-Ad-FVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1100" y="-2338"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uY2-eB-jL3">
+            <objects>
+                <navigationController storyboardIdentifier="AuthNavigationController" id="cQj-BH-4J4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ijy-dy-mxl">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cz5-c6-QD8" kind="relationship" relationship="rootViewController" id="Exx-vg-cW3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZ4-gc-iKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1755" y="-2337"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="0ih-af-656">
+            <size key="intrinsicContentSize" width="72.5" height="29"/>
+        </designable>
+        <designable name="0q9-hh-sk3">
+            <size key="intrinsicContentSize" width="113.5" height="28.5"/>
+        </designable>
+        <designable name="17U-g8-sQF">
+            <size key="intrinsicContentSize" width="45.5" height="30"/>
+        </designable>
+        <designable name="21u-vn-bV2">
+            <size key="intrinsicContentSize" width="177" height="30"/>
+        </designable>
+        <designable name="5Ll-5O-ofP">
+            <size key="intrinsicContentSize" width="81.5" height="27"/>
+        </designable>
+        <designable name="5iy-4i-Vhg">
+            <size key="intrinsicContentSize" width="81.5" height="30"/>
+        </designable>
+        <designable name="Jaj-SO-unZ">
+            <size key="intrinsicContentSize" width="135" height="29"/>
+        </designable>
+        <designable name="LZx-WU-dI6">
+            <size key="intrinsicContentSize" width="39.5" height="30"/>
+        </designable>
+        <designable name="WwL-A2-Vlu">
+            <size key="intrinsicContentSize" width="13" height="30"/>
+        </designable>
+        <designable name="aUZ-v3-LCt">
+            <size key="intrinsicContentSize" width="102.5" height="30"/>
+        </designable>
+        <designable name="vLq-Tp-XEF">
+            <size key="intrinsicContentSize" width="111.5" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Field" width="222" height="45"/>
+        <image name="HalfField" width="180" height="45"/>
+        <image name="LoginBackground" width="1024" height="768"/>
+        <image name="LoginField" width="430" height="45"/>
+        <image name="OrangeAsterik" width="15.5" height="14.5"/>
+        <image name="OrangeCheck" width="22" height="22"/>
+        <image name="OrangeField" width="430" height="45"/>
+        <image name="OrangeUnCheck" width="22.5" height="22"/>
+        <image name="PickerField" width="430" height="45"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
