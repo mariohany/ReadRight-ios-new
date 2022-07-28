@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Pre Reading TestVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReadingTestVC" id="Y6W-OH-hqX" customClass="PreReadingTestVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,36 +246,39 @@
                             <constraint firstAttribute="trailing" secondItem="4Kp-18-GWG" secondAttribute="trailing" id="lbs-2e-esg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="BuH-3K-Hve" kind="show" identifier="StartReadingTest" id="N7p-4g-jWA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47" y="84"/>
         </scene>
-        <!--View Controller-->
+        <!--Reading TestVC-->
         <scene sceneID="cXW-mk-Um0">
             <objects>
-                <viewController id="BuH-3K-Hve" sceneMemberID="viewController">
+                <viewController id="BuH-3K-Hve" customClass="ReadingTestVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CVo-OH-Okn">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="984"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIg-g2-pB7">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="704" height="984"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-at-Okg">
-                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="704" height="984"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LB-0f-BpU" userLabel="QuestionView" customClass="CustomView" customModule="readright" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="72" width="1318" height="880"/>
+                                        <rect key="frame" x="24" y="72" width="656" height="840"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UT7-8M-Fp5">
-                                                <rect key="frame" x="1241" y="8" width="55" height="73"/>
+                                                <rect key="frame" x="579" y="8" width="55" height="73"/>
                                                 <state key="normal" image="ReadThis">
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILe-CD-zzA">
-                                                <rect key="frame" x="589" y="8" width="140.5" height="50.5"/>
+                                                <rect key="frame" x="258" y="8" width="140.5" height="50.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من ٣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R02-dI-mK5">
                                                         <rect key="frame" x="0.0" y="0.0" width="62.5" height="50.5"/>
@@ -298,7 +301,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="8pH-dc-dud">
-                                                <rect key="frame" x="724.5" y="288.5" width="563.5" height="303"/>
+                                                <rect key="frame" x="62.5" y="268.5" width="563.5" height="303"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="skF-uH-9g6">
                                                         <rect key="frame" x="0.0" y="0.0" width="209" height="142.5"/>
@@ -378,16 +381,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-Yw-pUX" userLabel="StoryView" customClass="CustomView" customModule="CustomViews">
-                                        <rect key="frame" x="24" y="72" width="1318" height="880"/>
+                                        <rect key="frame" x="24" y="72" width="656" height="840"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pod-bD-jl4">
-                                                <rect key="frame" x="1241" y="8" width="55" height="73"/>
+                                                <rect key="frame" x="579" y="8" width="55" height="73"/>
                                                 <state key="normal" image="ReadThis">
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrN-cx-eWT">
-                                                <rect key="frame" x="586" y="8" width="146" height="50.5"/>
+                                                <rect key="frame" x="255" y="8" width="146" height="50.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من ٣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUM-zC-aM8">
                                                         <rect key="frame" x="0.0" y="0.0" width="62.5" height="50.5"/>
@@ -410,34 +413,34 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="2Tt-rF-qv1">
-                                                <rect key="frame" x="0.0" y="215" width="1294" height="450"/>
+                                                <rect key="frame" x="0.0" y="195" width="632" height="450"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="GUu-Ah-5hh">
-                                                        <rect key="frame" x="0.0" y="37" width="684" height="413"/>
+                                                        <rect key="frame" x="0.0" y="37" width="285" height="413"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="EFN-Am-EdH">
-                                                                <rect key="frame" x="193" y="0.0" width="298" height="141"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="285" height="141"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قبل أن تبدأ، تأكد من رؤية الإطار الأحمر كله." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-CC-KWA">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="298" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="285" height="28.5"/>
                                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقر على الزر أدناه عندما تكون على استعداد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq7-er-CHS">
-                                                                        <rect key="frame" x="0.0" y="37.5" width="298" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="37.5" width="285" height="28.5"/>
                                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لقراءة القطعة." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSa-AL-rz7">
-                                                                        <rect key="frame" x="0.0" y="75" width="298" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="75" width="285" height="28.5"/>
                                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقر على مرة أخرى عند الانتهاء من القراءة." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiU-3a-TEb">
-                                                                        <rect key="frame" x="0.0" y="112.5" width="298" height="28.5"/>
+                                                                        <rect key="frame" x="0.0" y="112.5" width="285" height="28.5"/>
                                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -445,7 +448,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-pj-wh2">
-                                                                <rect key="frame" x="242" y="213" width="200" height="200"/>
+                                                                <rect key="frame" x="42.5" y="213" width="200" height="200"/>
                                                                 <state key="normal" image="RoundStartBtn">
                                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
@@ -454,13 +457,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4u-59-Kgm">
-                                                        <rect key="frame" x="684" y="0.0" width="610" height="450"/>
+                                                        <rect key="frame" x="285" y="0.0" width="347" height="450"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedFrame" translatesAutoresizingMaskIntoConstraints="NO" id="KNe-Jf-76H">
-                                                                <rect key="frame" x="0.0" y="0.0" width="610" height="450"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="347" height="450"/>
                                                             </imageView>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kI4-BM-QtN">
-                                                                <rect key="frame" x="10" y="8" width="590" height="433"/>
+                                                                <rect key="frame" x="10" y="8" width="327" height="433"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <string key="text">الحديث عن مثلث برمودا يشبة الحديث عن الحكايات الخرافية، ولكن يبقي الفرق هنا هو أن مثلث برمودا حقيقة واقعية لمسناها في عصرنا هذا، وقرأنا عنها في الصحف العربية والعالمية، ويمكن القول أن مثلث برمودا يعتبر التحدي الذي يواجه الإنسان في هذا القرن . وهو أحد الغرائب الطبيعية الذي تتحدث عنه الصحف.</string>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -468,7 +471,7 @@
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVk-tf-dHl">
-                                                                <rect key="frame" x="270.5" y="145" width="69.5" height="160"/>
+                                                                <rect key="frame" x="139" y="145" width="69.5" height="160"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="117"/>
                                                                 <color key="textColor" red="0.83529411760000005" green="0.0" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
