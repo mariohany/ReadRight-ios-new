@@ -84,9 +84,9 @@ class ADLTestVC: UIViewController, CustomAlertViewDelegate {
     
     func observeSuccess(){
         viewModel.result.subscribe { status in
-            if let msg = status.element, msg != ""{
+//            if let msg = status.element, msg != ""{
                 Helpers.popToTestsController()
-            }
+//            }
         }
     }
     

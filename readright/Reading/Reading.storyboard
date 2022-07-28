@@ -736,7 +736,11 @@
                         <outlet property="VolumeSlider" destination="13F-5I-SIS" id="582-7E-doH"/>
                         <outlet property="beforeStartView" destination="VI0-es-MNa" id="Cf1-QO-Fbv"/>
                         <outlet property="testsDashboardView" destination="CIL-T6-IXF" id="OB8-cw-fan"/>
-                        <segue destination="yYn-4Q-d4o" kind="show" id="jTT-Vc-X4r"/>
+                        <segue destination="yYn-4Q-d4o" kind="show" identifier="GoReadingTest" id="jTT-Vc-X4r"/>
+                        <segue destination="jHS-sZ-PQT" kind="show" identifier="GoADLTest" id="PvV-Ch-fWy"/>
+                        <segue destination="Fu0-p5-EQg" kind="show" identifier="GoSearchTest" id="Hhe-xe-GpR"/>
+                        <segue destination="W0D-IF-OfD" kind="show" identifier="GoVisualTest" id="0ZQ-f0-pLp"/>
+                        <segue destination="au3-aJ-wnS" kind="show" identifier="GoNeglectTest" id="66H-lz-Rli"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -752,6 +756,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVf-KW-EPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="659" y="-106"/>
+        </scene>
+        <!--ADLTest-->
+        <scene sceneID="ScS-jB-muZ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ADLTest" storyboardName="ADLTest" referencedIdentifier="ADLTest" id="jHS-sZ-PQT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="At7-4a-zzT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1X-aS-eWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="-38"/>
+        </scene>
+        <!--SearchTest-->
+        <scene sceneID="SnN-hH-9aw">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchTest" storyboardName="SearchTest" referencedIdentifier="SearchTest" id="Fu0-p5-EQg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="08m-Kb-xY8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d5a-Uq-Ofj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="28"/>
+        </scene>
+        <!--VisualFieldTest-->
+        <scene sceneID="Csk-WQ-K2r">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="VisualFieldTest" storyboardName="VisualFieldTest" referencedIdentifier="VisualFieldTest" id="W0D-IF-OfD" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4lt-X9-Hh2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGa-dF-sbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="92"/>
+        </scene>
+        <!--VisualNeglectTest-->
+        <scene sceneID="hEk-Yy-Cvu">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="VisualNeglectTest" storyboardName="VisualNeglectTest" referencedIdentifier="VisualNeglectTest" id="au3-aJ-wnS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="TwB-Dg-Tya"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Abr-ue-9p4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="163"/>
         </scene>
     </scenes>
     <resources>

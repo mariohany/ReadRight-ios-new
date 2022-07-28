@@ -102,4 +102,84 @@ struct NetworkModels {
             case url = "URL"
         }
     }
+    
+    struct ReadingQuesionModel: Codable {
+        let numberOfWords, answer:Int
+        let storyText, questionText: String
+        
+        enum CodingKeys: String, CodingKey {
+            case storyText = "StoryText"
+            case questionText = "QuestionText"
+            case numberOfWords = "NumberOfWords"
+            case answer
+        }
+    }
+    
+    struct ReadingResultModel {
+        let answer, questionNo:Int?
+        let readingTime: Float?
+    }
+    
+    struct SubmitTestsBaseResponse: Codable {
+        let success:Bool?
+        let message:String?
+        
+        enum CodingKeys: String, CodingKey {
+            case success = "Success"
+            case message = "Message"
+        }
+    }
+    
+    struct VisualFieldTestRequest: Codable {
+        let duration:Float
+        let nodesAnswers:[NodesAnswer]
+        let nodesHits:[NodesHits]
+        
+        enum CodingKeys: String, CodingKey {
+            case duration = "Duration"
+            case nodesAnswers = "NodesAnswers"
+            case nodesHits = "NodesHits"
+        }
+    }
+    
+    struct NodesAnswer: Codable {
+        let question, nodeNo, answer:Int
+        
+        enum CodingKeys: String, CodingKey {
+            case question = "Question"
+            case nodeNo = "NodeNo"
+            case answer = "Answer"
+        }
+    }
+
+    struct NodesHits: Codable {
+        let dot, shown, hit:Int
+        
+        enum CodingKeys: String, CodingKey {
+            case dot = "Dot"
+            case shown = "Shown"
+            case hit = "Hit"
+        }
+    }
+    
+    struct Elements: Codable {
+        let itemId, x, y, type, numClicks:Int
+        
+        enum CodingKeys: String, CodingKey {
+            case itemId = "item_id"
+            case x
+            case y
+            case type = "type"
+            case numClicks = "num_clicks"
+        }
+    }
+    
+    struct HitsPath: Codable {
+        let itemId, index:Int
+        
+        enum CodingKeys: String, CodingKey {
+            case itemId = "item_id"
+            case index
+        }
+    }
 }

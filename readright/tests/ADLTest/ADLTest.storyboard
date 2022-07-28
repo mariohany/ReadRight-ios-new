@@ -16,7 +16,7 @@
         <!--Prepare ADL Test-->
         <scene sceneID="nDk-Le-xOo">
             <objects>
-                <viewController storyboardIdentifier="ADLTestVC" id="Wci-pt-EV1" userLabel="Prepare ADL Test" customClass="PrepareADLTestVC" sceneMemberID="viewController">
+                <viewController id="Wci-pt-EV1" userLabel="Prepare ADL Test" customClass="PrepareADLTestVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="go2-jy-zWD"/>
                         <viewControllerLayoutGuide type="bottom" id="ZhZ-LP-njk"/>

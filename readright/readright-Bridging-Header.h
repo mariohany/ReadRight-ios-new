@@ -3,6 +3,11 @@
 //
 
 #import "SimpleBarChart.h"
+#import "CustomPageControl.h"
+#import "DragableImageView.h"
+#import "SearchCanvasView.h"
+#import "NeglectCanvasView.h"
+#import "CustomSlider.h"
 #import "MWFeedInfo.h"
 #import "MWFeedItem.h"
 #import "MWFeedParser.h"

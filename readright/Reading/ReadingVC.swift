@@ -428,40 +428,29 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
     }
     
     @IBAction func goReadingTest1(_ sender: UIButton) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "ReadingTestVC") as? ReadingTestVC
         readingTestNo = 1
-//        navigationController?.pushViewController(vc!, animated: true)
-        performSegue(withIdentifier: "", sender: self)
+        performSegue(withIdentifier: "GoReadingTest", sender: self)
     }
     
     @IBAction func goVisualTest(_ sender: UIButton) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "VisualTestVC") as? VisualTestVC
-//        navigationController?.pushViewController(vc!, animated: true)
+        performSegue(withIdentifier: "GoVisualTest", sender: self)
     }
     
     @IBAction func goReadingTest2(_ sender: UIButton) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "ReadingTestVC") as? ReadingTestVC
         readingTestNo = 2
-//        navigationController?.pushViewController(vc!, animated: true)
-        performSegue(withIdentifier: "", sender: self)
+        performSegue(withIdentifier: "GoReadingTest", sender: self)
     }
     
     @IBAction func goNeglectTest(_ sender: UIButton) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "NeglectTestVC") as? NeglectTestVC
-//        navigationController?.pushViewController(vc!, animated: true)
-        performSegue(withIdentifier: "", sender: self)
+        performSegue(withIdentifier: "GoNeglectTest", sender: self)
     }
     
     @IBAction func goADLTest(_ sender: UIButton) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "ADLTestVC") as? ADLTestVC
-//        navigationController?.pushViewController(vc!, animated: true)
-        performSegue(withIdentifier: "", sender: self)
+        performSegue(withIdentifier: "GoADLTest", sender: self)
     }
     
     @IBAction func goDesktopSearchTest(_ sender: UIButton) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "SearchTestVC") as? SearchTestVC
-//        navigationController?.pushViewController(vc!, animated: true)
-        performSegue(withIdentifier: "", sender: self)
+        performSegue(withIdentifier: "GoSearchTest", sender: self)
     }
     
     @IBAction func beforeTestVoiceOver(_ sender: UIButton) {

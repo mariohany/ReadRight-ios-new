@@ -11,6 +11,12 @@ import AVFoundation
 
 class Helpers{
     
+    
+//    static func appDelegate() -> AppDelegate {
+//        let app = UIApplication.shared
+//        return app.delegate! as! AppDelegate
+//    }
+    
     static let ARABIC_DICTIONARY:[String] = ["١","٢","٣","٤","٥","٦","٧","٨","٩","١٠","١١","١٢","١٣","١٤","١٥","١٦","١٧","١٩","١٩","٢٠","٢١","٢٢","٢٣","٢٤","٢٥","٢٦","٢٧","٢٨","٢٩"]
     
     enum Format{
@@ -297,6 +303,14 @@ class Helpers{
         } catch let err {
             print("ERROR: Failed to retrieve music file Path \(err.localizedDescription)")
             return nil
+        }
+    }
+    
+    @objc static func popToTestsController(){	
+        let navigationController = (UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate).window?.rootViewController?.navigationController
+        let array = navigationController?.viewControllers
+        if let item = array?[1]{
+            navigationController?.popToViewController(item, animated: true)
         }
     }
     

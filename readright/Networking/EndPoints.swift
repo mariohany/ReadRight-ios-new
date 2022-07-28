@@ -20,7 +20,14 @@ enum Endpoint {
     case GetSearchTestHistory
     case GetBooks
     case GetChaptersByBook(bookId:Int)
+    
+    case SubmitReadingTest(stage:Int, passage1:Float, passage2:Float, passage3:Float, answer1:Bool, answer2:Bool, answer3:Bool, readingSpeed:Int, idPassage1:Int, idPassage2:Int, idPassage3:Int)
+    case SubmitVisualFieldTest(model: NetworkModels.VisualFieldTestRequest)
+    case SubmitADLTest(driving:Int, readingNews:Int, hygiene:Int, readingBooks:Int, enjoyReading:Int, findThings:Int)
+    case SubmitSearchTest(score:Int, duration:Float)
+    case SubmitVisualNeglectTest(score:Int, duration:Int, targets:Int, distractors:Int, revisits:Int, x:Int, y:Int, numTotalTargets:Int, numTotalDistractors:Int, numTargetsMissed:Int, numTargetsMissedLeft:Int, numTargetsMissedRight:Int, numRevisits:Int, numRevisitsLeft:Int, numRevisitsRight:Int, meanXTargets:Int, meanYTargets:Int, elements:[NetworkModels.Elements], hitsPath:[NetworkModels.HitsPath])
 }
+
 
 extension Endpoint: TargetType {
     var baseURL: URL {
@@ -42,6 +49,12 @@ extension Endpoint: TargetType {
         case .GetSearchTestHistory: return "users/GetSearchTestHistory"
         case .GetBooks: return "therapy/GetBooks"
         case .GetChaptersByBook: return "therapy/GetChaptersByBook"
+            
+        case .SubmitReadingTest: return "VisualReadingTest"
+        case .SubmitVisualFieldTest: return "VisualFieldTest"
+        case .SubmitADLTest: return "ADLTest"
+        case .SubmitSearchTest: return "visualsearch"
+        case .SubmitVisualNeglectTest: return "visualneglect"
         }
     }
 
@@ -49,7 +62,7 @@ extension Endpoint: TargetType {
         switch self {
         case .ForgetPassword, .GetUserInfo, .GetSearchTestHistory, .GetNeglectTestHistory, .GetReadingTestHistory, .GetTherapyHistory, .GetFieldTestHistory, .GetBooks, .GetChaptersByBook : return .get
         case .UpdateUserInfo : return .put
-        case .Login, .Register : return .post
+        case .Login, .Register, .SubmitReadingTest, .SubmitVisualFieldTest, .SubmitADLTest, .SubmitSearchTest, .SubmitVisualNeglectTest : return .post
         }
     }
     
@@ -122,6 +135,63 @@ extension Endpoint: TargetType {
                 "BookId": bookId
             ]
             return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+        case .SubmitReadingTest(let stage, let passage1, let passage2, let passage3, let answer1, let answer2, let answer3, let readingSpeed, let idPassage1, let idPassage2, let idPassage3):
+            let params:[String : Any?] = ["Stage": stage,
+                          "Passage1": passage1,
+                          "Passage2": passage2,
+                          "Passage3": passage3,
+                          "Answer1": answer1,
+                          "Answer2": answer2,
+                          "Answer3": answer3,
+                          "ReadingSpeed": readingSpeed,
+                          "IdPassage1": idPassage1,
+                          "IdPassage1": idPassage2,
+                          "IdPassage1": idPassage3,
+            ]
+            return .requestParameters(parameters: params as [String : Any], encoding: JSONEncoding.default)
+        case .SubmitVisualFieldTest(let model):
+            let params:[String : Any] = ["Duration": model.duration,
+                                          "NodesAnswers": model.nodesAnswers,
+                                          "NodesHits": model.nodesHits
+            ]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+            
+        case .SubmitADLTest(let driving, let readingNews, let hygiene, let readingBooks, let enjoyReading, let findThings):
+            let params:[String : Any] = ["Driving": driving,
+                                        "ReadingNews": readingNews,
+                                        "Hygiene": hygiene,
+                                        "ReadingBooks": readingBooks,
+                                        "EnjoyReading": enjoyReading,
+                                        "FindThings": findThings
+            ]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        case .SubmitSearchTest(let score, let duration):
+            let params:[String : Any] = ["score": score,
+                                        "duration": duration
+            ]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        case .SubmitVisualNeglectTest(let score, let duration, let targets, let distractors, let revisits, let x, let y, let numTotalTargets, let numTotalDistractors, let numTargetsMissed, let numTargetsMissedLeft, let numTargetsMissedRight, let numRevisits, let numRevisitsLeft, let numRevisitsRight, let meanXTargets, let meanYTargets, let elements, let hitsPath):
+            let params:[String : Any] = ["score": score,
+                                         "duration": duration,
+                                         "targets": targets,
+                                         "distractors": distractors,
+                                         "revisits" : revisits,
+                                         "x" : x,
+                                         "y" : y,
+                                         "num_total_targets" : numTotalTargets,
+                                         "num_total_distractors" : numTotalDistractors,
+                                         "num_total_missed" : numTargetsMissed,
+                                         "num_total_missed_l" : numTargetsMissedLeft,
+                                         "num_total_missed_r" : numTargetsMissedRight,
+                                         "num_revisits" : numRevisits,
+                                         "num_revisits_l" : numRevisitsLeft,
+                                         "num_revisits_r" : numRevisitsRight,
+                                         "mean_x_targets" : meanXTargets,
+                                         "mean_y_targets" : meanYTargets,
+                                         "elements" : elements,
+                                         "hits_path" : hitsPath
+            ]
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
         

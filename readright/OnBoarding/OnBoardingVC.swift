@@ -34,7 +34,7 @@ class OnBoardingVC : UIViewController {
         self.tabBarController?.navigationItem.title = "نظرة عامة"
         self.navigationController?.navigationBar.topItem?.title = "نظرة عامة"
     }
-    
+    	
     @IBAction private func playVoiceOver(){
         if let audioPlayer = audioPlayer {
             if !audioPlayer.isPlaying {
