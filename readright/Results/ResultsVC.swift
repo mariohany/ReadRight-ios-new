@@ -34,7 +34,7 @@ class ResultsVC: UIViewController {
     var values: [CGFloat] = []
     var texts: [String] = []
     var xLabels: [String] = []
-    var barColors: [UIColor] = []
+    var barColors: [UIColor] = [UIColor(red: 119/255.0, green: 156/255.0, blue: 89/255.0, alpha: 1)]
     var currentBarColor: Int = 0
     let viewModel = ResultsViewModel()
     var visualFieldsResult:[NetworkModels.HistoryItem] = []
@@ -85,7 +85,11 @@ class ResultsVC: UIViewController {
                     Helpers.handleErrorMessages(message: Constants.HISTORY_EMPTY)
                 }
                 self.chart.removeFromSuperview()
-                self.loadChartBarWithValues(value: list.map { $0.ReactionTime ?? 0.0 }, text: list.map{ String(describing: $0.ReactionTime) }, labels: list.map{ $0.date ?? "" }, incrementalValue: self.getIncrementalStepFromArray(array: list.map { $0.ReactionTime ?? 0.0 }), containerView: self.ChartView)
+                let values = list.map {CGFloat($0.reactionTime ?? 0)}
+                let texts = list.map{String(describing: $0.reactionTime!)}
+                let labels = list.map{Helpers.convertDate($0.date)}
+                
+                self.loadChartBarWithValues(value: values, text: texts, labels: labels, incrementalValue: self.getIncrementalStepFromArray(array: values), containerView: self.ChartView)
                 self.chart.reloadData()
             }
         }
@@ -96,7 +100,12 @@ class ResultsVC: UIViewController {
                     Helpers.handleErrorMessages(message: Constants.HISTORY_EMPTY)
                 }
                 self.chart.removeFromSuperview()
-                self.loadChartBarWithValues(value: list.map { $0.ReadingSpeed ?? 0.0 }, text: list.map{ String(describing: $0.ReadingSpeed) }, labels: list.map{ $0.date ?? "" }, incrementalValue: self.getIncrementalStepFromArray(array: list.map { $0.ReadingSpeed ?? 0.0 }), containerView: self.ChartView)
+                let values = list.map {CGFloat($0.readingSpeed ?? 0)}
+                let texts = list.map{String(describing: $0.readingSpeed!)}
+                let labels = list.map{Helpers.convertDate($0.createdAt)}
+                
+                self.loadChartBarWithValues(value: values, text: texts, labels: labels, incrementalValue: self.getIncrementalStepFromArray(array: values), containerView: self.ChartView)
+                
                 self.chart.reloadData()
             }
         }
@@ -274,7 +283,7 @@ extension ResultsVC : UITableViewDelegate, UITableViewDataSource {
             case HISTORY_FIELD_VIEW: //Field Test results
             do {
                 cell = FieldHistoryCell.init(style: .default, reuseIdentifier: "FieldHistoryCell")
-                (cell as? FieldHistoryCell)?.FieldDate?.text = visualFieldsResult[indexPath.row].date
+                (cell as? FieldHistoryCell)?.FieldDate?.text = Helpers.convertDate(visualFieldsResult[indexPath.row].date)
                 let bgView: UIView = UIView()
                 bgView.backgroundColor = UIColor(red: 221.0/255.0, green: 134.0/255.0, blue: 89.0/255.0, alpha: 1)
                 (cell as? FieldHistoryCell)?.selectedBackgroundView = bgView
@@ -317,7 +326,7 @@ extension ResultsVC: SimpleBarChartDataSource, SimpleBarChartDelegate {
     }
     
     func barChart(_ barChart: SimpleBarChart!, colorForBarAt index: UInt) -> UIColor! {
-        return barColors[Int(index)]
+        return barColors[Int(currentBarColor)]
     }
     
     func barChart(_ barChart: SimpleBarChart!, xLabelForBarAt index: UInt) -> String! {

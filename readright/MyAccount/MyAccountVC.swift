@@ -311,11 +311,14 @@ class MyAccountVC: UIViewController, UITextFieldDelegate{
         nameField.text = userInfo.name
 
         
-        birthYearPicker.selectRow(years.firstIndex(of: Int(userInfo.yob?.split(separator: "/").last ?? "0") ?? 0) ?? 0, inComponent: 0, animated: false)
+        birthYearPicker.selectRow(years.firstIndex(of: Int(userInfo.yob ?? "0") ?? 0) ?? 0, inComponent: 0, animated: false)
+        yearBirthField.text = userInfo.yob
         
-//        startYearPicker.selectRow(years.firstIndex(of: userInfo.yob ?? 0) ?? 0, inComponent: 0, animated: false)
+        startYearPicker.selectRow(years.firstIndex(of: Int(userInfo.vpStartDate?.split(separator: "/").last ?? "0") ?? 0) ?? 0, inComponent: 0, animated: false)
+        startYearField.text = userInfo.vpStartDate?.split(separator: "/").last?.lowercased() ?? ""
         
-//        startMonthPicker.selectRow(months.firstIndex(of: userInfo.yob ?? 0) ?? 0, inComponent: 0, animated: false)
+        startMonthPicker.selectRow(months.firstIndex(of: Int(userInfo.vpStartDate?.split(separator: "/").first ?? "0") ?? 0) ?? 0, inComponent: 0, animated: false)
+        startMonthField.text = userInfo.vpStartDate?.split(separator: "/").first?.lowercased() ?? ""
         
         switch userInfo.gender {
         case 1: maleAction()

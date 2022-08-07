@@ -18,11 +18,16 @@ class ResultNeglectTestVC: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let backImage = UIImage(named: "TestsBackIcons")?.withRenderingMode(.alwaysOriginal)
-        let barButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: Helpers.self, action: #selector(Helpers.popToTestsController))
+        let barButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(popToTestsController))
         
         self.navigationItem.leftBarButtonItem = barButtonItem
         self.ScoreTextField.text = String(format:"%d%%", self.ResultScore)
     }
+    
+    @objc func popToTestsController(){
+        self.navigationController?.popViewController(animated: true)
+    }
+
 
     override func viewDidAppear(_ animated:Bool){
         super.viewDidAppear(animated)
@@ -30,6 +35,6 @@ class ResultNeglectTestVC: UIViewController{
     }
 
     @IBAction private func goNextTest() {
-        Helpers.popToTestsController()
+        self.popToTestsController()
     }
 }

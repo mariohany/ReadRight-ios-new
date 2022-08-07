@@ -11,8 +11,8 @@ let TEST_DURATION:Int = 300
 
 class VisualNeglectTestVC: UIViewController {
     
-    @IBOutlet weak private var  TimeLabel:UILabel!
-    @IBOutlet weak private var  Container:UIView!
+    @IBOutlet weak private var TimeLabel:UILabel!
+    @IBOutlet weak private var Container:UIView!
     let viewModel:NeglectViewModel = NeglectViewModel()
     var updatingTimer:Timer?
     var totalTime:Int = 300 //intially is 5 min (300s)
@@ -36,7 +36,7 @@ class VisualNeglectTestVC: UIViewController {
     var numTargetsMissedLeft:Int = 0
     var numTargetsMissedRight:Int = 0
     
-    var testCanvas:NeglectCanvasView?
+    var testCanvas:NeglectCanvasView? = .fromNib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +74,7 @@ class VisualNeglectTestVC: UIViewController {
                                     tag:0)
         alert?.show()
         
-        testCanvas = NeglectCanvasView.init()
+        testCanvas = .fromNib()
         testCanvas?.parent = self
         
         self.Container.addSubview(testCanvas!)
@@ -200,43 +200,49 @@ extension VisualNeglectTestVC : CustomAlertViewDelegate {
                     
                     self.handleNeglectViewModel()
                 }
-                
                 break
+            
             case 3: // Existing alert
                 if (index == 0) {
                     //back to tests dashboard
-                    Helpers.popToTestsController()
+                    self.popToTestsController()
                 }
                 break
+            
         default:
             break
         }
     }
+    
+    func popToTestsController(){
+        self.navigationController?.popViewController(animated: true)
+    }
+
 }
 
 extension VisualNeglectTestVC: NeglectCanvasViewDelegate {
-    func didSelectNewTarget(_ x: Int32, _ y: Int32) {
+    func didSelectNewTarget(x: Int, y: Int) {
         self.allClicksCount+=1
         uniqueTargetsCount+=1
         allTargetsVisitsCount+=1
-        vnt_X += Int(x)
-        vnt_Y += Int(y)
+        vnt_X += x
+        vnt_Y += y
     }
     
-    func didSelectDistractorTarget(_ x: Int32, _ y: Int32) {
+    func didSelectDistractorTarget(x: Int, y: Int) {
         allClicksCount+=1
         uniqueDistractorsCount+=1
         allDistractorsVisitsCount+=1
-        vnt_X += Int(x)
-        vnt_Y += Int(y)
+        vnt_X += x
+        vnt_Y += y
     }
     
-    func didSelectRevisitedDistractorTarget(_ x: Int32, _ y: Int32) {
+    func didSelectRevisitedDistractorTarget(x: Int, y: Int) {
         allClicksCount+=1
         allDistractorsVisitsCount+=1
         distractorsRevisitsCount+=1
-        vnt_X += Int(x)
-        vnt_Y += Int(y)
+        vnt_X += x
+        vnt_Y += y
         
         if (Int(x) < Int(testCanvas!.frame.size.width / 2)) {
             numRevisitsLeft+=1
@@ -245,12 +251,12 @@ extension VisualNeglectTestVC: NeglectCanvasViewDelegate {
         }
     }
     
-    func didSelectVisitedTarget(_ x: Int32, _ y: Int32) {
+    func didSelectVisitedTarget(x: Int, y: Int) {
         allClicksCount+=1
         allTargetsVisitsCount+=1
         targetRevisitsCount+=1
-        vnt_X += Int(x)
-        vnt_Y += Int(y)
+        vnt_X += x
+        vnt_Y += y
         
         
         if (Int(x) < Int(testCanvas!.frame.size.width / 2)) {
@@ -260,8 +266,8 @@ extension VisualNeglectTestVC: NeglectCanvasViewDelegate {
         }
     }
     
-    func didMissTargetLeft(_ leftMissedTargetsCount: Int32, andRight rightMissedTargetsCount: Int32) {
-        numTargetsMissedLeft = Int(leftMissedTargetsCount)
-        numTargetsMissedRight = Int(rightMissedTargetsCount)
+    func didMissTarget(leftMissedTargetsCount: Int, rightMissedTargetsCount: Int) {
+        numTargetsMissedLeft = leftMissedTargetsCount
+        numTargetsMissedRight = rightMissedTargetsCount
     }
 }

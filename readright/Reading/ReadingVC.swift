@@ -53,8 +53,8 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
     var previousIndexRow:Int = -1
     var previousSegment:Int = 0
     
-    var books:[NetworkModels.BookDataItem] = []
-    var chapters:[NetworkModels.ChapterDataItem] = []
+    var books:[NetworkModels.Book] = []
+    var chapters:[NetworkModels.Chapter] = []
     var audioPlayer:AVAudioPlayer?
 
     var leftTextView: UITextView?
@@ -116,8 +116,10 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         beforeStartView.addSubview(spinner)
         spinner.startAnimating()
         
+        observeStatus()
         observeError()
         observeLoading()
+        observeTherapyResult()
         observeBooks()
         observeChapters()
         
@@ -143,7 +145,7 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         feedParser?.feedParseType = ParseTypeFull
         feedParser?.connectionType = ConnectionTypeAsynchronously
         
-//        totalTherapyTime = SharedPref.shared.userInfo. [CommonHelper getCurrentUser].therapySpentTime ;
+        totalTherapyTime = SharedPref.shared.userInfo?.therapyCurrentDuration ?? 0
         
         self.TherapyTitleLabel.text = "Aljazeera - مباشر"
         
@@ -188,7 +190,7 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
             tempTestLbl = value(forKey: String(format: "TestLabel_%d", j)) as? UILabel
             
             //Set the btn with grey background
-            tempTestBtn?.setImage(UIImage(named: greenImages[j - 1]), for: .normal)
+            tempTestBtn?.setImage(UIImage(named: greyImages[j - 1]), for: .normal)
             tempTestBtn?.isUserInteractionEnabled = false
             //Set the text label with grey color
             tempTestLbl?.textColor = UIColor(red:209.0/255.0, green:209.0/255.0, blue:209.0/255.0, alpha:1)
@@ -197,12 +199,20 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
 
     
     override func viewWillAppear(_ animated: Bool) {
-//        if(currentUser.therapyStatus == NEED_THERAPY){
-            initTherapyScenes()
-//        }else{
-//            initTestsScenes()
-//            handleTestsViewsStatusWithPendingTestId(currentUser.pendingTestId)
-//        }
+        viewModel.getUserInfo()
+    }
+    
+    func observeStatus() {
+        viewModel.status.asObservable().subscribe { status in
+            if let status = status.element, status != nil{
+                if(status == Constants.NEED_THERAPY){
+                    self.initTherapyScenes()
+                }else{
+                    self.initTestsScenes()
+                    self.handleTestsViewsStatusWithPendingTestId(SharedPref.shared.userInfo?.examinationId ?? 1)
+                }
+            }
+        }
     }
     
     func observeLoading() {
@@ -224,21 +234,36 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         }
     }
     
-    func observeBooks() {
-        viewModel.error.asObservable().subscribe { status in
-            if let error = status.element, error != "" {
-                Helpers.handleErrorMessages(message: error)
+    func observeTherapyResult() {
+        viewModel.therapyResult.asObservable().subscribe { status in
+            if let res = status.element, let remaining = res?.remains {
+                if remaining > 0 {
+                    Helpers.saveTherapyCounter(self.totalTherapyTime)
+                }else{
+                    self.totalTherapyTime = 0
+                    Helpers.saveTherapyCounter(0)
+                    let alert = CustomAlertView(title:"العلاج", message:"لقد اتممت ٥ ساعات من العلاج. الآن تحتاج إلي المرور بالاختبارات لتقييم مدى التقدم الخاص بك!", buttonTitle:"استمرار", delegate:self, tag:1)
+                    alert?.show()
+                }
             }
-            print(status)
+        }
+    }
+    
+    func observeBooks() {
+        viewModel.bookResult.asObservable().subscribe { status in
+            if let book = status.element, !book.isEmpty {
+                self.books = book
+                self.BooksTableView.reloadData()
+            }
         }
     }
     
     func observeChapters() {
-        viewModel.error.asObservable().subscribe { status in
-            if let error = status.element, error != "" {
-                Helpers.handleErrorMessages(message: error)
+        viewModel.chapterResult.asObservable().subscribe { status in
+            if let chapter = status.element, !chapter.isEmpty {
+                self.chapters = chapter
+                self.ChaptersTableView.reloadData()
             }
-            print(status)
         }
     }
     
@@ -318,12 +343,8 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         if(viewModel.therapyItemTitle == nil && viewModel.readingChapterID == 0){
             return
         }
-//        if(totalTherapyTime >= Constants.THERAPY_SHOULD_TIME){
-//            viewModel.submitCompleteTherapy()
-//            //do all magic to star tests again
-//        } else {
-//            viewModel.submitTherapyInterval()
-//        }
+        
+        viewModel.submitTherapyInterval()
     }
 
     
@@ -429,34 +450,34 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
     
     @IBAction func goReadingTest1(_ sender: UIButton) {
         readingTestNo = 1
-        performSegue(withIdentifier: "GoReadingTest", sender: self)
+        self.performSegue(withIdentifier: "GoReadingTest", sender: self)
     }
     
     @IBAction func goVisualTest(_ sender: UIButton) {
-        performSegue(withIdentifier: "GoVisualTest", sender: self)
+        self.performSegue(withIdentifier: "GoVisualTest", sender: self)
     }
     
     @IBAction func goReadingTest2(_ sender: UIButton) {
         readingTestNo = 2
-        performSegue(withIdentifier: "GoReadingTest", sender: self)
+        self.performSegue(withIdentifier: "GoReadingTest", sender: self)
     }
     
     @IBAction func goNeglectTest(_ sender: UIButton) {
-        performSegue(withIdentifier: "GoNeglectTest", sender: self)
+        self.performSegue(withIdentifier: "GoNeglectTest", sender: self)
     }
     
     @IBAction func goADLTest(_ sender: UIButton) {
-        performSegue(withIdentifier: "GoADLTest", sender: self)
+        self.performSegue(withIdentifier: "GoADLTest", sender: self)
     }
     
     @IBAction func goDesktopSearchTest(_ sender: UIButton) {
-        performSegue(withIdentifier: "GoSearchTest", sender: self)
+        self.performSegue(withIdentifier: "GoSearchTest", sender: self)
     }
     
     @IBAction func beforeTestVoiceOver(_ sender: UIButton) {
         if let audioPlayer = audioPlayer {
             if !audioPlayer.isPlaying {
-                audioPlayer.currentTime = 0;
+                audioPlayer.currentTime = 0
                 audioPlayer.play()
             }else{
                 audioPlayer.stop()
@@ -482,9 +503,6 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         itemsToDisplay = parsedItems.sorted(by: { item1, item2 in
             item1.date > item2.date
         })
-//        [parsedItems sortedArrayUsingDescriptors:
-//                          [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"date"
-//                                                                               ascending:NO]]];
         self.NewsTableView.isUserInteractionEnabled = true
         self.NewsTableView.alpha = 1
         self.NewsTableView.reloadData()
@@ -525,11 +543,11 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         if(startTxtIndex < currentTherapyText?.count ?? 0){
             
             var txtSegment:String? = nil
-            var txt = currentTherapyText
+            let txt = currentTherapyText
             
             if(Int(startTxtIndex + TEXTVIEW_SEGMENT_WIDTH) < txt?.count ?? 0){
                 var extender:Int = 0
-                var baseIndex:Int = Int(startTxtIndex + TEXTVIEW_SEGMENT_WIDTH - 1)
+                let baseIndex:Int = Int(startTxtIndex + TEXTVIEW_SEGMENT_WIDTH - 1)
                 while (txt?[baseIndex + extender] != " " && (baseIndex + extender) < txt!.count - 1){
                     extender+=1
                 }
@@ -644,7 +662,7 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         repeat {
             if((startTxtIndex + TEXTVIEW_SEGMENT_WIDTH) < txt.count){
                 var extender:Int = 0
-                var baseIndex:Int = startTxtIndex + TEXTVIEW_SEGMENT_WIDTH - 1
+                let baseIndex:Int = startTxtIndex + TEXTVIEW_SEGMENT_WIDTH - 1
                 while (txt[baseIndex + extender] != " " && (baseIndex + extender) < txt.count - 1){
                     extender+=1
                 }
@@ -836,7 +854,7 @@ extension ReadingVC: UITableViewDelegate, UITableViewDataSource {
                         cell = TherapyChapterCell(style: .default, reuseIdentifier: cellIdentifier)
                     }
                     
-                    (cell as? TherapyChapterCell)?.ChapterTitle.text = chapters[arrayIndex].chapterTitle
+                    (cell as? TherapyChapterCell)?.ChapterTitle.text = chapters[arrayIndex].title
                     
                     bgView.backgroundColor = UIColor(red:255.0/255.0, green:239.0/255.0, blue:230.0/255.0, alpha:1).withAlphaComponent(1) //light Orange
                     cell?.selectedBackgroundView = bgView
@@ -849,9 +867,9 @@ extension ReadingVC: UITableViewDelegate, UITableViewDataSource {
                         cell = TherapyBooksCell(style: .default, reuseIdentifier: cellIdentifier)
                     }
                     
-                    (cell as? TherapyBooksCell)?.BookAuthor.text = books[arrayIndex].bookAuthor
-                    (cell as? TherapyBooksCell)?.BookTitle.text = books[arrayIndex].bookTitle
-                    (cell as? TherapyBooksCell)?.BookTopic.text = books[arrayIndex].bookCategory
+                    (cell as? TherapyBooksCell)?.BookAuthor.text = books[arrayIndex].author
+                    (cell as? TherapyBooksCell)?.BookTitle.text = books[arrayIndex].title
+                    (cell as? TherapyBooksCell)?.BookTopic.text = books[arrayIndex].genre
                     
                     bgView.backgroundColor = UIColor(red:243.0/255.0, green:250.0/255.0, blue:212.0/255.0, alpha:1).withAlphaComponent(1) //light grey
                     cell?.selectedBackgroundView = bgView
@@ -902,14 +920,14 @@ extension ReadingVC: UITableViewDelegate, UITableViewDataSource {
                     
                     currentChapterId = chapters[indexPath.row].chapterId ?? 0
                     
-                    if let url = URL(string: chapters[indexPath.row].chapterUrl ?? "") {
+                    if let url = URL(string: chapters[indexPath.row].url ?? "") {
                         let req = URLRequest(url: url)
                         self.view.showActivityView()
                         let session:URLSessionDataTask = URLSession.shared.dataTask(with: req, completionHandler: { data, response, error in
                             DispatchQueue.main.async {
                                 if let data = data {
                                     
-                                    if let content = String(data: data, encoding: .utf8), let title = self.chapters[indexPath.row].chapterTitle {
+                                    if let content = String(data: data, encoding: .utf8), let title = self.chapters[indexPath.row].title {
                                         self.runTherapyTableCellItem(String(NSString(string:content).convertingHTMLToPlainText()), title)
                                     }
                                 }
@@ -920,7 +938,7 @@ extension ReadingVC: UITableViewDelegate, UITableViewDataSource {
                     }
                 }else if(tableView == self.BooksTableView){
                     //reload the chapter table with the it's chapters
-                    self.TherapyTitleLabel.text = books[indexPath.row].bookTitle
+                    self.TherapyTitleLabel.text = books[indexPath.row].title
                     currentBookId = books[indexPath.row].bookId ?? 0
                     viewModel.readingBookID = currentBookId
                     
@@ -931,6 +949,19 @@ extension ReadingVC: UITableViewDelegate, UITableViewDataSource {
                 break
             }
         default: break
+        }
+    }
+}
+
+extension ReadingVC: CustomAlertViewDelegate {
+    func didSelectButtonAtIndex(tag: Int, index: Int) {
+        switch (tag) {
+            case 1: do { // Finishing alert
+                self.initTestsScenes()
+                self.handleTestsViewsStatusWithPendingTestId(Constants.READING_TEST1)
+                break
+            }
+            default: break
         }
     }
 }
@@ -965,6 +996,16 @@ extension ReadingVC: MWFeedParserDelegate {
             present(alert, animated: true, completion: nil)
         }
         updateNewsTableWithParsedItems()
+    }
+}
+
+extension ReadingVC {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "GoReadingTest"){
+            // Get reference to the destination view controller
+            let vc = segue.destination as? PreReadingTestVC
+            vc?.readingTestNo = readingTestNo!
+        }
     }
 }
 

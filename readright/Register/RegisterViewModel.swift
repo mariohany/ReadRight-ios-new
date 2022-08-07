@@ -26,10 +26,29 @@ class RegisterViewModel {
                     case .success(let response):
                         if response != nil {
                             SharedPref.shared.setToken(token: response.token)
+                            self.getUserInfo()
+                        }
+                    case .error(let error):do {
+                        self.isLoading.accept(false)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
+                    }
+                }
+            }.disposed(by: disposeBag)
+    }
+    
+    private func getUserInfo(){
+        provider.request(.GetUserInfo)
+            .map(NetworkModels.UserInfo.self)
+            .subscribe { (result) in
+                self.isLoading.accept(false)
+                switch result {
+                    case .success(let response):
+                        if response != nil {
+                            SharedPref.shared.setUserInfo(userInfo: response)
                             self.loginResponse.accept(true)
                         }
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }

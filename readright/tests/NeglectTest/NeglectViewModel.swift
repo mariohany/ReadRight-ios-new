@@ -53,7 +53,7 @@ class NeglectViewModel {
                         }
                     }
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }

@@ -134,13 +134,14 @@
 		E8192763287C462400FFB24C /* CustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E8192761287C462400FFB24C /* CustomPageControl.m */; };
 		E8227DBE28889F9000DC3180 /* VisualNeglectTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8227DBD28889F9000DC3180 /* VisualNeglectTest.storyboard */; };
 		E82866212888D27D00C48D39 /* VisualNeglectTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82866202888D27D00C48D39 /* VisualNeglectTestVC.swift */; };
+		E82A4467289DC1B5009396B3 /* SearchCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82A4466289DC1B5009396B3 /* SearchCanvasView.swift */; };
 		E8347C4C288B85700098D910 /* NeglectCanvas.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8347C49288B85700098D910 /* NeglectCanvas.xib */; };
-		E8347C4D288B85700098D910 /* NeglectCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8347C4A288B85700098D910 /* NeglectCanvasView.m */; };
 		E840A3B028880C79006F6130 /* SearchTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E840A3AF28880C79006F6130 /* SearchTest.storyboard */; };
 		E849973D288AE839004B54BF /* NeglectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849973C288AE839004B54BF /* NeglectViewModel.swift */; };
 		E855598A287D8F8500F79FC8 /* VisualFieldTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */; };
 		E855598C287DAA9A00F79FC8 /* VisualFIeldTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E855598B287DAA9A00F79FC8 /* VisualFIeldTestViewModel.swift */; };
 		E86A7661287B46B900DB63E9 /* VisualFieldTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86A7660287B46B900DB63E9 /* VisualFieldTest.storyboard */; };
+		E870B5BC28AE9DDD00142D6C /* NeglectCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870B5BB28AE9DDD00142D6C /* NeglectCanvasView.swift */; };
 		E879117A287E5D92003E97E5 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8791179287E5D92003E97E5 /* CustomAlert.swift */; };
 		E879117C287E5F11003E97E5 /* PrepareADLTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E879117B287E5F11003E97E5 /* PrepareADLTestVC.swift */; };
 		E879117E287E6285003E97E5 /* ADLTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E879117D287E6285003E97E5 /* ADLTestVC.swift */; };
@@ -151,8 +152,7 @@
 		E8B3613928836F98009C1C9A /* ADLTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8B3613828836F98009C1C9A /* ADLTest.storyboard */; };
 		E8E34A532884B34800467E4B /* PrepareSearchTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E34A522884B34800467E4B /* PrepareSearchTestVC.swift */; };
 		E8E34A552884B61E00467E4B /* SearchTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E34A542884B61E00467E4B /* SearchTestVC.swift */; };
-		E8E34A5B2884BB5100467E4B /* SearchCanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E34A572884BB5100467E4B /* SearchCanvasView.m */; };
-		E8E34A5D2884BB5100467E4B /* Board.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E34A5A2884BB5100467E4B /* Board.xib */; };
+		E8E34A5D2884BB5100467E4B /* SearchCanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E34A5A2884BB5100467E4B /* SearchCanvasView.xib */; };
 		E8E34A5F2884C2A200467E4B /* SearchTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E34A5E2884C2A200467E4B /* SearchTestHelper.swift */; };
 		E8E34A612884CD2800467E4B /* SearchTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E34A602884CD2800467E4B /* SearchTestViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -302,14 +302,14 @@
 		E8192762287C462400FFB24C /* CustomPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomPageControl.h; path = "../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/CustomPageControl.h"; sourceTree = "<group>"; };
 		E8227DBD28889F9000DC3180 /* VisualNeglectTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VisualNeglectTest.storyboard; path = readright/tests/SearchTest/VisualNeglectTest.storyboard; sourceTree = SOURCE_ROOT; };
 		E82866202888D27D00C48D39 /* VisualNeglectTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualNeglectTestVC.swift; path = readright/tests/SearchTest/VisualNeglectTestVC.swift; sourceTree = SOURCE_ROOT; };
+		E82A4466289DC1B5009396B3 /* SearchCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCanvasView.swift; sourceTree = "<group>"; };
 		E8347C49288B85700098D910 /* NeglectCanvas.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NeglectCanvas.xib; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/NeglectCanvas.xib"; sourceTree = "<group>"; };
-		E8347C4A288B85700098D910 /* NeglectCanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NeglectCanvasView.m; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/NeglectCanvasView.m"; sourceTree = "<group>"; };
-		E8347C4B288B85700098D910 /* NeglectCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeglectCanvasView.h; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/NeglectCanvasView.h"; sourceTree = "<group>"; };
 		E840A3AF28880C79006F6130 /* SearchTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTest.storyboard; sourceTree = "<group>"; };
 		E849973C288AE839004B54BF /* NeglectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeglectViewModel.swift; sourceTree = "<group>"; };
 		E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualFieldTestVC.swift; path = readright/tests/ReadingTest/VisualFieldTestVC.swift; sourceTree = SOURCE_ROOT; };
 		E855598B287DAA9A00F79FC8 /* VisualFIeldTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualFIeldTestViewModel.swift; path = readright/tests/ReadingTest/VisualFIeldTestViewModel.swift; sourceTree = SOURCE_ROOT; };
 		E86A7660287B46B900DB63E9 /* VisualFieldTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VisualFieldTest.storyboard; path = readright/tests/ReadingTest/VisualFieldTest.storyboard; sourceTree = SOURCE_ROOT; };
+		E870B5BB28AE9DDD00142D6C /* NeglectCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeglectCanvasView.swift; sourceTree = "<group>"; };
 		E8791179287E5D92003E97E5 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		E879117B287E5F11003E97E5 /* PrepareADLTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrepareADLTestVC.swift; path = readright/tests/ADLTest/PrepareADLTestVC.swift; sourceTree = SOURCE_ROOT; };
 		E879117D287E6285003E97E5 /* ADLTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ADLTestVC.swift; path = readright/tests/ADLTest/ADLTestVC.swift; sourceTree = SOURCE_ROOT; };
@@ -320,9 +320,7 @@
 		E8B3613828836F98009C1C9A /* ADLTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ADLTest.storyboard; sourceTree = "<group>"; };
 		E8E34A522884B34800467E4B /* PrepareSearchTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareSearchTestVC.swift; sourceTree = "<group>"; };
 		E8E34A542884B61E00467E4B /* SearchTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestVC.swift; sourceTree = "<group>"; };
-		E8E34A572884BB5100467E4B /* SearchCanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCanvasView.m; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/SearchCanvasView.m"; sourceTree = "<group>"; };
-		E8E34A592884BB5100467E4B /* SearchCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchCanvasView.h; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/SearchCanvasView.h"; sourceTree = "<group>"; };
-		E8E34A5A2884BB5100467E4B /* Board.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Board.xib; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/Board.xib"; sourceTree = "<group>"; };
+		E8E34A5A2884BB5100467E4B /* SearchCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchCanvasView.xib; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/SearchCanvasView.xib"; sourceTree = "<group>"; };
 		E8E34A5E2884C2A200467E4B /* SearchTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestHelper.swift; sourceTree = "<group>"; };
 		E8E34A602884CD2800467E4B /* SearchTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -768,8 +766,7 @@
 			isa = PBXGroup;
 			children = (
 				E8347C49288B85700098D910 /* NeglectCanvas.xib */,
-				E8347C4B288B85700098D910 /* NeglectCanvasView.h */,
-				E8347C4A288B85700098D910 /* NeglectCanvasView.m */,
+				E870B5BB28AE9DDD00142D6C /* NeglectCanvasView.swift */,
 			);
 			path = NeglectCanvasView;
 			sourceTree = "<group>";
@@ -777,9 +774,8 @@
 		E8E34A562884BB3300467E4B /* SearchCanvasView */ = {
 			isa = PBXGroup;
 			children = (
-				E8E34A5A2884BB5100467E4B /* Board.xib */,
-				E8E34A592884BB5100467E4B /* SearchCanvasView.h */,
-				E8E34A572884BB5100467E4B /* SearchCanvasView.m */,
+				E8E34A5A2884BB5100467E4B /* SearchCanvasView.xib */,
+				E82A4466289DC1B5009396B3 /* SearchCanvasView.swift */,
 			);
 			path = SearchCanvasView;
 			sourceTree = "<group>";
@@ -913,7 +909,7 @@
 				5C0D585727D81A4F008F03DA /* FieldResultView.xib in Resources */,
 				5C06305A2777642B007E8E59 /* instructionsVisualField2.mp3 in Resources */,
 				5C06308F2777646D007E8E59 /* tour5.mp3 in Resources */,
-				E8E34A5D2884BB5100467E4B /* Board.xib in Resources */,
+				E8E34A5D2884BB5100467E4B /* SearchCanvasView.xib in Resources */,
 				5C0630AA277764EE007E8E59 /* instructionsNeglect.mp3 in Resources */,
 				5C7EB1FD278F3E8100F62206 /* Auth.storyboard in Resources */,
 				5C0630542777642B007E8E59 /* prepareReading.mp3 in Resources */,
@@ -999,6 +995,7 @@
 				5C229FDA275C025D00B63196 /* Helpers.swift in Sources */,
 				5CEA903E27F3B97E00526A91 /* MWFeedItem.m in Sources */,
 				5CEB09FB27CABC0D00DDC612 /* TherapyHistoryCell.swift in Sources */,
+				E870B5BC28AE9DDD00142D6C /* NeglectCanvasView.swift in Sources */,
 				5CBB0FA9282153740015E2C3 /* ReadingTestVC.swift in Sources */,
 				5CE11B11277F747100F7102F /* LoginViewModel.swift in Sources */,
 				E8E34A532884B34800467E4B /* PrepareSearchTestVC.swift in Sources */,
@@ -1012,14 +1009,13 @@
 				5C24B2782760F9130038F3E9 /* ResultsVC.swift in Sources */,
 				E855598A287D8F8500F79FC8 /* VisualFieldTestVC.swift in Sources */,
 				5C7EB2042794541800F62206 /* MyAccountViewModel.swift in Sources */,
-				E8E34A5B2884BB5100467E4B /* SearchCanvasView.m in Sources */,
 				5C0630CB277F29B1007E8E59 /* Validator.swift in Sources */,
 				5C625A7927F8B1B6003510A7 /* TherapyBookCell.swift in Sources */,
 				5CEB09F927CA8DA000DDC612 /* ResultsViewModel.swift in Sources */,
 				5C625A7727F8B0E1003510A7 /* TherapyChapterCell.swift in Sources */,
 				5CEA903A27F3B97E00526A91 /* MWFeedInfo.m in Sources */,
 				5C24B2672760182D0038F3E9 /* Constants.swift in Sources */,
-				E8347C4D288B85700098D910 /* NeglectCanvasView.m in Sources */,
+				E82A4467289DC1B5009396B3 /* SearchCanvasView.swift in Sources */,
 				5CEA904027F3B97E00526A91 /* NSDate+InternetDateTime.m in Sources */,
 				E89946902888CC22001590D6 /* PrepareNeglectVC.swift in Sources */,
 				5C08E4DA27F2540300B017C6 /* TherapyViewModel.swift in Sources */,

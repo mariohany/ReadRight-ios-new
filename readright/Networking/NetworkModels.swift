@@ -25,11 +25,11 @@ struct NetworkModels {
         init(_ response:Response) {
             self.baseError = MoyaError.statusCode(response)
             self.httpResponse = response.response
-            self.customModel = try? JSONDecoder().decode(BaseErrorModel.self, from: response.data)
+            self.customModel = try? JSONDecoder().decode(BaseErrorModel.self, from: Data(response.mapString().utf8))
         }
 
         func getLocalizedDescription() -> String {
-           return self.baseError.localizedDescription
+            return self.customModel?.message?.joined(separator: "\n") ?? self.baseError.localizedDescription
         }
     }
     
@@ -40,7 +40,10 @@ struct NetworkModels {
     struct UserInfo: Codable {
         let id: Int?
         let email,name,vpExtraCause,yob,vpStartDate: String?
-        let gender,hemianopiaTypeId,vpSideId,vpCauseId,status,iteration,examinationId: Int?
+        let gender,hemianopiaTypeId,vpSideId,vpCauseId,status,iteration,examinationId,therapyTotalDuration: Int?
+        var therapyCurrentDuration:Int
+        var readingTestQuestionsCount:Int? = 0
+        var readingTestAskedQuestions:[Int]? = []
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -51,12 +54,20 @@ struct NetworkModels {
             case status
             case iteration
             case examinationId
+            case readingTestQuestionsCount
+            case readingTestAskedQuestions
             case vpStartDate = "vp_start_date"
             case hemianopiaTypeId = "ha_type"
             case vpSideId = "vp_side"
             case vpCauseId = "vp_cause"
             case vpExtraCause = "vp_extra_cause"
+            case therapyCurrentDuration = "therapy_current_duration"
+            case therapyTotalDuration = "therapy_total_duration"
         }
+    }
+    
+    struct SubmitTherapyResponse: Codable {
+        let remains: Int?
     }
     
     struct ResultsBaseModel: Codable {
@@ -70,14 +81,14 @@ struct NetworkModels {
         let NodeHits: [Int]?
     }
     
-    struct BookDataItem: Codable {
-        let bookTitle,bookAuthor,bookCategory: String?
-        let bookId: Int?
-    }
-    
-    struct ChapterDataItem: Codable {
-        let chapterTitle,chapterUrl: String?
-        let chapterId: Int?
+    struct SearchTestHistory: Codable {
+        let date:String?
+        let reactionTime: Double?
+        
+        enum CodingKeys: String, CodingKey {
+            case date = "Test_date"
+            case reactionTime = "Reaction_time"
+        }
     }
     
     struct Book: Codable {
@@ -85,21 +96,22 @@ struct NetworkModels {
         let title, author, genre: String?
         
         enum CodingKeys: String, CodingKey {
-            case bookId = "BookId"
-            case title = "Title"
-            case author = "Author"
-            case genre = "Genre"
+            case bookId = "id"
+            case title = "title"
+            case author = "author"
+            case genre = "genre"
         }
     }
     
     struct Chapter: Codable {
-        let chapterId:Int?
+        let chapterId,bookId:Int?
         let title, url: String?
         
         enum CodingKeys: String, CodingKey {
-            case chapterId = "ChapterId"
-            case title = "Title"
-            case url = "URL"
+            case chapterId = "id"
+            case bookId = "bookId"
+            case title = "title"
+            case url = "url"
         }
     }
     
@@ -115,7 +127,7 @@ struct NetworkModels {
         }
     }
     
-    struct ReadingResultModel {
+    struct ReadingRequestModel {
         let answer, questionNo:Int?
         let readingTime: Float?
     }
@@ -163,7 +175,9 @@ struct NetworkModels {
     }
     
     struct Elements: Codable {
-        let itemId, x, y, type, numClicks:Int
+        var itemId, type, numClicks:Int?
+        var x, y :Float?
+        
         
         enum CodingKeys: String, CodingKey {
             case itemId = "item_id"
@@ -180,6 +194,16 @@ struct NetworkModels {
         enum CodingKeys: String, CodingKey {
             case itemId = "item_id"
             case index
+        }
+    }
+    
+    struct ReadingResults: Codable {
+        let readingSpeed:Int?
+        let createdAt:String?
+        
+        enum CodingKeys: String, CodingKey {
+            case readingSpeed = "reading_speed"
+            case createdAt = "created_at"
         }
     }
 }

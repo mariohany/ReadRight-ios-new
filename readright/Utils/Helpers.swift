@@ -139,24 +139,9 @@ class Helpers{
         }
     }
     
-//    static func convertDateUsedCar(_ addedAt : String)-> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-//        let date = dateFormatter.date(from: addedAt)
-//        dateFormatter.dateFormat = "dd MMMM"
-//        let lang = SharedPreferences.shared.currentLang
-//        dateFormatter.locale = Locale(identifier: lang ?? "EN")
-//        if let date = date {
-//            let dateString = dateFormatter.string(from: date)
-//            return dateString
-//        } else {
-//            return ""
-//        }
-//    }
-    
     static func convertDate(_ wantedDate : String?)-> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         let date = dateFormatter.date(from: wantedDate ?? "")
         dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -306,17 +291,17 @@ class Helpers{
         }
     }
     
-    @objc static func popToTestsController(){	
-        let navigationController = (UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate).window?.rootViewController?.navigationController
-        let array = navigationController?.viewControllers
-        if let item = array?[1]{
-            navigationController?.popToViewController(item, animated: true)
-        }
-    }
-    
     static func arabicCharacter(englishNumber:Int) -> String{
         return ARABIC_DICTIONARY[englishNumber - 1]
     }
+    
+    static func saveTherapyCounter(_ duration:Int){
+        var user = SharedPref.shared.userInfo
+        user?.therapyCurrentDuration = duration
+        SharedPref.shared.setUserInfo(userInfo: user)
+    }
+    
+    
     
 }
 

@@ -19,7 +19,7 @@ class SearchTestVC: UIViewController {
     @IBOutlet weak private var ResultView: CustomView!
     @IBOutlet weak private var TestView: CustomView!
     
-    var currentCanvasView:SearchCanvasView = SearchCanvasView.init()
+    var currentCanvasView:SearchCanvasView = .fromNib()
     var currentTargetTag:Int = 0
     var targetsDirections:[Int] = []
     var targetsDirectionsBackup:[Int] = []
@@ -53,7 +53,7 @@ class SearchTestVC: UIViewController {
         self.ResultView.isHidden = true
         
         currentCanvasView.parent = self
-        currentCanvasView.numberOfTargets = Int32(NUMBER_OF_TARGETS)
+        currentCanvasView.numberOfTargets = NUMBER_OF_TARGETS
         self.CanvasView.addSubview(currentCanvasView)
         
         currentTargetTag = 6
@@ -72,7 +72,7 @@ class SearchTestVC: UIViewController {
         let alert = CustomAlertView(title:"الهدف الخاص بك هو: ", messageImage:UIImage(named:SearchTestHelper.getItemName(currentTargetTag))!, buttonTitle:"أنا مستعد", delegate:self, tag:0)
         alert?.show()
         
-        currentCanvasView.randamizeItems(leftTrial!, Int32(currentTargetTag))
+        currentCanvasView.randamizeItems(leftTrial!, currentTargetTag)
     }
     
     func observeSuccess(){
@@ -103,9 +103,13 @@ class SearchTestVC: UIViewController {
         }
     }
     
+    func popToTestsController(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @objc func customBackBtn(){
         if(isFinished == true){
-            Helpers.popToTestsController()
+            self.popToTestsController()
         }else{
             let alert = CustomAlertView(title:"هل تريد إلغاء الاختبار ؟", buttonOKTitle:"نعم، إلغي الاختبار", buttonCancelTitle:"عودة للاختبار", delegate:self, tag:3)
             alert?.show()
@@ -137,7 +141,7 @@ class SearchTestVC: UIViewController {
             alert?.show()
             
             let isLeft:Bool = targetsDirections[currentTargetTag] == -1 ? false : true
-            currentCanvasView.randamizeItems(isLeft, Int32(currentTargetTag))
+            currentCanvasView.randamizeItems(isLeft, currentTargetTag)
             targetsDirections[currentTargetTag] = 0
         }
         
@@ -193,7 +197,7 @@ class SearchTestVC: UIViewController {
             unAttended!+=1
             if(unAttended! >= TRIAL_FOR_LEAVING){
                 updatingTimer?.invalidate()
-                Helpers.popToTestsController()
+                self.popToTestsController()
             }
             
             directionsResult[currentRound! - 1] = targetsDirectionsBackup[currentTargetTag]
@@ -246,7 +250,7 @@ class SearchTestVC: UIViewController {
     }
 
     @IBAction private func FinishedBtn() {
-        Helpers.popToTestsController()
+        self.popToTestsController()
     }
 }
 
@@ -267,7 +271,7 @@ extension SearchTestVC : CustomAlertViewDelegate {
                 if (index == 0) {
                     //back to tests dashboard
                     updatingTimer?.invalidate()
-                    Helpers.popToTestsController()
+                    self.popToTestsController()
                 }
                 break
         default:
@@ -277,7 +281,7 @@ extension SearchTestVC : CustomAlertViewDelegate {
 }
 
 extension SearchTestVC: SearchCanvasViewDelegate {
-    func didSelectItem(withTag tag: Int32) {
+    func didSelectItemWithTag(_ tag: Int) {
         if(currentTargetTag == tag){
             if(!currentCanvasView.isSelectetTarget(tag)){
                 if(currentRound == 1){

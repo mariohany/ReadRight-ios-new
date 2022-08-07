@@ -18,8 +18,8 @@ class ResultsViewModel {
     let disposeBag = DisposeBag()
     var error = BehaviorRelay<String>(value: "")
     var isLoading = BehaviorRelay<Bool>(value: false)
-    var searchResult = BehaviorRelay<[NetworkModels.HistoryItem]?>(value: nil)
-    var readingResult = BehaviorRelay<[NetworkModels.HistoryItem]?>(value: nil)
+    var searchResult = BehaviorRelay<[NetworkModels.SearchTestHistory]?>(value: nil)
+    var readingResult = BehaviorRelay<[NetworkModels.ReadingResults]?>(value: nil)
     var neglectResult = BehaviorRelay<[NetworkModels.HistoryItem]?>(value: nil)
     var therapyResult = BehaviorRelay<NetworkModels.ResultsBaseModel?>(value: nil)
     var visualResult = BehaviorRelay<[NetworkModels.HistoryItem]?>(value: nil)
@@ -27,16 +27,14 @@ class ResultsViewModel {
     func getSearchTaskHistory(){
         self.isLoading.accept(true)
         provider.request(.GetSearchTestHistory)
-            .map(NetworkModels.ResultsBaseModel.self)
+            .map([NetworkModels.SearchTestHistory].self)
             .subscribe { (result) in
                 self.isLoading.accept(false)
                 switch result {
                     case .success(let response):
-                        if let response = response.History {
-                            self.searchResult.accept(response)
-                        }
+                        self.searchResult.accept(response)
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }
@@ -44,16 +42,14 @@ class ResultsViewModel {
     func getReadingHistory(){
         self.isLoading.accept(true)
         provider.request(.GetReadingTestHistory)
-            .map(NetworkModels.ResultsBaseModel.self)
+            .map([NetworkModels.ReadingResults].self)
             .subscribe { (result) in
                 self.isLoading.accept(false)
                 switch result {
                     case .success(let response):
-                        if let response = response.History {
-                            self.readingResult.accept(response)
-                        }
+                        self.readingResult.accept(response)
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }
@@ -70,7 +66,7 @@ class ResultsViewModel {
                             self.neglectResult.accept(response)
                         }
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }
@@ -85,7 +81,7 @@ class ResultsViewModel {
                     case .success(let response):
                         self.therapyResult.accept(response)
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }
@@ -93,16 +89,14 @@ class ResultsViewModel {
     func getVisualFieldHistory(){
         self.isLoading.accept(true)
         provider.request(.GetFieldTestHistory(from: visualFrom, to: visualTo))
-            .map(NetworkModels.ResultsBaseModel.self)
+            .map([NetworkModels.HistoryItem].self)
             .subscribe { (result) in
                 self.isLoading.accept(false)
                 switch result {
                     case .success(let response):
-                        if let response = response.History {
-                            self.visualResult.accept(response)
-                        }
+                        self.visualResult.accept(response)
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }

@@ -3,4 +3,86 @@
    uuid = "1F090727-638B-4AD5-BA4D-59AF2BF40B09"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E49CC10-C48A-4EF0-AABC-A1BD2A6A145D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "readright/tests/ReadingTest/ReadingTestVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "observeSuccess()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8E49CC10-C48A-4EF0-AABC-A1BD2A6A145D - c7ff138dd1988af8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;Swift.Optional&lt;Swift.Bool&gt;&gt;) -&gt; () in readright.ReadingTestVC.observeSuccess() -&gt; ()"
+                  moduleName = "readright"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user225703/Desktop/ReadRight-ios-new/readright/tests/ReadingTest/ReadingTestVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "8E49CC10-C48A-4EF0-AABC-A1BD2A6A145D - c7ff138dd1988af8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.Event&lt;Swift.Optional&lt;Swift.Bool&gt;&gt;) -&gt; () in readright.ReadingTestVC.observeSuccess() -&gt; ()"
+                  moduleName = "readright"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user225703/Desktop/ReadRight-ios-new/readright/tests/ReadingTest/ReadingTestVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD4C2D3E-8DE2-4ACD-B5A0-2BF2E59618D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "readright/tests/ReadingTest/ReadingTestViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "submitResult(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC5E2DAF-829C-47AF-88A6-070FDFD1CC6B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "readright/tests/ReadingTest/ReadingTestViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "submitResult(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QH6-et-KV9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QH6-et-KV9">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,7 +33,7 @@
                                 <rect key="frame" x="24" y="36" width="976" height="708"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UF-lc-lS8">
-                                        <rect key="frame" x="363" y="630.5" width="250" height="59.5"/>
+                                        <rect key="frame" x="363" y="634" width="250" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="N4b-U9-gXx"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="O8e-k1-uNk"/>
@@ -51,19 +51,19 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7t3-rM-ubm">
-                                        <rect key="frame" x="544" y="165.5" width="400" height="377.5"/>
+                                        <rect key="frame" x="544" y="166.5" width="400" height="375.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="dyf-0P-t47">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البريد الألكتروني" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8I-k2-dzs">
-                                                        <rect key="frame" x="176" y="0.0" width="224" height="45"/>
+                                                        <rect key="frame" x="213.5" y="0.0" width="186.5" height="45"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" enabled="NO" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" borderStyle="line" placeholder="البريد الألكتروني" minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="VzQ-Vy-GdC" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="176" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="213.5" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="LMs-m3-Ojg"/>
                                                         </constraints>
@@ -82,13 +82,13 @@
                                                 <rect key="frame" x="0.0" y="57" width="400" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الاسم المفضل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBC-UZ-GQn">
-                                                        <rect key="frame" x="186.5" y="0.0" width="213.5" height="45"/>
+                                                        <rect key="frame" x="221.5" y="0.0" width="178.5" height="45"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="الاسم المفضل" minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="q0r-Rq-M53" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="178.5" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="213.5" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="WI9-1V-j0V"/>
                                                         </constraints>
@@ -107,7 +107,7 @@
                                                 <rect key="frame" x="0.0" y="114" width="400" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3g-sY-Xnd" userLabel="femaleRadioButton">
-                                                        <rect key="frame" x="87" y="0.0" width="22.5" height="50"/>
+                                                        <rect key="frame" x="76.5" y="0.0" width="22.5" height="50"/>
                                                         <state key="normal" image="OrangeUnCheck">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -117,13 +117,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ذكر" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMG-Hk-Sng">
-                                                        <rect key="frame" x="159.5" y="0.0" width="28" height="50"/>
+                                                        <rect key="frame" x="149" y="0.0" width="21" height="50"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="22"/>
                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7O-5b-bRx" userLabel="maleRadioButton">
-                                                        <rect key="frame" x="189.5" y="0.0" width="22.5" height="50"/>
+                                                        <rect key="frame" x="172" y="0.0" width="22.5" height="50"/>
                                                         <state key="normal" image="OrangeUnCheck"/>
                                                         <state key="selected" image="OrangeCheck"/>
                                                         <connections>
@@ -131,13 +131,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أنثي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KM-4J-Jfs">
-                                                        <rect key="frame" x="50" y="0.0" width="35" height="50"/>
+                                                        <rect key="frame" x="50" y="0.0" width="24.5" height="50"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="22"/>
                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="الجنس" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScR-gi-uSl">
-                                                        <rect key="frame" x="343.5" y="0.0" width="56.5" height="50"/>
+                                                        <rect key="frame" x="358.5" y="0.0" width="41.5" height="50"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -167,13 +167,13 @@
                                                 <rect key="frame" x="0.0" y="176" width="400" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سنة الميلاد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLC-PN-6Yl">
-                                                        <rect key="frame" x="189" y="0.0" width="211" height="45"/>
+                                                        <rect key="frame" x="221.5" y="0.0" width="178.5" height="45"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="سنة الميلاد" minimumFontSize="17" background="FieldArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-yx-hrd" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="181" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="213.5" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="bIC-wM-E7N"/>
                                                         </constraints>
@@ -189,22 +189,22 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تغيير كلمة المرور" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF7-R7-QaQ">
-                                                <rect key="frame" x="0.0" y="233" width="400" height="30.5"/>
+                                                <rect key="frame" x="0.0" y="233" width="400" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="795-zZ-PjI">
-                                                <rect key="frame" x="0.0" y="275.5" width="400" height="45"/>
+                                                <rect key="frame" x="0.0" y="273.5" width="400" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="كلمة السر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwY-hg-Pf3">
-                                                        <rect key="frame" x="242" y="8.5" width="158" height="28"/>
+                                                        <rect key="frame" x="267.5" y="9" width="132.5" height="26.5"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="كلمة السر الجديدة" minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="Jqv-ec-7x7" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="267.5" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="9dj-GB-2od"/>
                                                         </constraints>
@@ -220,16 +220,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ajl-eD-LCQ">
-                                                <rect key="frame" x="0.0" y="332.5" width="400" height="45"/>
+                                                <rect key="frame" x="0.0" y="330.5" width="400" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="أعد كلمة السر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyn-rm-qVv">
-                                                        <rect key="frame" x="212" y="0.0" width="188" height="45"/>
+                                                        <rect key="frame" x="239.5" y="0.0" width="160.5" height="45"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="آعد كتابة كلمة السر" minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="7EY-Ue-RCt" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="212" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="239.5" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="h8g-rG-GnC"/>
                                                         </constraints>
@@ -250,25 +250,25 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Uv-jT-p5K">
-                                        <rect key="frame" x="42" y="165.5" width="445" height="377.5"/>
+                                        <rect key="frame" x="42" y="166.5" width="445" height="375.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="apc-lu-TxE" userLabel="blined type">
-                                                <rect key="frame" x="0.0" y="0.0" width="445" height="24.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="445" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="لا أعرف" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Tcd-8z-lVS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="24.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="23"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="عمى أيمن" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="umU-9L-X1c">
-                                                        <rect key="frame" x="228.5" y="0.0" width="72" height="24.5"/>
+                                                        <rect key="frame" x="193.5" y="0.0" width="52" height="23"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz2-w4-JkZ" userLabel="leftBlindRadioBtn">
-                                                        <rect key="frame" x="182" y="0.0" width="22.5" height="24.5"/>
+                                                        <rect key="frame" x="147" y="0.0" width="22.5" height="23"/>
                                                         <state key="normal" image="OrangeUnCheck">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -278,12 +278,12 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="نوع العمى" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="pkv-E6-I8R">
-                                                        <rect key="frame" x="370.5" y="0.0" width="74.5" height="24.5"/>
+                                                        <rect key="frame" x="386" y="0.0" width="59" height="23"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="21"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pef-fL-RyX" userLabel="rightBlindRadioBtn">
-                                                        <rect key="frame" x="302.5" y="0.0" width="22.5" height="24.5"/>
+                                                        <rect key="frame" x="247.5" y="0.0" width="22.5" height="23"/>
                                                         <state key="normal" image="OrangeUnCheck"/>
                                                         <state key="selected" image="OrangeCheck"/>
                                                         <connections>
@@ -291,13 +291,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="عمى أيسر" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="EXr-21-Txp">
-                                                        <rect key="frame" x="104.5" y="0.0" width="75.5" height="24.5"/>
+                                                        <rect key="frame" x="90.5" y="0.0" width="54.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2t-UI-qcj" userLabel="noBlindRadioBtn">
-                                                        <rect key="frame" x="58" y="0.0" width="22.5" height="24.5"/>
+                                                        <rect key="frame" x="44" y="0.0" width="22.5" height="23"/>
                                                         <state key="normal" image="OrangeUnCheck">
                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -333,21 +333,21 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oHa-DY-XE4">
-                                                <rect key="frame" x="0.0" y="36.5" width="445" height="57"/>
+                                                <rect key="frame" x="0.0" y="35" width="445" height="54"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="أجد صعوبة في الرؤية ب:" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzh-Rx-C4q">
-                                                        <rect key="frame" x="0.0" y="0.0" width="445" height="24.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="445" height="23"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="21"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Hz9-PV-O82">
-                                                        <rect key="frame" x="0.0" y="32.5" width="445" height="24.5"/>
+                                                        <rect key="frame" x="0.0" y="31" width="445" height="23"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qyB-ye-LtJ">
-                                                                <rect key="frame" x="344.5" y="0.0" width="100.5" height="24.5"/>
+                                                                <rect key="frame" x="344.5" y="0.0" width="100.5" height="23"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7E8-9I-GVa" userLabel="rightVisionRadioBtn">
-                                                                        <rect key="frame" x="78" y="0.0" width="22.5" height="24.5"/>
+                                                                        <rect key="frame" x="65.5" y="0.0" width="35" height="23"/>
                                                                         <state key="normal" image="OrangeUnCheck"/>
                                                                         <state key="selected" image="OrangeCheck"/>
                                                                         <connections>
@@ -355,7 +355,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="العين اليمني" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="QA0-vV-OZg">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="24.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="23"/>
                                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
                                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -363,10 +363,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="6U9-vY-9JE">
-                                                                <rect key="frame" x="229.5" y="0.0" width="101" height="24.5"/>
+                                                                <rect key="frame" x="229.5" y="0.0" width="101" height="23"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAy-bQ-pyd" userLabel="leftVisionRadioBtn">
-                                                                        <rect key="frame" x="78.5" y="0.0" width="22.5" height="24.5"/>
+                                                                        <rect key="frame" x="67.5" y="0.0" width="33.5" height="23"/>
                                                                         <state key="normal" image="OrangeUnCheck"/>
                                                                         <state key="selected" image="OrangeCheck"/>
                                                                         <connections>
@@ -374,7 +374,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="العين اليسري" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="719-dJ-EF3">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="24.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="23"/>
                                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
                                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -382,10 +382,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="bI6-BG-Uvg">
-                                                                <rect key="frame" x="115" y="0.0" width="100.5" height="24.5"/>
+                                                                <rect key="frame" x="115" y="0.0" width="100.5" height="23"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" verticalHuggingPriority="252" horizontalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIX-pJ-Zc2" userLabel="bothVisionRadioBtn">
-                                                                        <rect key="frame" x="78" y="0.0" width="22.5" height="24.5"/>
+                                                                        <rect key="frame" x="60.5" y="0.0" width="40" height="23"/>
                                                                         <state key="normal" image="OrangeUnCheck">
                                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
@@ -395,7 +395,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="كلا الجانبين" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="SYc-Jc-vcJ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="24.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="23"/>
                                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
                                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -403,10 +403,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="BG5-T4-QbZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="101" height="24.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="101" height="23"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLs-VU-YOY" userLabel="notSureVisionRadioBtn">
-                                                                        <rect key="frame" x="78.5" y="0.0" width="22.5" height="24.5"/>
+                                                                        <rect key="frame" x="63" y="0.0" width="38" height="23"/>
                                                                         <state key="normal" image="OrangeUnCheck">
                                                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </state>
@@ -416,7 +416,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="لست متأكد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="and-2f-4dy">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="24.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="63" height="23"/>
                                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="21"/>
                                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -428,15 +428,15 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ggh-k6-6LL">
-                                                <rect key="frame" x="0.0" y="111.5" width="445" height="87.5"/>
+                                                <rect key="frame" x="0.0" y="107" width="445" height="86"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متى بدأت المشكلة البصرية الخاصة بك؟" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKr-ga-dVu">
-                                                        <rect key="frame" x="162" y="0.0" width="283" height="24.5"/>
+                                                        <rect key="frame" x="230" y="0.0" width="215" height="23"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="21"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WrO-7Y-HSM">
-                                                        <rect key="frame" x="0.0" y="32.5" width="445" height="45"/>
+                                                        <rect key="frame" x="0.0" y="31" width="445" height="45"/>
                                                         <subviews>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="الشهر" minimumFontSize="17" background="HalfField" translatesAutoresizingMaskIntoConstraints="NO" id="MJM-q0-LSS" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="214.5" height="45"/>
@@ -481,10 +481,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="aaf-ym-w9M">
-                                                <rect key="frame" x="0.0" y="211" width="445" height="166.5"/>
+                                                <rect key="frame" x="0.0" y="205" width="445" height="170.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="آسباب السكتة الدماغية ..." minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="wfl-kl-Yte" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="25" width="215" height="45"/>
+                                                        <rect key="frame" x="0.0" y="23.5" width="223.5" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="6NV-VU-Jrr"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="215" id="bM8-Fl-4eo"/>
@@ -499,7 +499,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kaP-k2-z43" userLabel="operationHeadRadioBtn">
-                                                        <rect key="frame" x="422.5" y="107" width="22.5" height="22"/>
+                                                        <rect key="frame" x="422.5" y="104.5" width="22.5" height="22"/>
                                                         <state key="normal" image="OrangeUnCheck"/>
                                                         <state key="selected" image="OrangeCheck"/>
                                                         <connections>
@@ -507,7 +507,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDq-gh-5gK" userLabel="otherRadioBtn">
-                                                        <rect key="frame" x="422.5" y="141" width="22.5" height="22"/>
+                                                        <rect key="frame" x="422.5" y="138.5" width="22.5" height="22"/>
                                                         <state key="normal" image="OrangeUnCheck"/>
                                                         <state key="selected" image="OrangeCheck"/>
                                                         <connections>
@@ -515,13 +515,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="أخرى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="QH5-gO-Qjx">
-                                                        <rect key="frame" x="373.5" y="138.5" width="45" height="27"/>
+                                                        <rect key="frame" x="375" y="137" width="43.5" height="25.5"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="23"/>
                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asu-3R-653" userLabel="headStrockRadioBtn">
-                                                        <rect key="frame" x="422.5" y="36.5" width="22.5" height="22"/>
+                                                        <rect key="frame" x="422.5" y="35" width="22.5" height="22"/>
                                                         <state key="normal" image="OrangeUnCheck"/>
                                                         <state key="selected" image="OrangeCheck"/>
                                                         <connections>
@@ -529,13 +529,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="السكتة الدماغية" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3fb-WC-rU6">
-                                                        <rect key="frame" x="295" y="34" width="123.5" height="27"/>
+                                                        <rect key="frame" x="323.5" y="33" width="95" height="25.5"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="23"/>
                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6K-Qy-Cqw" userLabel="headHurtRadioBtn">
-                                                        <rect key="frame" x="422.5" y="70.5" width="22.5" height="22"/>
+                                                        <rect key="frame" x="422.5" y="69" width="22.5" height="22"/>
                                                         <state key="normal" image="OrangeUnCheck"/>
                                                         <state key="selected" image="OrangeCheck"/>
                                                         <connections>
@@ -543,24 +543,24 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ما سبب المشكلة البصرية الخاصة بك؟" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-Sh-DPH">
-                                                        <rect key="frame" x="175" y="0.0" width="270" height="24.5"/>
+                                                        <rect key="frame" x="242.5" y="0.0" width="202.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="21"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عملية جراحية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-o9-f0F">
-                                                        <rect key="frame" x="315" y="104.5" width="103.5" height="27"/>
+                                                        <rect key="frame" x="336" y="103" width="82.5" height="25.5"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="23"/>
                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أصابة في الرأس" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-eU-vDL">
-                                                        <rect key="frame" x="285" y="68" width="133.5" height="27"/>
+                                                        <rect key="frame" x="332.5" y="67" width="86" height="25.5"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="23"/>
                                                         <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="Ydl-va-mkP" userLabel="other" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="129.5" width="213.5" height="45"/>
+                                                        <rect key="frame" x="0.0" y="127" width="215" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="MZ4-wa-N0k"/>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="215" id="q2K-Td-pGS"/>
@@ -625,7 +625,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="حسابي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUQ-ZY-Btz">
-                                        <rect key="frame" x="435" y="18" width="106" height="47"/>
+                                        <rect key="frame" x="455.5" y="18" width="65.5" height="44"/>
                                         <fontDescription key="fontDescription" name="AdobeArabic-Bold" family="Adobe Arabic" pointSize="40"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

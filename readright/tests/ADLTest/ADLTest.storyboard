@@ -16,7 +16,7 @@
         <!--Prepare ADL Test-->
         <scene sceneID="nDk-Le-xOo">
             <objects>
-                <viewController id="Wci-pt-EV1" userLabel="Prepare ADL Test" customClass="PrepareADLTestVC" sceneMemberID="viewController">
+                <viewController id="Wci-pt-EV1" userLabel="Prepare ADL Test" customClass="PrepareADLTestVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="go2-jy-zWD"/>
                         <viewControllerLayoutGuide type="bottom" id="ZhZ-LP-njk"/>
@@ -353,7 +353,7 @@
         <!--ADL Test-->
         <scene sceneID="XxZ-S6-jwP">
             <objects>
-                <viewController id="FTX-Ql-rAk" userLabel="ADL Test" customClass="ADLTestVC" sceneMemberID="viewController">
+                <viewController id="FTX-Ql-rAk" userLabel="ADL Test" customClass="ADLTestVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kDx-mH-Qph"/>
                         <viewControllerLayoutGuide type="bottom" id="6x3-r3-A0Y"/>

@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJz-YV-8G2" customClass="CustomView" customModule="readright" customModuleProvider="target">
-                                <rect key="frame" x="24" y="44" width="976" height="684"/>
+                                <rect key="frame" x="24" y="44" width="976" height="700"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11C-SM-7wG" userLabel="nextBtn">
                                         <rect key="frame" x="18" y="296.5" width="59.5" height="107"/>
@@ -69,7 +69,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="Screenshot1" translatesAutoresizingMaskIntoConstraints="NO" id="pKU-Xz-iRh">
-                                        <rect key="frame" x="227.5" y="159" width="521" height="501"/>
+                                        <rect key="frame" x="227.5" y="159" width="521" height="517"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="texttexttext" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="eGS-rj-Jxy" userLabel="slideText">
                                         <rect key="frame" x="64" y="111" width="848" height="24"/>
@@ -102,7 +102,7 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="30"/>
+                                        <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,7 +116,7 @@
                             <constraint firstItem="hJz-YV-8G2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="6lu-ka-Sc6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="52D-RJ-IzD" secondAttribute="bottom" id="92g-ii-Vrf"/>
                             <constraint firstItem="vOH-JN-a3h" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="H0Z-KQ-L3r"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hJz-YV-8G2" secondAttribute="bottom" constant="40" id="STD-n5-lAS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hJz-YV-8G2" secondAttribute="bottom" constant="24" id="STD-n5-lAS"/>
                             <constraint firstItem="52D-RJ-IzD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Xte-27-sd9"/>
                             <constraint firstItem="52D-RJ-IzD" firstAttribute="centerX" secondItem="hJz-YV-8G2" secondAttribute="centerX" id="itk-T7-eyB"/>
                             <constraint firstItem="52D-RJ-IzD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jmC-FV-R4a"/>

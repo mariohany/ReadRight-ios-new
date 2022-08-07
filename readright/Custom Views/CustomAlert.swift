@@ -15,7 +15,7 @@ import UIKit
 class CustomAlertView: UIView {
     var viewMessage:UIImageView?
     var viewBackground:UIView?
-    weak var parent:CustomAlertViewDelegate?
+    var parent:CustomAlertViewDelegate?
     var TAG:Int = 0
     
     override init(frame: CGRect) {
@@ -190,8 +190,8 @@ class CustomAlertView: UIView {
         viewMessage = nil
         viewBackground?.removeFromSuperview()
         viewBackground = nil
-        if (parent != nil && responds(to: #selector(parent?.didSelectButtonAtIndex))) {
-            parent?.didSelectButtonAtIndex(tag: self.tag, index: 0)
+        if let parent = parent{
+            parent.didSelectButtonAtIndex(tag: self.TAG, index: 0)
         }
         self.removeFromSuperview()
     }
@@ -201,8 +201,8 @@ class CustomAlertView: UIView {
         viewMessage = nil
         viewBackground?.removeFromSuperview()
         viewBackground = nil
-        if (parent != nil && responds(to: #selector(parent?.didSelectButtonAtIndex))) {
-            parent?.didSelectButtonAtIndex(tag: self.tag, index: 1)
+        if let parent = parent{
+            parent.didSelectButtonAtIndex(tag: self.TAG, index: 1)
         }
         self.removeFromSuperview()
     }

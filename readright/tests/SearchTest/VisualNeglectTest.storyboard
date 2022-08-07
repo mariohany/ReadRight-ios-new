@@ -1,9 +1,514 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QCD-Bp-VhU">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <customFonts key="customFonts">
+        <array key="AdobeArabic-Regular.otf">
+            <string>AdobeArabic-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Prepare Neglect Test-->
+        <scene sceneID="KoS-Jx-Qir">
+            <objects>
+                <viewController id="QCD-Bp-VhU" userLabel="Prepare Neglect Test" customClass="PrepareNeglectVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gwc-g2-N7J"/>
+                        <viewControllerLayoutGuide type="bottom" id="jNv-4F-Dmo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jaO-xm-qlG">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="XkT-BF-JqX">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYK-3C-Ksg" userLabel="PrepareView" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="52" width="976" height="692"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfl-UN-Fky">
+                                        <rect key="frame" x="899" y="8" width="55" height="73"/>
+                                        <state key="normal" image="ReadThis">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="prepareVoiceOver" destination="QCD-Bp-VhU" eventType="touchUpInside" id="YRW-YM-sfJ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اختبار الاهمال البصري" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyj-4M-Kvf">
+                                        <rect key="frame" x="359" y="8" width="258.5" height="50.5"/>
+                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-xP-MMa">
+                                        <rect key="frame" x="200.5" y="213.5" width="347.5" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هذا الاختبار لمعرفة ما إذا يمكنك العثور على الأجسام " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gi-e7-V7t">
+                                                <rect key="frame" x="0.0" y="0.0" width="347.5" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تنتشر على كامل المجل البصري لديك." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDp-yn-Xuq">
+                                                <rect key="frame" x="0.0" y="36.5" width="347.5" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeglectBig" translatesAutoresizingMaskIntoConstraints="NO" id="0oA-rE-pU0">
+                                        <rect key="frame" x="602" y="181.5" width="350" height="329.5"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhj-gF-sIE">
+                                        <rect key="frame" x="18" y="624" width="400" height="50"/>
+                                        <state key="normal" image="ShowInfoNeglect">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showInstructions" destination="QCD-Bp-VhU" eventType="touchUpInside" id="4Ua-Eu-MTK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0oA-rE-pU0" firstAttribute="leading" secondItem="rSI-xP-MMa" secondAttribute="trailing" constant="54" id="4af-nL-3fe"/>
+                                    <constraint firstAttribute="bottom" secondItem="bhj-gF-sIE" secondAttribute="bottom" constant="18" id="AfD-h3-lPJ"/>
+                                    <constraint firstItem="bhj-gF-sIE" firstAttribute="leading" secondItem="KYK-3C-Ksg" secondAttribute="leading" constant="18" id="Aon-BF-OPz"/>
+                                    <constraint firstItem="Dyj-4M-Kvf" firstAttribute="centerX" secondItem="KYK-3C-Ksg" secondAttribute="centerX" id="Td6-Xe-eap"/>
+                                    <constraint firstAttribute="trailing" secondItem="kfl-UN-Fky" secondAttribute="trailing" constant="22" id="XSh-mS-AJt"/>
+                                    <constraint firstItem="0oA-rE-pU0" firstAttribute="centerY" secondItem="KYK-3C-Ksg" secondAttribute="centerY" id="Zhl-ly-dan"/>
+                                    <constraint firstItem="kfl-UN-Fky" firstAttribute="top" secondItem="KYK-3C-Ksg" secondAttribute="top" constant="8" id="cbu-Ml-6fI"/>
+                                    <constraint firstAttribute="trailing" secondItem="0oA-rE-pU0" secondAttribute="trailing" constant="24" id="mhR-fb-ybM"/>
+                                    <constraint firstItem="rSI-xP-MMa" firstAttribute="top" secondItem="0oA-rE-pU0" secondAttribute="top" constant="32" id="oJ8-BX-M21"/>
+                                    <constraint firstItem="Dyj-4M-Kvf" firstAttribute="top" secondItem="KYK-3C-Ksg" secondAttribute="top" constant="8" id="u2v-qW-Icx"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZR8-8e-FDY" userLabel="InstructionsView" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="52" width="976" height="692"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JI-BP-hPH">
+                                        <rect key="frame" x="899" y="8" width="55" height="73"/>
+                                        <state key="normal" image="ReadThis">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="instructionVoiceOver" destination="QCD-Bp-VhU" eventType="touchUpInside" id="pQM-sD-4OL"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التعليمات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fII-OW-pAB">
+                                        <rect key="frame" x="415.5" y="8" width="145" height="54"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="46"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeglectLong" translatesAutoresizingMaskIntoConstraints="NO" id="nHB-kk-AM0">
+                                        <rect key="frame" x="731.5" y="151.5" width="220.5" height="389"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="b7N-Yx-cyW">
+                                        <rect key="frame" x="14.5" y="198.5" width="699" height="295.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="aH7-9s-SdU">
+                                                <rect key="frame" x="0.0" y="0.0" width="699" height="28.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ستجد ثلاثة أنواع من العلامة المستهدفة. سيكون هدفك النقر على العلامة ذات الفجوة في الجزء العلوي." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sai-iz-Wnb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="674" height="28.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartPhrase" translatesAutoresizingMaskIntoConstraints="NO" id="rX9-yl-Rwm">
+                                                        <rect key="frame" x="685" y="0.0" width="14" height="28.5"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-hF-PUF">
+                                                <rect key="frame" x="261" y="44.5" width="438" height="28.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يجب أن يتم العثور على جميع الأهداف الصحيحة على الشاشة." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfh-28-99N">
+                                                        <rect key="frame" x="0.0" y="0.0" width="413" height="28.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartPhrase" translatesAutoresizingMaskIntoConstraints="NO" id="2NZ-bH-ijV">
+                                                        <rect key="frame" x="424" y="0.0" width="14" height="28.5"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="BhQ-Jc-cxr">
+                                                <rect key="frame" x="218" y="89" width="481" height="28.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سوف يظهر وميض أخضر لفترة وجيزة، عند النقر على الهدف الصحيح." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRf-JV-9Ob">
+                                                        <rect key="frame" x="0.0" y="0.0" width="456" height="28.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartPhrase" translatesAutoresizingMaskIntoConstraints="NO" id="uaQ-tt-W0q">
+                                                        <rect key="frame" x="467" y="0.0" width="14" height="28.5"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="93V-TB-psD">
+                                                <rect key="frame" x="434.5" y="133.5" width="264.5" height="28.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقر على كل هدف مرة واحدة فقط." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH7-Iq-Deh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="239.5" height="28.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartPhrase" translatesAutoresizingMaskIntoConstraints="NO" id="BaQ-2a-trD">
+                                                        <rect key="frame" x="250.5" y="0.0" width="14" height="28.5"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="s7s-q4-hHe">
+                                                <rect key="frame" x="402.5" y="178" width="296.5" height="28.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سيكون لديك ٥ دقائق لتجد كل الأهداف." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrB-SB-Lir">
+                                                        <rect key="frame" x="0.0" y="0.0" width="271.5" height="28.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartPhrase" translatesAutoresizingMaskIntoConstraints="NO" id="vrr-1c-Xi5">
+                                                        <rect key="frame" x="282.5" y="0.0" width="14" height="28.5"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="vYh-9H-GjG">
+                                                <rect key="frame" x="420" y="222.5" width="279" height="28.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقر على زر &quot;لقد انتهيت&quot; عند الانتهاء." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRh-bk-Wwc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="254" height="28.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartPhrase" translatesAutoresizingMaskIntoConstraints="NO" id="Dsl-hX-oO4">
+                                                        <rect key="frame" x="265" y="0.0" width="14" height="28.5"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0Pw-P8-RuK">
+                                                <rect key="frame" x="224.5" y="267" width="474.5" height="28.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="في نهاية الاختبار سيظهر لك النسبة المئوية من الأهداف التي وجدتها." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95Q-Qb-Yiz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="449.5" height="28.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartPhrase" translatesAutoresizingMaskIntoConstraints="NO" id="95w-mz-oND">
+                                                        <rect key="frame" x="460.5" y="0.0" width="14" height="28.5"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqe-So-c2U">
+                                        <rect key="frame" x="18" y="624" width="400" height="50"/>
+                                        <state key="normal" image="StartNeglectBtn">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startNeglectTest" destination="QCD-Bp-VhU" eventType="touchUpInside" id="mhj-px-R2n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjI-rh-i44">
+                                        <rect key="frame" x="758" y="624" width="200" height="50"/>
+                                        <state key="normal" image="NeglectIntroBtn">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backToIntro" destination="QCD-Bp-VhU" eventType="touchUpInside" id="4mm-o8-FIv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fII-OW-pAB" firstAttribute="centerX" secondItem="ZR8-8e-FDY" secondAttribute="centerX" id="0RT-Cb-NeG"/>
+                                    <constraint firstItem="nHB-kk-AM0" firstAttribute="leading" secondItem="b7N-Yx-cyW" secondAttribute="trailing" constant="18" id="7xK-e8-ZWi"/>
+                                    <constraint firstAttribute="bottom" secondItem="YjI-rh-i44" secondAttribute="bottom" constant="18" id="A48-vL-FQ2"/>
+                                    <constraint firstItem="fII-OW-pAB" firstAttribute="top" secondItem="ZR8-8e-FDY" secondAttribute="top" constant="8" id="BcM-Mi-5xw"/>
+                                    <constraint firstItem="vqe-So-c2U" firstAttribute="leading" secondItem="ZR8-8e-FDY" secondAttribute="leading" constant="18" id="BfS-2b-iJZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="8JI-BP-hPH" secondAttribute="trailing" constant="22" id="G3I-rs-Lft"/>
+                                    <constraint firstAttribute="trailing" secondItem="nHB-kk-AM0" secondAttribute="trailing" constant="24" id="HCE-af-e52"/>
+                                    <constraint firstItem="8JI-BP-hPH" firstAttribute="top" secondItem="ZR8-8e-FDY" secondAttribute="top" constant="8" id="MvB-tF-cJA"/>
+                                    <constraint firstItem="b7N-Yx-cyW" firstAttribute="centerY" secondItem="nHB-kk-AM0" secondAttribute="centerY" id="YA1-4v-lu5"/>
+                                    <constraint firstAttribute="trailing" secondItem="YjI-rh-i44" secondAttribute="trailing" constant="18" id="dOP-kZ-yja"/>
+                                    <constraint firstItem="nHB-kk-AM0" firstAttribute="centerY" secondItem="ZR8-8e-FDY" secondAttribute="centerY" id="kNW-sh-7iU"/>
+                                    <constraint firstAttribute="bottom" secondItem="vqe-So-c2U" secondAttribute="bottom" constant="18" id="wO8-0W-T7F"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0lB-Jd-8md"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KYK-3C-Ksg" firstAttribute="leading" secondItem="0lB-Jd-8md" secondAttribute="leading" constant="24" id="8tu-ub-DDD"/>
+                            <constraint firstItem="XkT-BF-JqX" firstAttribute="trailing" secondItem="0lB-Jd-8md" secondAttribute="trailing" id="9tI-dZ-eek"/>
+                            <constraint firstItem="XkT-BF-JqX" firstAttribute="leading" secondItem="0lB-Jd-8md" secondAttribute="leading" id="Fqm-YV-UJH"/>
+                            <constraint firstItem="ZR8-8e-FDY" firstAttribute="top" secondItem="0lB-Jd-8md" secondAttribute="top" constant="32" id="GmY-DL-xeN"/>
+                            <constraint firstItem="0lB-Jd-8md" firstAttribute="trailing" secondItem="ZR8-8e-FDY" secondAttribute="trailing" constant="24" id="Lqd-PR-icW"/>
+                            <constraint firstItem="ZR8-8e-FDY" firstAttribute="leading" secondItem="0lB-Jd-8md" secondAttribute="leading" constant="24" id="SfM-7K-iDZ"/>
+                            <constraint firstItem="0lB-Jd-8md" firstAttribute="bottom" secondItem="ZR8-8e-FDY" secondAttribute="bottom" constant="24" id="XEo-jS-kgx"/>
+                            <constraint firstItem="0lB-Jd-8md" firstAttribute="trailing" secondItem="KYK-3C-Ksg" secondAttribute="trailing" constant="24" id="jNV-3U-A65"/>
+                            <constraint firstItem="0lB-Jd-8md" firstAttribute="bottom" secondItem="XkT-BF-JqX" secondAttribute="bottom" id="nHC-E5-Bst"/>
+                            <constraint firstItem="XkT-BF-JqX" firstAttribute="top" secondItem="jaO-xm-qlG" secondAttribute="top" id="nfE-UG-Lnd"/>
+                            <constraint firstItem="0lB-Jd-8md" firstAttribute="bottom" secondItem="KYK-3C-Ksg" secondAttribute="bottom" constant="24" id="rCF-kJ-Y70"/>
+                            <constraint firstItem="KYK-3C-Ksg" firstAttribute="top" secondItem="0lB-Jd-8md" secondAttribute="top" constant="32" id="sFx-2U-21p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="InstructionsView" destination="ZR8-8e-FDY" id="sic-sn-ZTW"/>
+                        <outlet property="PrepareView" destination="KYK-3C-Ksg" id="Oue-qg-L2f"/>
+                        <segue destination="OMW-DL-FN0" kind="show" identifier="StartNeglectTest" id="Im3-ew-Vyr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aCP-6S-KhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3277" y="501"/>
+        </scene>
+        <!--Neglect Test Scene-->
+        <scene sceneID="Jwo-Go-Iau">
+            <objects>
+                <viewController id="OMW-DL-FN0" userLabel="Neglect Test Scene" customClass="VisualNeglectTestVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KR3-FV-WKx"/>
+                        <viewControllerLayoutGuide type="bottom" id="1oa-u1-YJB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kKk-jz-qBL">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="728"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="2K5-N3-dJu">
+                                <rect key="frame" x="0.0" y="0.0" width="704" height="728"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ax2-a9-72T" userLabel="TestView" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="32" width="656" height="672"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="vw1-2P-jQS">
+                                        <rect key="frame" x="240" y="14" width="176" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDB-06-eb6">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="54"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <color key="textColor" red="0.22352941179999999" green="0.33725490200000002" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Timer" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-GX-Abl">
+                                                <rect key="frame" x="134" y="0.0" width="42" height="54"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIK-oR-t0n" userLabel="SignsContainer">
+                                        <rect key="frame" x="8" y="183" width="640" height="306"/>
+                                        <color key="backgroundColor" red="0.70588235290000001" green="0.70588235290000001" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MIK-oR-t0n" secondAttribute="height" multiplier="932:445" id="7VP-o8-Bn3"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rv-Si-qU3">
+                                        <rect key="frame" x="18" y="604" width="400" height="50"/>
+                                        <state key="normal" image="IveFinished">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="amDone" destination="OMW-DL-FN0" eventType="touchUpInside" id="vxl-yf-yUD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="8Rv-Si-qU3" firstAttribute="leading" secondItem="Ax2-a9-72T" secondAttribute="leading" constant="18" id="2bd-f6-9ZT"/>
+                                    <constraint firstItem="MIK-oR-t0n" firstAttribute="leading" secondItem="Ax2-a9-72T" secondAttribute="leading" constant="8" id="7Pm-mf-FCC"/>
+                                    <constraint firstAttribute="trailing" secondItem="MIK-oR-t0n" secondAttribute="trailing" constant="8" id="F7B-LK-QMD"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Rv-Si-qU3" secondAttribute="bottom" constant="18" id="J8e-xl-EBR"/>
+                                    <constraint firstItem="MIK-oR-t0n" firstAttribute="centerY" secondItem="Ax2-a9-72T" secondAttribute="centerY" id="VX9-Y8-XKD"/>
+                                    <constraint firstItem="MIK-oR-t0n" firstAttribute="centerX" secondItem="Ax2-a9-72T" secondAttribute="centerX" id="WoG-ZP-OfM"/>
+                                    <constraint firstItem="vw1-2P-jQS" firstAttribute="centerX" secondItem="Ax2-a9-72T" secondAttribute="centerX" id="lMP-2Z-lRh"/>
+                                    <constraint firstItem="vw1-2P-jQS" firstAttribute="top" secondItem="Ax2-a9-72T" secondAttribute="top" constant="14" id="rUW-Kt-wba"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dFV-Fq-TdH"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2K5-N3-dJu" secondAttribute="trailing" id="24s-vk-Q1m"/>
+                            <constraint firstItem="Ax2-a9-72T" firstAttribute="top" secondItem="dFV-Fq-TdH" secondAttribute="top" constant="32" id="ITH-1Q-6NB"/>
+                            <constraint firstAttribute="bottom" secondItem="2K5-N3-dJu" secondAttribute="bottom" id="JsZ-xV-a33"/>
+                            <constraint firstItem="dFV-Fq-TdH" firstAttribute="bottom" secondItem="Ax2-a9-72T" secondAttribute="bottom" constant="24" id="YTE-Wc-5Wf"/>
+                            <constraint firstAttribute="trailing" secondItem="Ax2-a9-72T" secondAttribute="trailing" constant="24" id="kjg-OP-dty"/>
+                            <constraint firstItem="2K5-N3-dJu" firstAttribute="top" secondItem="kKk-jz-qBL" secondAttribute="top" id="qfJ-sf-RgY"/>
+                            <constraint firstItem="2K5-N3-dJu" firstAttribute="leading" secondItem="dFV-Fq-TdH" secondAttribute="leading" id="sDB-tK-ThE"/>
+                            <constraint firstItem="Ax2-a9-72T" firstAttribute="leading" secondItem="dFV-Fq-TdH" secondAttribute="leading" constant="24" id="v37-sN-VIN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JOd-Qo-iwb"/>
+                    <connections>
+                        <outlet property="Container" destination="MIK-oR-t0n" id="vCH-pq-TXG"/>
+                        <outlet property="TimeLabel" destination="qDB-06-eb6" id="e7U-cA-hu9"/>
+                        <segue destination="3ud-Na-bBw" kind="show" identifier="FinishNeglectTest" id="6tm-YQ-h4i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bis-Ed-fd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3950" y="507"/>
+        </scene>
+        <!--Result Neglect Test-->
+        <scene sceneID="12m-eG-JZi">
+            <objects>
+                <viewController id="3ud-Na-bBw" userLabel="Result Neglect Test" customClass="ResultNeglectTestVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vB6-Jg-OEU"/>
+                        <viewControllerLayoutGuide type="bottom" id="neZ-jd-tj3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YGQ-tX-5FJ">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="728"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="RlI-rj-Hrl">
+                                <rect key="frame" x="0.0" y="0.0" width="704" height="728"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ce-gw-J7h" userLabel="FinishView" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="32" width="656" height="672"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نتائج الاختبار" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdZ-at-Opd">
+                                        <rect key="frame" x="250.5" y="8" width="155" height="50.5"/>
+                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PWC-4D-ajY">
+                                        <rect key="frame" x="230" y="219" width="196.5" height="234.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لقد أحرزت" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwC-7C-wIN">
+                                                <rect key="frame" x="33" y="0.0" width="130.5" height="50.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCQ-PW-cei">
+                                                <rect key="frame" x="0.0" y="62.5" width="196.5" height="109.5"/>
+                                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="98"/>
+                                                <color key="textColor" red="0.80392156859999997" green="0.3921568627" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من كل الأهداف" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QE-Rm-c2a">
+                                                <rect key="frame" x="4.5" y="184" width="187.5" height="50.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ben-Pa-k9P">
+                                        <rect key="frame" x="18" y="604" width="400" height="50"/>
+                                        <state key="normal" image="NextTestBtn">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goNextTest:" destination="3ud-Na-bBw" eventType="touchUpInside" id="SoS-Ct-mIJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="PWC-4D-ajY" firstAttribute="centerX" secondItem="1ce-gw-J7h" secondAttribute="centerX" id="IBP-Ax-d2B"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ben-Pa-k9P" secondAttribute="bottom" constant="18" id="Qyl-qv-YGq"/>
+                                    <constraint firstItem="PWC-4D-ajY" firstAttribute="centerY" secondItem="1ce-gw-J7h" secondAttribute="centerY" id="fKW-Qd-Vyv"/>
+                                    <constraint firstItem="EdZ-at-Opd" firstAttribute="centerX" secondItem="1ce-gw-J7h" secondAttribute="centerX" id="h6a-sm-oC5"/>
+                                    <constraint firstItem="Ben-Pa-k9P" firstAttribute="leading" secondItem="1ce-gw-J7h" secondAttribute="leading" constant="18" id="nUM-B2-vLR"/>
+                                    <constraint firstItem="EdZ-at-Opd" firstAttribute="top" secondItem="1ce-gw-J7h" secondAttribute="top" constant="8" id="vnO-yW-ee2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V6z-8P-G89"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1ce-gw-J7h" firstAttribute="top" secondItem="V6z-8P-G89" secondAttribute="top" constant="32" id="9d3-yk-YqL"/>
+                            <constraint firstAttribute="trailing" secondItem="RlI-rj-Hrl" secondAttribute="trailing" id="JR2-Jl-a6R"/>
+                            <constraint firstItem="V6z-8P-G89" firstAttribute="bottom" secondItem="1ce-gw-J7h" secondAttribute="bottom" constant="24" id="Mev-rq-0De"/>
+                            <constraint firstAttribute="bottom" secondItem="RlI-rj-Hrl" secondAttribute="bottom" id="Swz-Gs-bG2"/>
+                            <constraint firstItem="RlI-rj-Hrl" firstAttribute="top" secondItem="YGQ-tX-5FJ" secondAttribute="top" id="VdO-8g-35J"/>
+                            <constraint firstItem="1ce-gw-J7h" firstAttribute="leading" secondItem="V6z-8P-G89" secondAttribute="leading" constant="24" id="gcZ-yx-vbU"/>
+                            <constraint firstAttribute="trailing" secondItem="1ce-gw-J7h" secondAttribute="trailing" constant="24" id="hDT-SY-Bcl"/>
+                            <constraint firstItem="RlI-rj-Hrl" firstAttribute="leading" secondItem="V6z-8P-G89" secondAttribute="leading" id="nnA-Me-GJ6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pVL-gA-43J"/>
+                    <connections>
+                        <outlet property="ScoreTextField" destination="uCQ-PW-cei" id="a42-JD-8r5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jTe-Rc-Pyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4664" y="534"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="IveFinished" width="400" height="50"/>
+        <image name="LoginBackground" width="1024" height="768"/>
+        <image name="NeglectBig" width="350" height="329.5"/>
+        <image name="NeglectIntroBtn" width="200" height="50"/>
+        <image name="NeglectLong" width="220.5" height="389"/>
+        <image name="NextTestBtn" width="400" height="50"/>
+        <image name="ReadThis" width="55" height="73"/>
+        <image name="ShowInfoNeglect" width="400" height="50"/>
+        <image name="StartNeglectBtn" width="400" height="50"/>
+        <image name="StartPhrase" width="14" height="22.5"/>
+        <image name="Timer" width="42" height="50"/>
+    </resources>
 </document>

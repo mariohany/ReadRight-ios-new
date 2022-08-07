@@ -21,7 +21,7 @@ enum Endpoint {
     case GetBooks
     case GetChaptersByBook(bookId:Int)
     
-    case SubmitReadingTest(stage:Int, passage1:Float, passage2:Float, passage3:Float, answer1:Bool, answer2:Bool, answer3:Bool, readingSpeed:Int, idPassage1:Int, idPassage2:Int, idPassage3:Int)
+    case SubmitReadingTest(stage:Int, passage1:Int, passage2:Int, passage3:Int, answer1:Int, answer2:Int, answer3:Int, readingSpeed:Int, idPassage1:Int, idPassage2:Int, idPassage3:Int)
     case SubmitVisualFieldTest(model: NetworkModels.VisualFieldTestRequest)
     case SubmitADLTest(driving:Int, readingNews:Int, hygiene:Int, readingBooks:Int, enjoyReading:Int, findThings:Int)
     case SubmitSearchTest(score:Int, duration:Float)
@@ -46,13 +46,13 @@ extension Endpoint: TargetType {
         case .GetReadingTestHistory: return "visualreading/history"
         case .GetFieldTestHistory: return "visualfield/hits/history"
         case .GetNeglectTestHistory: return "visualneglect/history"
-        case .GetSearchTestHistory: return "users/GetSearchTestHistory"
-        case .GetBooks: return "therapy/GetBooks"
-        case .GetChaptersByBook: return "therapy/GetChaptersByBook"
+        case .GetSearchTestHistory: return "visualsearch"
+        case .GetBooks: return "therapy-books"
+        case .GetChaptersByBook(let bookId): return "therapy-books-chapter/\(bookId)"
             
-        case .SubmitReadingTest: return "VisualReadingTest"
-        case .SubmitVisualFieldTest: return "VisualFieldTest"
-        case .SubmitADLTest: return "ADLTest"
+        case .SubmitReadingTest: return "visualreading"
+        case .SubmitVisualFieldTest: return "visualfield"
+        case .SubmitADLTest: return "activities"
         case .SubmitSearchTest: return "visualsearch"
         case .SubmitVisualNeglectTest: return "visualneglect"
         }
@@ -130,39 +130,36 @@ extension Endpoint: TargetType {
             return .requestPlain
         case .GetBooks:
             return .requestPlain
-        case .GetChaptersByBook(let bookId):
-            let params: [String : Any] = [
-                "BookId": bookId
-            ]
-            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+        case .GetChaptersByBook:
+            return .requestPlain
         case .SubmitReadingTest(let stage, let passage1, let passage2, let passage3, let answer1, let answer2, let answer3, let readingSpeed, let idPassage1, let idPassage2, let idPassage3):
-            let params:[String : Any?] = ["Stage": stage,
-                          "Passage1": passage1,
-                          "Passage2": passage2,
-                          "Passage3": passage3,
-                          "Answer1": answer1,
-                          "Answer2": answer2,
-                          "Answer3": answer3,
-                          "ReadingSpeed": readingSpeed,
-                          "IdPassage1": idPassage1,
-                          "IdPassage1": idPassage2,
-                          "IdPassage1": idPassage3,
+            let params:[String : Int?] = ["stage": stage,
+                          "passage1": passage1,
+                          "passage2": passage2,
+                          "passage3": passage3,
+                          "answer1": answer1,
+                          "answer2": answer2,
+                          "answer3": answer3,
+                          "reading_speed": readingSpeed,
+                          "passage1_id": idPassage1,
+                          "passage2_id": idPassage2,
+                          "passage3_id": idPassage3,
             ]
             return .requestParameters(parameters: params as [String : Any], encoding: JSONEncoding.default)
         case .SubmitVisualFieldTest(let model):
-            let params:[String : Any] = ["Duration": model.duration,
-                                          "NodesAnswers": model.nodesAnswers,
-                                          "NodesHits": model.nodesHits
+            let params:[String : Any] = ["duration": model.duration,
+                                          "node_answers": model.nodesAnswers,
+                                          "node_hits": model.nodesHits
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
             
         case .SubmitADLTest(let driving, let readingNews, let hygiene, let readingBooks, let enjoyReading, let findThings):
-            let params:[String : Any] = ["Driving": driving,
-                                        "ReadingNews": readingNews,
-                                        "Hygiene": hygiene,
-                                        "ReadingBooks": readingBooks,
-                                        "EnjoyReading": enjoyReading,
-                                        "FindThings": findThings
+            let params:[String : Any] = ["driving": driving,
+                                        "reading_news": readingNews,
+                                        "hygiene": hygiene,
+                                        "reading_books": readingBooks,
+                                        "enjoy_reading": enjoyReading,
+                                        "find_things": findThings
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .SubmitSearchTest(let score, let duration):

@@ -33,7 +33,7 @@ class ReadingTestVC: UIViewController{
     var stopWatch = Date()
     var currentReadingTime:TimeInterval?
     var questions:[NetworkModels.ReadingQuesionModel] = []
-    var result:[NetworkModels.ReadingResultModel] = []
+    var result:[NetworkModels.ReadingRequestModel] = Array(repeating: NetworkModels.ReadingRequestModel(answer: nil, questionNo: nil, readingTime: nil), count: 3)
     
     //Chart params
     var _values:[CGFloat] = []
@@ -46,8 +46,8 @@ class ReadingTestVC: UIViewController{
     
     var isFinished:Bool = false
     
-//    var currentUser:UserModel?
-    var askedQuestionsArray:[Int] = []
+    var currentUser:NetworkModels.UserInfo?
+    var askedQuestionsArray:[Int] = [0,0,0,0,0,0,0,0,0,0,0,0]
     var askedQuestionsCount:Int = 0
     var audioPlayer:AVAudioPlayer?
     let viewModel = ReadingTestViewModel()
@@ -69,9 +69,9 @@ class ReadingTestVC: UIViewController{
         let barButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(customBackBtn))
         
         self.navigationItem.leftBarButtonItem = barButtonItem
-//        currentUser = [CommonHelper getCurrentUser];
-//        askedQuestionsCount = currentUser.readingTestQuestionsCount;
-//        askedQuestionsArray = [[NSMutableArray alloc] initWithArray:currentUser.readingTestAskedQuestions];
+        currentUser = SharedPref.shared.userInfo
+        askedQuestionsCount = currentUser?.readingTestQuestionsCount ?? 0
+        askedQuestionsArray = currentUser?.readingTestAskedQuestions ?? [0,0,0,0,0,0,0,0,0,0,0,0]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,11 +81,11 @@ class ReadingTestVC: UIViewController{
     
     func observeSuccess(){
         viewModel.result.subscribe { status in
-            if let msg = status.element, msg != ""{
-//                currentUser = [CommonHelper getCurrentUser];
-//                currentUser.readingTestQuestionsCount = askedQuestionsCount;
-//                currentUser.readingTestAskedQuestions = [askedQuestionsArray copy];
-//                [CommonHelper saveUser:currentUser];
+            if let success = status.element, success == true {
+                self.currentUser = SharedPref.shared.userInfo
+                self.currentUser?.readingTestQuestionsCount = self.askedQuestionsCount
+                self.currentUser?.readingTestAskedQuestions = self.askedQuestionsArray
+                SharedPref.shared.setUserInfo(userInfo: self.currentUser)
                 self.ResultView.isHidden = false
                 self.QuestionView.isHidden = true
                 self.StoryView.isHidden = true
@@ -132,13 +132,13 @@ class ReadingTestVC: UIViewController{
         self.ResultAverageSecs.text = String(format: "%0.1f", passageAverageSec)
         self.ResultAverageWords.text = String(format: "%d", wordsPerMin)
         
-        viewModel.tp_Passage1 = passageSecs1
-        viewModel.tp_Passage2 = passageSecs2
-        viewModel.tp_Passage3 = passageSecs3
+        viewModel.tp_Passage1 = Int(passageSecs1)
+        viewModel.tp_Passage2 = Int(passageSecs2)
+        viewModel.tp_Passage3 = Int(passageSecs3)
         
-        viewModel.tp_Answer1 = result[0].answer == 1
-        viewModel.tp_Answer2 = result[1].answer == 1
-        viewModel.tp_Answer3 = result[2].answer == 1
+        viewModel.tp_Answer1 = result[0].answer ?? 0
+        viewModel.tp_Answer2 = result[1].answer ?? 0
+        viewModel.tp_Answer3 = result[2].answer ?? 0
         
         viewModel.tp_ReadingSpeed = wordsPerMin
         
@@ -166,29 +166,29 @@ class ReadingTestVC: UIViewController{
     
     func fillSeedValues() {
         
-        questions[0] = NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: "أهرامات مصر من أقدم عجائب الدنيا السبع، وتعتبر مقابر للفراعنة، وقد امتلأت مقابرهم في يوم من الأيام بممتلكات الملوك التي لا تقدر بثمن، والتي دفنت معهم حتي يستعملوها في الحياة الأخري. وقد نهبت كنوز الأهرامات منذ آلاف السنين. وترجع الفكرة في بناء الأهرامات إلي اعتقاد المصريين القدماء في خلود الروح." ,questionText: "هل تم ذكر فراعنة مصر في هذا المقطع ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: "أهرامات مصر من أقدم عجائب الدنيا السبع، وتعتبر مقابر للفراعنة، وقد امتلأت مقابرهم في يوم من الأيام بممتلكات الملوك التي لا تقدر بثمن، والتي دفنت معهم حتي يستعملوها في الحياة الأخري. وقد نهبت كنوز الأهرامات منذ آلاف السنين. وترجع الفكرة في بناء الأهرامات إلي اعتقاد المصريين القدماء في خلود الروح." ,questionText: "هل تم ذكر فراعنة مصر في هذا المقطع ؟"))
         
-        questions[1] = NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:0, storyText: "تعطي جائزة نوبل لمن يقوم بالأبحاث البارزة، أو لمن يستطيع أن يبتكر تقنيات جديدة، أو من يقوم بخدمات اجتماعية نبيلة. وتعد جائزة نوبل أعلي مرتبة علي مستوي العالم. الأب الروحي لجائزة نوبل هو الصناعي السويدي ومخترع الديناميت، الفريد نوبل. ويتم توزيع جوائز نوبل في احتفال رسمي في العاشر من ديسمبر ." ,questionText: "هل تم ذكر الاوسكار في هذا المقطع ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:0, storyText: "تعطي جائزة نوبل لمن يقوم بالأبحاث البارزة، أو لمن يستطيع أن يبتكر تقنيات جديدة، أو من يقوم بخدمات اجتماعية نبيلة. وتعد جائزة نوبل أعلي مرتبة علي مستوي العالم. الأب الروحي لجائزة نوبل هو الصناعي السويدي ومخترع الديناميت، الفريد نوبل. ويتم توزيع جوائز نوبل في احتفال رسمي في العاشر من ديسمبر ." ,questionText: "هل تم ذكر الاوسكار في هذا المقطع ؟"))
         
-        questions[2] = NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: "قال أطباء إن علاجاً محتملا لحساسية الفول السوداني نجح في تغيير حياة عدد من الاطفال المشاركين في تجربة طبية. وكان علي الاطفال زيادة كمية الفول السوداني التي يتناولونها يوميا بصورة تدريجية. وقد رجحت نتائج التجربة أن ۸٤ في المئة من الأطفال استطاعوا تناول الفول السوداني يومياً بعد مضي ستة أشهر ." ,questionText: "هل تحدث هذا المقطع عن حساسية الفول السوداني ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: "قال أطباء إن علاجاً محتملا لحساسية الفول السوداني نجح في تغيير حياة عدد من الاطفال المشاركين في تجربة طبية. وكان علي الاطفال زيادة كمية الفول السوداني التي يتناولونها يوميا بصورة تدريجية. وقد رجحت نتائج التجربة أن ۸٤ في المئة من الأطفال استطاعوا تناول الفول السوداني يومياً بعد مضي ستة أشهر ." ,questionText: "هل تحدث هذا المقطع عن حساسية الفول السوداني ؟"))
         
-        questions[3] = NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:0, storyText: " قالت منظمة الأمم المتحده للتربية والعلوم اليونسكو إن نحو ٤۳ في المئة من الأطفال في الدول العربية يفتقرون المبادئ الأساسية للتعليم سواء كانوا في المدارس أو خارجها. ووفقا للتقارير ، فإن طفلا من بين كل أربعة اطفال ، في الدول الفقيرة ، لا يستطيع قراءة جملة واحدة وتزيد النسبة في مناطق الصحراء الكبري." ,questionText: "هل تحدث هذا المقطع عن الأطفال في اليابان ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:0, storyText: " قالت منظمة الأمم المتحده للتربية والعلوم اليونسكو إن نحو ٤۳ في المئة من الأطفال في الدول العربية يفتقرون المبادئ الأساسية للتعليم سواء كانوا في المدارس أو خارجها. ووفقا للتقارير ، فإن طفلا من بين كل أربعة اطفال ، في الدول الفقيرة ، لا يستطيع قراءة جملة واحدة وتزيد النسبة في مناطق الصحراء الكبري." ,questionText: "هل تحدث هذا المقطع عن الأطفال في اليابان ؟"))
         
-        questions[4] = NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:0, storyText: "اعلنت شركة صناعة السيارات الفاخرة (بورش) عن أول سيارة كهربائية وهي معروضة في متحف في ألمانيا .و تم العثور علي هذه السيارة في إحدي المباني التجارية لتخزين البضائع والصناعات ومعدات النقل الثقيلة بالعاصمة النمساوية فيينا. وصمم فرديناند بورش هذه السيارة الكهربائية عندما كان عمره ۲۲ ، وقد اسس شركته في عام ۱۹۳۱." ,questionText: "هل تم ذكر الطائرات في هذا المقطع ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:0, storyText: "اعلنت شركة صناعة السيارات الفاخرة (بورش) عن أول سيارة كهربائية وهي معروضة في متحف في ألمانيا .و تم العثور علي هذه السيارة في إحدي المباني التجارية لتخزين البضائع والصناعات ومعدات النقل الثقيلة بالعاصمة النمساوية فيينا. وصمم فرديناند بورش هذه السيارة الكهربائية عندما كان عمره ۲۲ ، وقد اسس شركته في عام ۱۹۳۱." ,questionText: "هل تم ذكر الطائرات في هذا المقطع ؟"))
         
-        questions[5] = NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:0, storyText: "ابن سينا ولد في قرية (أفشنة) الفارسية قرب بخاري. عرف بإسم الشيخ الرئيس، وسماه الغربيون بأمير الأطباء وأبو الطب الحديث. وقد ألف ٤٥۰ كتاب في مواضيع مختلفة، العديد منها يركز علي الفلسفة والطب الحديث. ويعتبر ابن سينا من أول من كتب عن الطب في العالم. ولقد اتبع أسلوب آبقراط وجالينوس." ,questionText: "هل تحدث هذا المقطع عن ابن سينا ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:0, storyText: "ابن سينا ولد في قرية (أفشنة) الفارسية قرب بخاري. عرف بإسم الشيخ الرئيس، وسماه الغربيون بأمير الأطباء وأبو الطب الحديث. وقد ألف ٤٥۰ كتاب في مواضيع مختلفة، العديد منها يركز علي الفلسفة والطب الحديث. ويعتبر ابن سينا من أول من كتب عن الطب في العالم. ولقد اتبع أسلوب آبقراط وجالينوس." ,questionText: "هل تحدث هذا المقطع عن ابن سينا ؟"))
         
-        questions[6] = NetworkModels.ReadingQuesionModel(numberOfWords:51, answer:0, storyText: "الحديث عن مثلث برمودا يشبة الحديث عن الحكايات الخرافية، ولكن يبقي الفرق هنا هو أن مثلث برمودا حقيقة واقعية لمسناها في عصرنا هذا، وقرأنا عنها في الصحف العربية والعالمية، ويمكن القول أن مثلث برمودا يعتبر التحدي الذي يواجه الإنسان في هذا القرن . وهو أحد الغرائب الطبيعية الذي تتحدث عنه الصحف." ,questionText: "هل تحدث هذا المقطع عن البراكين ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:51, answer:0, storyText: "الحديث عن مثلث برمودا يشبة الحديث عن الحكايات الخرافية، ولكن يبقي الفرق هنا هو أن مثلث برمودا حقيقة واقعية لمسناها في عصرنا هذا، وقرأنا عنها في الصحف العربية والعالمية، ويمكن القول أن مثلث برمودا يعتبر التحدي الذي يواجه الإنسان في هذا القرن . وهو أحد الغرائب الطبيعية الذي تتحدث عنه الصحف." ,questionText: "هل تحدث هذا المقطع عن البراكين ؟"))
         
-        questions[7] = NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: "يقع مضيق جبل طارق البحري بين المغرب وأسبانيا ومستعمرة جبل طارق البريطانية، ويفصل بين المحيط الأطلسي والبحر الأبيض المتوسط. سمي لهذا الإسم لان القائد طارق بن زياد عبره في بداية الفتوحات الإسلامية لأسبانيا عام ۷۱۱ ميلادية. يبلغ عمق المياه فيه حوالي ۳۰۰ متر، واقل مسافة بين ضفتيه هي ۱٤ كيلومتر." ,questionText: "هل تحدث هذا المقطع عن مضيق جبل طارق ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: "يقع مضيق جبل طارق البحري بين المغرب وأسبانيا ومستعمرة جبل طارق البريطانية، ويفصل بين المحيط الأطلسي والبحر الأبيض المتوسط. سمي لهذا الإسم لان القائد طارق بن زياد عبره في بداية الفتوحات الإسلامية لأسبانيا عام ۷۱۱ ميلادية. يبلغ عمق المياه فيه حوالي ۳۰۰ متر، واقل مسافة بين ضفتيه هي ۱٤ كيلومتر." ,questionText: "هل تحدث هذا المقطع عن مضيق جبل طارق ؟"))
         
-        questions[8] = NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: "يعتزم بنك باركليز البريطاني إغلاق ربع فروعه الحالية في المملكة المتحدة بالإضافة الى تسريح مئات العاملين في قسم الاستثمار المصرفي. فإنه من المتوقع أن يستبدل بنك الإقراض البريطاني منافذ صغيرة في متاجر (أزدا). وتأتي خطة تسريح العمالة إلي جانب ما أعلنه البنك عن خفض ۳۷۰۰ وظيفة في أوائل العام الماضي." ,questionText: "هل تم ذكر بنك باركليز البريطاني في هذا المقطع ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: "يعتزم بنك باركليز البريطاني إغلاق ربع فروعه الحالية في المملكة المتحدة بالإضافة الى تسريح مئات العاملين في قسم الاستثمار المصرفي. فإنه من المتوقع أن يستبدل بنك الإقراض البريطاني منافذ صغيرة في متاجر (أزدا). وتأتي خطة تسريح العمالة إلي جانب ما أعلنه البنك عن خفض ۳۷۰۰ وظيفة في أوائل العام الماضي." ,questionText: "هل تم ذكر بنك باركليز البريطاني في هذا المقطع ؟"))
         
-        questions[9] = NetworkModels.ReadingQuesionModel(numberOfWords:53, answer:0, storyText: "أمرت محكمة في جنوب أفريقيا على النحاتين بإزالة تمثال لأرنب من البرونز تم وضعه بطريقة خفية داخل أذن تمثال لنلسون مانديلا. وقال متحدث باسم المحكمة أن القرار جاء لإعادة الكرامة لتمثال الزعيم الجنوب الأفريقي. و قد وضعوا النحاتين هذا التمثال كنوع من التوقيع لهم كما يفيد الاعتراف بالتعجل في عملية النحت لإنهاء التمثال." ,questionText: "هل تم ذكر تمثال سلحفاه في هذا المقطع ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:53, answer:0, storyText: "أمرت محكمة في جنوب أفريقيا على النحاتين بإزالة تمثال لأرنب من البرونز تم وضعه بطريقة خفية داخل أذن تمثال لنلسون مانديلا. وقال متحدث باسم المحكمة أن القرار جاء لإعادة الكرامة لتمثال الزعيم الجنوب الأفريقي. و قد وضعوا النحاتين هذا التمثال كنوع من التوقيع لهم كما يفيد الاعتراف بالتعجل في عملية النحت لإنهاء التمثال." ,questionText: "هل تم ذكر تمثال سلحفاه في هذا المقطع ؟"))
         
-        questions[10] = NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: " يعتقد باحثون أمريكون ان استخدام المبيدات الحشرية قد تعزز الإصابة بمرض الزهايمر. واظهرت الدراسات أن نسبة وجود مركب (DDT)  في اجسام المرضي المصابين بالزهايمر تصل لأربعة أضعاف النسب المرصودة لدي الإحصاءات ولكن مركز ابحاث الزهايمر ببريطانيا أكد أنه لا زالت هناك حاجة إلي توفير أدلة علمية اكثر لإثبات وجود علاقة." ,questionText: "هل تحدث هذا المقطع عن مرض الزهايمر ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:50, answer:1, storyText: " يعتقد باحثون أمريكون ان استخدام المبيدات الحشرية قد تعزز الإصابة بمرض الزهايمر. واظهرت الدراسات أن نسبة وجود مركب (DDT)  في اجسام المرضي المصابين بالزهايمر تصل لأربعة أضعاف النسب المرصودة لدي الإحصاءات ولكن مركز ابحاث الزهايمر ببريطانيا أكد أنه لا زالت هناك حاجة إلي توفير أدلة علمية اكثر لإثبات وجود علاقة." ,questionText: "هل تحدث هذا المقطع عن مرض الزهايمر ؟"))
         
-        questions[11] = NetworkModels.ReadingQuesionModel(numberOfWords:53, answer:0, storyText: "منذ اليوم الأول تحول جهاز (الآي بود) الذي اطلقتة شركة أبل في ۲۰۰۱ إلي أيقونة في عالم التكنولوجيا. فقد تميز (الآي بود) بتصميمه ذي العجلة المميزة التى يمكن النقر عليها، وسماعاته البيضاء المتوفرة بسهولة، إذ جعل من أجهزة الصوتيات النقالة نسخة جذابة واكثر تطوراً مقارنة بمشغل (الووك مان) الذي أطلقته شركتة سوني قديماً." ,questionText: "هل تحدث هذا المقطع عن جهاز الكمبيوتر ؟")
+        questions.append(NetworkModels.ReadingQuesionModel(numberOfWords:53, answer:0, storyText: "منذ اليوم الأول تحول جهاز (الآي بود) الذي اطلقتة شركة أبل في ۲۰۰۱ إلي أيقونة في عالم التكنولوجيا. فقد تميز (الآي بود) بتصميمه ذي العجلة المميزة التى يمكن النقر عليها، وسماعاته البيضاء المتوفرة بسهولة، إذ جعل من أجهزة الصوتيات النقالة نسخة جذابة واكثر تطوراً مقارنة بمشغل (الووك مان) الذي أطلقته شركتة سوني قديماً." ,questionText: "هل تحدث هذا المقطع عن جهاز الكمبيوتر ؟"))
         
     }
     
@@ -239,7 +239,7 @@ class ReadingTestVC: UIViewController{
     
     @IBAction private func answerBtn(_ sender: UIButton){
         audioPlayer = nil
-        result[currentStage-1] = NetworkModels.ReadingResultModel(answer: sender.tag == questions[currentQuestion].answer ? 1 : 0, questionNo: currentQuestion, readingTime: Float(( -1 * currentReadingTime!)))
+        result[currentStage-1] = NetworkModels.ReadingRequestModel(answer: sender.tag == questions[currentQuestion].answer ? 1 : 0, questionNo: currentQuestion, readingTime: Float(( -1 * currentReadingTime!)))
         if(currentStage < 3){
             currentStage+=1
             self.StoryText.isHidden = true
@@ -252,11 +252,13 @@ class ReadingTestVC: UIViewController{
             doResultsMagic()
         }
     }
-    
-    @IBAction private func nextBtn(){}
-    
+        
     @IBAction private func nextTestBtn(){
-        Helpers.popToTestsController()
+        self.popToTestsController()
+    }
+    
+    func popToTestsController(){
+        self.navigationController?.popViewController(animated: true)
     }
     
 
@@ -299,7 +301,7 @@ class ReadingTestVC: UIViewController{
             let alert = CustomAlertView.init(title: "هل تريد إلغاء الاختبار ؟", buttonOKTitle: "نعم، إلغي الاختبار", buttonCancelTitle: "عودة للاختبار", delegate: self, tag: 3)
             alert?.show()
         }else{
-            Helpers.popToTestsController()
+            self.popToTestsController()
         }
     }
     
@@ -390,7 +392,7 @@ extension ReadingTestVC: CustomAlertViewDelegate {
             case   3: // Existing alert
                 if (index == 0) {
                     //back to tests dashboard
-                    Helpers.popToTestsController()
+                    self.popToTestsController()
                 }
                 break
         default:

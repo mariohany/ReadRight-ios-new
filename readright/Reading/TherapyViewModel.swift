@@ -19,21 +19,22 @@ class TherapyViewModel {
     let disposeBag = DisposeBag()
     var error = BehaviorRelay<String>(value: "")
     var isLoading = BehaviorRelay<Bool>(value: false)
-//    var searchResult = BehaviorRelay<[NetworkModels.HistoryItem]?>(value: nil)
+    var therapyResult = BehaviorRelay<NetworkModels.SubmitTherapyResponse?>(value: nil)
+    var status = BehaviorRelay<Int?>(value: nil)
+    var bookResult = BehaviorRelay<[NetworkModels.Book]>(value: [])
+    var chapterResult = BehaviorRelay<[NetworkModels.Chapter]>(value: [])
     
     func submitTherapyInterval(){
         self.isLoading.accept(true)
         provider.request(.GetSearchTestHistory)
-            .map(NetworkModels.ResultsBaseModel.self)
+            .map(NetworkModels.SubmitTherapyResponse.self)
             .subscribe { (result) in
                 self.isLoading.accept(false)
                 switch result {
-                case .success(let response): break
-//                        if let response = response.History {
-//                            self.searchResult.accept(response)
-//                        }
+                    case .success(let response):
+                        self.therapyResult.accept(response)
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }
@@ -41,16 +42,14 @@ class TherapyViewModel {
     func requestBooks(){
         self.isLoading.accept(true)
         provider.request(.GetBooks)
-            .map(NetworkModels.Book.self)
+            .map([NetworkModels.Book].self)
             .subscribe { (result) in
                 self.isLoading.accept(false)
                 switch result {
-                case .success(let response): break
-//                        if let response = response.History {
-//                            self.searchResult.accept(response)
-//                        }
+                    case .success(let response):
+                        self.bookResult.accept(response)
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }
@@ -58,16 +57,32 @@ class TherapyViewModel {
     func requestChapters(){
         self.isLoading.accept(true)
         provider.request(.GetChaptersByBook(bookId: readingBookID))
-            .map(NetworkModels.Chapter.self)
+            .map([NetworkModels.Chapter].self)
             .subscribe { (result) in
                 self.isLoading.accept(false)
                 switch result {
-                case .success(let response): break
-//                        if let response = response.History {
-//                            self.searchResult.accept(response)
-//                        }
+                    case .success(let response):
+                        self.chapterResult.accept(response)
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
+                }
+            }.disposed(by: disposeBag)
+    }
+    
+    func getUserInfo(){
+        self.isLoading.accept(true)
+        provider.request(.GetUserInfo)
+            .map(NetworkModels.UserInfo.self)
+            .subscribe { (result) in
+                self.isLoading.accept(false)
+                switch result {
+                    case .success(let response):
+                        if response != nil {
+                            SharedPref.shared.setUserInfo(userInfo: response)
+                            self.status.accept(response.status ?? 1)
+                        }
+                    case .error(let error):
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }

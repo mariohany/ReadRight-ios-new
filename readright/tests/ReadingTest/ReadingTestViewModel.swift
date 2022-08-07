@@ -12,12 +12,12 @@ import RxRelay
 
 
 class ReadingTestViewModel {
-    var tp_Passage1:Float = 0.0
-    var tp_Passage2:Float = 0.0
-    var tp_Passage3:Float = 0.0
-    var tp_Answer1:Bool = false
-    var tp_Answer2:Bool = false
-    var tp_Answer3:Bool = false
+    var tp_Passage1:Int = 0
+    var tp_Passage2:Int = 0
+    var tp_Passage3:Int = 0
+    var tp_Answer1:Int = 0
+    var tp_Answer2:Int = 0
+    var tp_Answer3:Int = 0
     var tp_ReadingSpeed:Int = 0
     var idPassage1:Int = 0
     var idPassage2:Int = 0
@@ -25,7 +25,7 @@ class ReadingTestViewModel {
     let disposeBag = DisposeBag()
     var error = BehaviorRelay<String>(value: "")
     var isLoading = BehaviorRelay<Bool>(value: false)
-    var result = BehaviorRelay<String>(value: "")
+    var result = BehaviorRelay<Bool?>(value: nil)
     
     func submitResult(_ stage:Int) {
         self.isLoading.accept(true)
@@ -35,17 +35,17 @@ class ReadingTestViewModel {
                 self.isLoading.accept(false)
                 switch result {
                     case .success(let response):
-                    if let success = response.success, success {
-                        if let msg = response.message {
-                            self.result.accept(msg)
-                        }
-                    }else{
-                        if let msg = response.message {
-                            self.error.accept(msg)
-                        }
-                    }
+//                    if let success = response.success, success {
+//                        if let msg = response.message {
+                            self.result.accept(true)
+//                        }
+//                    }else{
+//                        if let msg = response.message {
+//                            self.error.accept(msg)
+//                        }
+//                    }
                     case .error(let error):
-                        self.error.accept(error.localizedDescription)
+                        self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }
             }.disposed(by: disposeBag)
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -618,7 +618,7 @@
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
+                                        <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -793,7 +793,7 @@
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
+                                        <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -842,37 +842,37 @@
     </scenes>
     <designables>
         <designable name="0ih-af-656">
-            <size key="intrinsicContentSize" width="72.5" height="29"/>
+            <size key="intrinsicContentSize" width="68.5" height="25"/>
         </designable>
         <designable name="0q9-hh-sk3">
             <size key="intrinsicContentSize" width="113.5" height="28.5"/>
         </designable>
         <designable name="17U-g8-sQF">
-            <size key="intrinsicContentSize" width="45.5" height="30"/>
+            <size key="intrinsicContentSize" width="41.5" height="26"/>
         </designable>
         <designable name="21u-vn-bV2">
-            <size key="intrinsicContentSize" width="177" height="30"/>
+            <size key="intrinsicContentSize" width="173" height="26"/>
         </designable>
         <designable name="5Ll-5O-ofP">
             <size key="intrinsicContentSize" width="81.5" height="27"/>
         </designable>
         <designable name="5iy-4i-Vhg">
-            <size key="intrinsicContentSize" width="81.5" height="30"/>
+            <size key="intrinsicContentSize" width="77.5" height="26"/>
         </designable>
         <designable name="Jaj-SO-unZ">
-            <size key="intrinsicContentSize" width="135" height="29"/>
+            <size key="intrinsicContentSize" width="131" height="25"/>
         </designable>
         <designable name="LZx-WU-dI6">
-            <size key="intrinsicContentSize" width="39.5" height="30"/>
+            <size key="intrinsicContentSize" width="35.5" height="26"/>
         </designable>
         <designable name="WwL-A2-Vlu">
-            <size key="intrinsicContentSize" width="13" height="30"/>
+            <size key="intrinsicContentSize" width="9" height="26"/>
         </designable>
         <designable name="aUZ-v3-LCt">
-            <size key="intrinsicContentSize" width="102.5" height="30"/>
+            <size key="intrinsicContentSize" width="98.5" height="26"/>
         </designable>
         <designable name="vLq-Tp-XEF">
-            <size key="intrinsicContentSize" width="111.5" height="30"/>
+            <size key="intrinsicContentSize" width="107.5" height="26"/>
         </designable>
     </designables>
     <resources>

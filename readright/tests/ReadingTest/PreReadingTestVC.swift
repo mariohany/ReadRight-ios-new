@@ -20,8 +20,12 @@ class PreReadingTestVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         let backImage = UIImage(named: "TestsBackIcons")?.withRenderingMode(.alwaysOriginal)
-        let barButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: Helpers(), action: #selector(Helpers.popToTestsController))
+        let barButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(popToTestsController))
         self.navigationItem.leftBarButtonItem = barButtonItem
+    }
+    
+    @objc func popToTestsController(){
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

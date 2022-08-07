@@ -203,8 +203,13 @@ class VisualFieldTestVC : UIViewController, CustomAlertViewDelegate {
     }
     
     @IBAction private func nextTestBtn(){
-        Helpers.popToTestsController()
+        self.popToTestsController()
     }
+    
+    func popToTestsController(){
+        self.navigationController?.popViewController(animated: true)
+    }
+
 
     func fillReadyAnswers() {
         answers[0] = "answer1_1,answer1_3,answer1_2,other"
@@ -250,7 +255,7 @@ class VisualFieldTestVC : UIViewController, CustomAlertViewDelegate {
             case   3: // Existing alert
                 if (index == 0) {
                     //back to tests dashboard
-                    Helpers.popToTestsController()
+                    self.popToTestsController()
                 }
                 break
         default:
@@ -260,7 +265,7 @@ class VisualFieldTestVC : UIViewController, CustomAlertViewDelegate {
     
     @objc func customBackBtn(){
         if(isFinished){
-            Helpers.popToTestsController()
+            self.popToTestsController()
         } else {
             let alert = CustomAlertView.init(title: "هل تريد إلغاء الاختبار ؟", buttonOKTitle: "نعم، إلغي الاختبار", buttonCancelTitle: "عودة للاختبار", delegate: self, tag: 3)
             alert?.show()

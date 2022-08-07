@@ -43,7 +43,7 @@
                                     <action selector="ChangeTab:" destination="Y6W-OH-hqX" eventType="valueChanged" id="rb2-dy-W5V"/>
                                 </connections>
                             </segmentedControl>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lan-IY-n9g" userLabel="FieldHistoryView" customClass="CustomView" customModule="CustomViews">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lan-IY-n9g" userLabel="FieldHistoryView" customClass="CustomView" customModule="readright" customModuleProvider="target">
                                 <rect key="frame" x="10" y="75" width="1004" height="669"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ThinTable" translatesAutoresizingMaskIntoConstraints="NO" id="eIG-qm-73N">
@@ -58,7 +58,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calender" translatesAutoresizingMaskIntoConstraints="NO" id="h6S-82-EJc">
                                         <rect key="frame" x="918" y="24" width="32" height="32"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnI-gx-zfl">
+                                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="jnI-gx-zfl">
                                         <rect key="frame" x="24" y="99" width="768.5" height="402"/>
                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -202,11 +202,11 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="39"/>
+                                        <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xp-r3-L0l" userLabel="TherapyHistoryView" customClass="CustomView" customModule="CustomViews">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xp-r3-L0l" userLabel="TherapyHistoryView" customClass="CustomView" customModule="readright" customModuleProvider="target">
                                 <rect key="frame" x="10" y="75" width="1004" height="669"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HistoryTheraPyTable" translatesAutoresizingMaskIntoConstraints="NO" id="EFO-pB-Um3">
@@ -416,11 +416,11 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="39"/>
+                                        <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55s-qE-nDy" userLabel="ChartView" customClass="CustomView" customModule="CustomViews">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55s-qE-nDy" userLabel="ChartView" customClass="CustomView" customModule="readright" customModuleProvider="target">
                                 <rect key="frame" x="10" y="75" width="1004" height="669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كلمة في الدقيقة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwd-5q-9y5">
@@ -443,7 +443,7 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="39"/>
+                                        <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>

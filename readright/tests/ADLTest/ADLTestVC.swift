@@ -85,7 +85,7 @@ class ADLTestVC: UIViewController, CustomAlertViewDelegate {
     func observeSuccess(){
         viewModel.result.subscribe { status in
 //            if let msg = status.element, msg != ""{
-                Helpers.popToTestsController()
+                self.popToTestsController()
 //            }
         }
     }
@@ -350,6 +350,11 @@ func handleNextScenario(){
         largeOrangeImages[5] = "BigOrangeReading"
     }
     
+    func popToTestsController(){
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    
     func didSelectButtonAtIndex(tag: Int, index: Int) {
         switch (tag){
         case 2:// Existing alert
@@ -360,7 +365,7 @@ func handleNextScenario(){
         case 3:// Existing alert
             if (index == 0) {
                 //back to tests dashboard
-                Helpers.popToTestsController()
+                self.popToTestsController()
             }
         default:
             break

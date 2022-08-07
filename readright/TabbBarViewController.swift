@@ -21,7 +21,7 @@ class TabbBarViewController: UITabBarController, UITabBarControllerDelegate {
 //        button.addTarget(action: Selector(logOutUser), for: .touchUpInside)
         let label:UILabel = UILabel(frame: CGRect(x: -107, y: 0, width: 100, height: 20))
         label.font = UIFont(name: "Arial", size: 19)
-        label.text = "currentUser.nickName"
+        label.text = SharedPref.shared.userInfo?.name
         label.textColor = UIColor(red: 221.0/255.0, green: 134.0/255.0, blue: 89.0/255.0, alpha: 1)
         label.textAlignment = .right
         label.backgroundColor = UIColor.clear
@@ -31,7 +31,7 @@ class TabbBarViewController: UITabBarController, UITabBarControllerDelegate {
         let barButton:UIBarButtonItem = UIBarButtonItem(customView: button)
         
         self.navigationItem.rightBarButtonItem = barButton
-//        self.selectedIndex = currentUser.lastVisitedTab;
+//        self.selectedIndex = SharedPref.shared.userInfo.lastVisitedTab;
     
         self.delegate = self
 //        self.tabBar.items?[0].title = ""

@@ -17,10 +17,15 @@ class PrepareADLTestVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let backImage = UIImage(named: "TestsBackIcons")?.withRenderingMode(.alwaysOriginal)
-        let barButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: Helpers.self, action: #selector(Helpers.popToTestsController))
+        let barButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(popToTestsController))
         
         self.navigationItem.leftBarButtonItem = barButtonItem
     }
+    
+    @objc func popToTestsController(){
+        self.navigationController?.popViewController(animated: true)
+    }
+
 
     override func viewDidAppear(_ animated:Bool){
         super.viewDidAppear(animated)

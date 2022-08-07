@@ -10,11 +10,11 @@ import UIKit
 public struct Constants {
     
 //    static let baseURL:URL = URL(string: "https://arabic-readright.com")!
-    static let baseURL:URL = URL(string: "http://localhost:8000/api/v1/")!
+    static let baseURL:URL = URL(string: "http://188.166.23.205:8000/api/v1/")!
     static let TOUR_SLIDES:Int = 29
     static let TOUR_VOICE_OVER_ARRAY:[String] = ["tour1.mp3","tour2.mp3","tour3.mp3","tour4.mp3","tour5.mp3","tour6.mp3","tour7.mp3","tour8.mp3","tour9.mp3","tour10.mp3","tour11.mp3","tour12.mp3","tour13.mp3","tour14.mp3","tour15.mp3","tour16.mp3","tour17.mp3","tour18.mp3","tour19.mp3","tour20.mp3","tour21.mp3","tour22.mp3","tour23.mp3","tour24.mp3","tour25.mp3","tour26.mp3","tour27.mp3","tour28.mp3","tour29.mp3","tour30.mp3"]
     static let HISTORY_EMPTY = "لا يوجد نتائج!"
-    
+    	
 
 
     static let TESTS_INTRO_VOICE_OVER = "testsIntro.mp3"

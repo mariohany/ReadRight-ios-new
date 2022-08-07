@@ -37,7 +37,7 @@
             <objects>
                 <navigationController id="LwC-hZ-Jmz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="حسابي" image="MyAccount" landscapeImage="MyAccount" largeContentSizeImage="MyAccount" selectedImage="MyAccount" id="Czb-rB-ATm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="RX2-FU-qjH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RX2-FU-qjH">
                         <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -59,7 +59,7 @@
         <scene sceneID="SKf-sV-aSN">
             <objects>
                 <navigationController id="Mkm-dl-1sB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="نظرة عامة" image="Star" landscapeImage="Star" largeContentSizeImage="Star" id="awX-fZ-oDM"/>
+                    <tabBarItem key="tabBarItem" title="نظرة عامة" image="Star" landscapeImage="Star" largeContentSizeImage="Star" selectedImage="Star" id="awX-fZ-oDM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="TmB-Pa-9PN">
                         <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
