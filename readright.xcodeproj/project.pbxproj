@@ -135,7 +135,7 @@
 		E8227DBE28889F9000DC3180 /* VisualNeglectTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8227DBD28889F9000DC3180 /* VisualNeglectTest.storyboard */; };
 		E82866212888D27D00C48D39 /* VisualNeglectTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82866202888D27D00C48D39 /* VisualNeglectTestVC.swift */; };
 		E82A4467289DC1B5009396B3 /* SearchCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82A4466289DC1B5009396B3 /* SearchCanvasView.swift */; };
-		E8347C4C288B85700098D910 /* NeglectCanvas.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8347C49288B85700098D910 /* NeglectCanvas.xib */; };
+		E8347C4C288B85700098D910 /* NeglectCanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8347C49288B85700098D910 /* NeglectCanvasView.xib */; };
 		E840A3B028880C79006F6130 /* SearchTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E840A3AF28880C79006F6130 /* SearchTest.storyboard */; };
 		E849973D288AE839004B54BF /* NeglectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849973C288AE839004B54BF /* NeglectViewModel.swift */; };
 		E855598A287D8F8500F79FC8 /* VisualFieldTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */; };
@@ -303,7 +303,7 @@
 		E8227DBD28889F9000DC3180 /* VisualNeglectTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VisualNeglectTest.storyboard; path = readright/tests/SearchTest/VisualNeglectTest.storyboard; sourceTree = SOURCE_ROOT; };
 		E82866202888D27D00C48D39 /* VisualNeglectTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualNeglectTestVC.swift; path = readright/tests/SearchTest/VisualNeglectTestVC.swift; sourceTree = SOURCE_ROOT; };
 		E82A4466289DC1B5009396B3 /* SearchCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCanvasView.swift; sourceTree = "<group>"; };
-		E8347C49288B85700098D910 /* NeglectCanvas.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NeglectCanvas.xib; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/NeglectCanvas.xib"; sourceTree = "<group>"; };
+		E8347C49288B85700098D910 /* NeglectCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NeglectCanvasView.xib; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/NeglectCanvasView.xib"; sourceTree = "<group>"; };
 		E840A3AF28880C79006F6130 /* SearchTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTest.storyboard; sourceTree = "<group>"; };
 		E849973C288AE839004B54BF /* NeglectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeglectViewModel.swift; sourceTree = "<group>"; };
 		E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualFieldTestVC.swift; path = readright/tests/ReadingTest/VisualFieldTestVC.swift; sourceTree = SOURCE_ROOT; };
@@ -765,7 +765,7 @@
 		E8347C48288B85370098D910 /* NeglectCanvasView */ = {
 			isa = PBXGroup;
 			children = (
-				E8347C49288B85700098D910 /* NeglectCanvas.xib */,
+				E8347C49288B85700098D910 /* NeglectCanvasView.xib */,
 				E870B5BB28AE9DDD00142D6C /* NeglectCanvasView.swift */,
 			);
 			path = NeglectCanvasView;
@@ -863,7 +863,7 @@
 				5C0630922777646D007E8E59 /* tour9.mp3 in Resources */,
 				5C0630892777646D007E8E59 /* tour29.mp3 in Resources */,
 				5C0630BD27776ACE007E8E59 /* instructionsVisualField1.mp3 in Resources */,
-				E8347C4C288B85700098D910 /* NeglectCanvas.xib in Resources */,
+				E8347C4C288B85700098D910 /* NeglectCanvasView.xib in Resources */,
 				5C06306327776447007E8E59 /* prepareSearch.mp3 in Resources */,
 				5C0630592777642B007E8E59 /* readingQ5.mp3 in Resources */,
 				5C0630982777646D007E8E59 /* tour12.mp3 in Resources */,

@@ -163,10 +163,10 @@ class VisualNeglectTestVC: UIViewController {
         viewModel.numRevisits = (targetRevisitsCount + distractorsRevisitsCount)
         viewModel.numRevisitsLeft = (numRevisitsLeft)
         viewModel.numRevisitsRight = (numRevisitsRight)
-        viewModel.elements = testCanvas?.getElements() as! [NetworkModels.Elements]
+        viewModel.elements = testCanvas?.getElements() ?? []
         viewModel.meanX = (vnt_X)
         viewModel.meanY = (vnt_Y)
-        viewModel.hitsPath = testCanvas?.getHitsPath() as! [NetworkModels.HitsPath]
+        viewModel.hitsPath = testCanvas?.getHitsPath() ?? []
         
         viewModel.submitResult()
     }

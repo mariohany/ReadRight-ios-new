@@ -148,9 +148,9 @@ struct NetworkModels {
         let nodesHits:[NodesHits]
         
         enum CodingKeys: String, CodingKey {
-            case duration = "Duration"
-            case nodesAnswers = "NodesAnswers"
-            case nodesHits = "NodesHits"
+            case duration = "duration"
+            case nodesAnswers = "node_answers"
+            case nodesHits = "node_hits"
         }
     }
     
@@ -158,9 +158,9 @@ struct NetworkModels {
         let question, nodeNo, answer:Int
         
         enum CodingKeys: String, CodingKey {
-            case question = "Question"
-            case nodeNo = "NodeNo"
-            case answer = "Answer"
+            case question = "question"
+            case nodeNo = "node_number"
+            case answer = "answer"
         }
     }
 
@@ -168,9 +168,9 @@ struct NetworkModels {
         let dot, shown, hit:Int
         
         enum CodingKeys: String, CodingKey {
-            case dot = "Dot"
-            case shown = "Shown"
-            case hit = "Hit"
+            case dot = "dot"
+            case shown = "shown"
+            case hit = "hit"
         }
     }
     

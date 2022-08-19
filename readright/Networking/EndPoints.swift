@@ -147,12 +147,8 @@ extension Endpoint: TargetType {
             ]
             return .requestParameters(parameters: params as [String : Any], encoding: JSONEncoding.default)
         case .SubmitVisualFieldTest(let model):
-            let params:[String : Any] = ["duration": model.duration,
-                                          "node_answers": model.nodesAnswers,
-                                          "node_hits": model.nodesHits
-            ]
-            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-            
+            let dataRequest = try! JSONEncoder().encode(model)
+            return .requestJSONEncodable(dataRequest)
         case .SubmitADLTest(let driving, let readingNews, let hygiene, let readingBooks, let enjoyReading, let findThings):
             let params:[String : Any] = ["driving": driving,
                                         "reading_news": readingNews,
@@ -168,6 +164,9 @@ extension Endpoint: TargetType {
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         case .SubmitVisualNeglectTest(let score, let duration, let targets, let distractors, let revisits, let x, let y, let numTotalTargets, let numTotalDistractors, let numTargetsMissed, let numTargetsMissedLeft, let numTargetsMissedRight, let numRevisits, let numRevisitsLeft, let numRevisitsRight, let meanXTargets, let meanYTargets, let elements, let hitsPath):
+            
+            let elemntsData = try! JSONEncoder().encode(elements)
+            let hitsPathData = try! JSONEncoder().encode(hitsPath)
             let params:[String : Any] = ["score": score,
                                          "duration": duration,
                                          "targets": targets,
@@ -185,9 +184,10 @@ extension Endpoint: TargetType {
                                          "num_revisits_r" : numRevisitsRight,
                                          "mean_x_targets" : meanXTargets,
                                          "mean_y_targets" : meanYTargets,
-                                         "elements" : elements,
-                                         "hits_path" : hitsPath
+                                         "elements" : elemntsData,
+                                         "hits_path" : hitsPathData
             ]
+            
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
