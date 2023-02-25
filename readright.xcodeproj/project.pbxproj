@@ -299,16 +299,16 @@
 		D8404996290AE2FE009ECC3E /* SearchCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCanvasView.xib; sourceTree = "<group>"; };
 		D8B2D71629119C1400E27EBD /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		D8F413842912912B0001D021 /* VisualCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisualCanvasView.xib; sourceTree = "<group>"; };
-		E8192755287C3B4200FFB24C /* PrepareVisualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrepareVisualVC.swift; path = readright/tests/ReadingTest/PrepareVisualVC.swift; sourceTree = SOURCE_ROOT; };
-		E8192759287C3C4C00FFB24C /* InstructionsVisual.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InstructionsVisual.xib; path = readright/tests/ReadingTest/InstructionsVisual.xib; sourceTree = SOURCE_ROOT; };
+		E8192755287C3B4200FFB24C /* PrepareVisualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrepareVisualVC.swift; path = readright/tests/VisualFieldTest/PrepareVisualVC.swift; sourceTree = SOURCE_ROOT; };
+		E8192759287C3C4C00FFB24C /* InstructionsVisual.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InstructionsVisual.xib; path = readright/tests/VisualFieldTest/InstructionsVisual.xib; sourceTree = SOURCE_ROOT; };
 		E8227DBD28889F9000DC3180 /* VisualNeglectTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VisualNeglectTest.storyboard; path = readright/tests/SearchTest/VisualNeglectTest.storyboard; sourceTree = SOURCE_ROOT; };
 		E82866202888D27D00C48D39 /* VisualNeglectTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualNeglectTestVC.swift; path = readright/tests/SearchTest/VisualNeglectTestVC.swift; sourceTree = SOURCE_ROOT; };
 		E82A4466289DC1B5009396B3 /* SearchCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCanvasView.swift; sourceTree = "<group>"; };
 		E840A3AF28880C79006F6130 /* SearchTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTest.storyboard; sourceTree = "<group>"; };
 		E849973C288AE839004B54BF /* NeglectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeglectViewModel.swift; sourceTree = "<group>"; };
-		E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualFieldTestVC.swift; path = readright/tests/ReadingTest/VisualFieldTestVC.swift; sourceTree = SOURCE_ROOT; };
-		E855598B287DAA9A00F79FC8 /* VisualFIeldTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualFIeldTestViewModel.swift; path = readright/tests/ReadingTest/VisualFIeldTestViewModel.swift; sourceTree = SOURCE_ROOT; };
-		E86A7660287B46B900DB63E9 /* VisualFieldTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VisualFieldTest.storyboard; path = readright/tests/ReadingTest/VisualFieldTest.storyboard; sourceTree = SOURCE_ROOT; };
+		E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualFieldTestVC.swift; path = readright/tests/VisualFieldTest/VisualFieldTestVC.swift; sourceTree = SOURCE_ROOT; };
+		E855598B287DAA9A00F79FC8 /* VisualFIeldTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualFIeldTestViewModel.swift; path = readright/tests/VisualFieldTest/VisualFIeldTestViewModel.swift; sourceTree = SOURCE_ROOT; };
+		E86A7660287B46B900DB63E9 /* VisualFieldTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VisualFieldTest.storyboard; path = readright/tests/VisualFieldTest/VisualFieldTest.storyboard; sourceTree = SOURCE_ROOT; };
 		E870B5BB28AE9DDD00142D6C /* NeglectCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeglectCanvasView.swift; sourceTree = "<group>"; };
 		E8791179287E5D92003E97E5 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		E879117B287E5F11003E97E5 /* PrepareADLTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrepareADLTestVC.swift; path = readright/tests/ADLTest/PrepareADLTestVC.swift; sourceTree = SOURCE_ROOT; };
@@ -628,6 +628,7 @@
 		5CBB0FA228214EBF0015E2C3 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				D84CBD0229AA76500021D480 /* VisualFieldTest */,
 				5CBB0FA7282152280015E2C3 /* SearchTest */,
 				5CBB0FA6282152100015E2C3 /* ADLTest */,
 				5CBB0FA5282151FE0015E2C3 /* NeglectTest */,
@@ -651,11 +652,6 @@
 		5CBB0FA4282151F00015E2C3 /* VisualFieldTest */ = {
 			isa = PBXGroup;
 			children = (
-				E86A7660287B46B900DB63E9 /* VisualFieldTest.storyboard */,
-				E8192755287C3B4200FFB24C /* PrepareVisualVC.swift */,
-				E8192759287C3C4C00FFB24C /* InstructionsVisual.xib */,
-				E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */,
-				E855598B287DAA9A00F79FC8 /* VisualFIeldTestViewModel.swift */,
 			);
 			path = VisualFieldTest;
 			sourceTree = "<group>";
@@ -758,6 +754,18 @@
 				12BB5361F981A8F125290085 /* Pods-readright.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D84CBD0229AA76500021D480 /* VisualFieldTest */ = {
+			isa = PBXGroup;
+			children = (
+				E86A7660287B46B900DB63E9 /* VisualFieldTest.storyboard */,
+				E8192755287C3B4200FFB24C /* PrepareVisualVC.swift */,
+				E8192759287C3C4C00FFB24C /* InstructionsVisual.xib */,
+				E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */,
+				E855598B287DAA9A00F79FC8 /* VisualFIeldTestViewModel.swift */,
+			);
+			path = VisualFieldTest;
 			sourceTree = "<group>";
 		};
 		E8347C48288B85370098D910 /* NeglectCanvasView */ = {
