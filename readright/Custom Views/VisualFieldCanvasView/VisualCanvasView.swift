@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class VisualCanavasView: UIView {
+class VisualCanvasView: UIView {
     @IBOutlet weak private var crossHair: UIImageView!
     
     @IBOutlet weak private var dot1_1: CustomView!
@@ -38,27 +38,24 @@ class VisualCanavasView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-//        Bundle.main.loadNibNamed("CanvasView", owner: self, options: nil)
     }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
-//        Bundle.main.loadNibNamed("CanvasView", owner: self, options: nil)
     }
-//    convenience init(){
-//        self.init()
-//        Bundle.main.loadNibNamed("CanvasView", owner: self, options: nil)
-//    }
+
     
     func peformQuestion(views:[UIView], showAnswers: @escaping (_ finished:Bool) -> Void) {
         doStartAnimation { finished in
             self.setAllDotsAlphas()
             self.setAllDotsHidden(isHidden: true)
             self.setHiddenViews(views: views, isHidden: false)
-            UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.setViewsAlpha(views: views, alpha: 0)
             }, completion: { finished in
-                let delayInSeconds = 2.0
-                DispatchQueue.main.asyncAfter(deadline: .now() + (delayInSeconds * Double(NSEC_PER_SEC))) {
+                let delay: UInt64 = 2 * NSEC_PER_SEC
+                let now: UInt64 = DispatchTime.now().uptimeNanoseconds
+                DispatchQueue.main.asyncAfter(deadline: .init(uptimeNanoseconds: UInt64(now + delay))) {
                     showAnswers(finished)
                 }
             })

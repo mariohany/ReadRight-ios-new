@@ -321,8 +321,8 @@ class MyAccountVC: UIViewController, UITextFieldDelegate{
         startMonthField.text = userInfo.vpStartDate?.split(separator: "/").first?.lowercased() ?? ""
         
         switch userInfo.gender {
-        case 1: maleAction()
-        case 2: femaleAction()
+        case "M": maleAction()
+        case "F": femaleAction()
         default: break
         }
         

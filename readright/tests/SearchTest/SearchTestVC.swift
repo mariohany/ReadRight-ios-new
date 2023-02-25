@@ -20,20 +20,20 @@ class SearchTestVC: UIViewController {
     @IBOutlet weak private var TestView: CustomView!
     
     var currentCanvasView:SearchCanvasView = .fromNib()
-    var currentTargetTag:Int = 0
-    var targetsDirections:[Int] = []
-    var targetsDirectionsBackup:[Int] = []
-    var directionsResult:[Int] = []
-    var result:[Float] = []
-    var currentRound:Int?
-    var practicalRound:Int?
-    var isFinished:Bool?
+    var currentTargetTag:Int = 6
+    var targetsDirections:[Int] = Array(repeating: 0, count: NUMBER_OF_TARGETS)
+    var targetsDirectionsBackup:[Int] = Array(repeating: 0, count: NUMBER_OF_TARGETS)
+    var directionsResult:[Int] = Array(repeating: 0, count: NUMBER_OF_TARGETS+1)
+    var result:[Float] = Array(repeating: 0, count: NUMBER_OF_TARGETS+1)
+    var currentRound:Int = 1
+    var practicalRound:Int = 0
+    var isFinished:Bool = false
     let viewModel: SearchTestViewModel = SearchTestViewModel()
     var updatingTimer:Timer?
-    var totalTime:Int? //intially is 1 min (100s)
-    var unAttended:Int?
-    var passedRounds:Int?
-    var testDuration:Float?
+    var totalTime:Int = 60 //intially is 1 min (60s)
+    var unAttended:Int = 0
+    var passedRounds:Int = 0
+    var testDuration:Float = 0
     var stopWatch:Date?
     var stopWatchForWholeTest:Date?
     
@@ -48,7 +48,6 @@ class SearchTestVC: UIViewController {
         let barButtonItem = UIBarButtonItem(image:backImage, style:.plain, target:self, action:#selector(customBackBtn))
         self.navigationItem.leftBarButtonItem = barButtonItem
         
-        isFinished = false
         self.TestView.isHidden = false
         self.ResultView.isHidden = true
         
@@ -56,14 +55,7 @@ class SearchTestVC: UIViewController {
         currentCanvasView.numberOfTargets = NUMBER_OF_TARGETS
         self.CanvasView.addSubview(currentCanvasView)
         
-        currentTargetTag = 6
-        passedRounds = 0
-        currentRound = 1
-        totalTime = 60 //1 min = 60 sec
-        unAttended = 0
-        practicalRound = 0
-        testDuration = 0
-        self.RoundNumber.text =  Helpers.arabicCharacter(englishNumber: currentRound!)
+        self.RoundNumber.text =  Helpers.arabicCharacter(englishNumber: currentRound)
         
         let x = arc4random_uniform(2)
         leftTrial = x == 1
@@ -77,10 +69,10 @@ class SearchTestVC: UIViewController {
     
     func observeSuccess(){
         viewModel.result.subscribe { status in
-//            if let msg = status.element, msg != ""{
-            self.isFinished = true
-            self.showResults()
-//            }
+            if let msg = status.element, msg != ""{
+                self.isFinished = true
+                self.showResults()
+            }
         }
     }
     
@@ -124,10 +116,10 @@ class SearchTestVC: UIViewController {
     }
 
     @objc func doNextRound(){
-        currentRound!+=1
+        currentRound+=1
         updatingTimer?.invalidate()
         
-        if(currentRound! > 17){
+        if(currentRound > 17){
             testDuration = -1 * Float(stopWatchForWholeTest!.timeIntervalSinceNow)
             self.handleViewModel()
         }else{
@@ -135,7 +127,7 @@ class SearchTestVC: UIViewController {
             totalTime = 60
             self.getNextTarget()
             
-            self.RoundNumber.text =  Helpers.arabicCharacter(englishNumber: currentRound!)
+            self.RoundNumber.text =  Helpers.arabicCharacter(englishNumber: currentRound)
             
             let alert = CustomAlertView(title:"الهدف الخاص بك هو: ", messageImage:UIImage(named:SearchTestHelper.getItemName(currentTargetTag))!, buttonTitle:"أنا مستعد", delegate:self, tag:0)
             alert?.show()
@@ -149,13 +141,16 @@ class SearchTestVC: UIViewController {
 
 
     func handleViewModel(){
-        var itemTimes:[Float] = Array.init(repeating: 0.0, count: NUMBER_OF_TARGETS + 1)
+        var itemTimes:[Double] = Array.init(repeating: 0.0, count: NUMBER_OF_TARGETS + 1)
         
         for i in 0 ..< NUMBER_OF_TARGETS {
-            itemTimes[i] = result[i]
+            let item = result[i].myRound()
+            itemTimes[i] = item
         }
-        viewModel.vst_score = passedRounds! + practicalRound!
-        viewModel.vst_duration = testDuration ?? 0
+        viewModel.vst_score = passedRounds + practicalRound
+        
+        let duration = testDuration.myRound()
+        viewModel.vst_duration = duration
         
         viewModel.submitResult(directionsResult, itemTimes)
     }
@@ -165,7 +160,7 @@ class SearchTestVC: UIViewController {
         self.TestView.isHidden = true
         self.ResultView.isHidden = false
         
-        self.PassedRoundsLabel.text = String(format:"%d",passedRounds! + practicalRound!)
+        self.PassedRoundsLabel.text = String(format:"%d",passedRounds + practicalRound)
         self.AverageRTLabel.text = String(format:"%.2f", averageRT())
     }
 
@@ -175,7 +170,7 @@ class SearchTestVC: UIViewController {
         for i in 0 ..< NUMBER_OF_TARGETS {
             averageRT = averageRT + result[i]
         }
-        averageRT = averageRT / Float((passedRounds! - practicalRound!))
+        averageRT = averageRT / Float((passedRounds - practicalRound))
         return averageRT
     }
 
@@ -186,21 +181,21 @@ class SearchTestVC: UIViewController {
     
     
     @objc func updateTimeLabel(_ timer:Timer) {
-        totalTime!-=1
+        totalTime-=1
         
-        self.Timelabel.text = String(format: "%02d:%02d", totalTime!/60, totalTime! % 60)
+        self.Timelabel.text = String(format: "%02d:%02d", totalTime/60, totalTime % 60)
         if(totalTime == 0){
             //hanlde finish of test
             updatingTimer?.invalidate()
             updatingTimer = nil
             
-            unAttended!+=1
-            if(unAttended! >= TRIAL_FOR_LEAVING){
+            unAttended+=1
+            if(unAttended >= TRIAL_FOR_LEAVING){
                 updatingTimer?.invalidate()
                 self.popToTestsController()
             }
             
-            directionsResult[currentRound! - 1] = targetsDirectionsBackup[currentTargetTag]
+            directionsResult[currentRound - 1] = targetsDirectionsBackup[currentTargetTag]
             self.doNextRound()
         }
         
@@ -259,7 +254,7 @@ extension SearchTestVC : CustomAlertViewDelegate {
         switch (tag) {
             case 0: // Showing target alert
                 if (index == 0) {
-                    updatingTimer = Timer(timeInterval: 1, target: self, selector:#selector(updateTimeLabel), userInfo: nil, repeats: true)
+                    updatingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(updateTimeLabel), userInfo: nil, repeats: true)
                     stopWatch = Date()
                     if(currentRound == 1){
                         stopWatchForWholeTest = Date()
@@ -287,11 +282,11 @@ extension SearchTestVC: SearchCanvasViewDelegate {
                 if(currentRound == 1){
                     directionsResult[0] = leftTrial == true ? 1: -1
                 }else{
-                    directionsResult[currentRound! - 1] = targetsDirectionsBackup[currentTargetTag]
+                    directionsResult[currentRound - 1] = targetsDirectionsBackup[currentTargetTag]
                 }
-                result[currentRound! - 1] = Float(-1 * stopWatch!.timeIntervalSinceNow)
+                result[currentRound - 1] = Float(-1 * stopWatch!.timeIntervalSinceNow)
 
-                passedRounds!+=1
+                passedRounds+=1
                 
                 currentCanvasView.doCorrectItem(tag)
                 

@@ -75,7 +75,6 @@
 		5C08E4DD27F26B9700B017C6 /* ColorDialogueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C08E4DC27F26B9700B017C6 /* ColorDialogueView.xib */; };
 		5C08E4DF27F26BBB00B017C6 /* ColorDialogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C08E4DE27F26BBB00B017C6 /* ColorDialogueView.swift */; };
 		5C0D585727D81A4F008F03DA /* FieldResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0D585627D81A4F008F03DA /* FieldResultView.xib */; };
-		5C0D585927D81A92008F03DA /* VisualCanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0D585827D81A92008F03DA /* VisualCanvasView.xib */; };
 		5C1817742752B5C300AEF0B0 /* TabbBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1817732752B5C300AEF0B0 /* TabbBarViewController.swift */; };
 		5C1817762752BA7300AEF0B0 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1817752752BA7300AEF0B0 /* Help.storyboard */; };
 		5C1817782752BB0C00AEF0B0 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1817772752BB0C00AEF0B0 /* MyAccount.storyboard */; };
@@ -127,15 +126,17 @@
 		5CEB09FB27CABC0D00DDC612 /* TherapyHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEB09FA27CABC0D00DDC612 /* TherapyHistoryCell.swift */; };
 		5CEB09FD27CABFA800DDC612 /* FieldHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEB09FC27CABFA700DDC612 /* FieldHistoryCell.swift */; };
 		5CEB0A0227CAF70700DDC612 /* SimpleBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEB0A0127CAF70700DDC612 /* SimpleBarChart.m */; };
+		D8404992290ADE7C009ECC3E /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = D840498F290ADE7C009ECC3E /* CustomSlider.m */; };
+		D8404993290ADE7C009ECC3E /* DragableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8404990290ADE7C009ECC3E /* DragableImageView.m */; };
+		D8404995290ADF43009ECC3E /* NeglectCanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8404994290ADF43009ECC3E /* NeglectCanvasView.xib */; };
+		D8404997290AE2FE009ECC3E /* SearchCanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8404996290AE2FE009ECC3E /* SearchCanvasView.xib */; };
+		D8B2D71729119C1400E27EBD /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B2D71629119C1400E27EBD /* CustomPageControl.swift */; };
+		D8F413852912912B0001D021 /* VisualCanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F413842912912B0001D021 /* VisualCanvasView.xib */; };
 		E8192756287C3B4200FFB24C /* PrepareVisualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8192755287C3B4200FFB24C /* PrepareVisualVC.swift */; };
 		E819275A287C3C4C00FFB24C /* InstructionsVisual.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8192759287C3C4C00FFB24C /* InstructionsVisual.xib */; };
-		E819275F287C45F100FFB24C /* DragableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E819275C287C45F100FFB24C /* DragableImageView.m */; };
-		E8192760287C45F100FFB24C /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = E819275D287C45F100FFB24C /* CustomSlider.m */; };
-		E8192763287C462400FFB24C /* CustomPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E8192761287C462400FFB24C /* CustomPageControl.m */; };
 		E8227DBE28889F9000DC3180 /* VisualNeglectTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8227DBD28889F9000DC3180 /* VisualNeglectTest.storyboard */; };
 		E82866212888D27D00C48D39 /* VisualNeglectTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82866202888D27D00C48D39 /* VisualNeglectTestVC.swift */; };
 		E82A4467289DC1B5009396B3 /* SearchCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82A4466289DC1B5009396B3 /* SearchCanvasView.swift */; };
-		E8347C4C288B85700098D910 /* NeglectCanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8347C49288B85700098D910 /* NeglectCanvasView.xib */; };
 		E840A3B028880C79006F6130 /* SearchTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E840A3AF28880C79006F6130 /* SearchTest.storyboard */; };
 		E849973D288AE839004B54BF /* NeglectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E849973C288AE839004B54BF /* NeglectViewModel.swift */; };
 		E855598A287D8F8500F79FC8 /* VisualFieldTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */; };
@@ -152,7 +153,6 @@
 		E8B3613928836F98009C1C9A /* ADLTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8B3613828836F98009C1C9A /* ADLTest.storyboard */; };
 		E8E34A532884B34800467E4B /* PrepareSearchTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E34A522884B34800467E4B /* PrepareSearchTestVC.swift */; };
 		E8E34A552884B61E00467E4B /* SearchTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E34A542884B61E00467E4B /* SearchTestVC.swift */; };
-		E8E34A5D2884BB5100467E4B /* SearchCanvasView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E34A5A2884BB5100467E4B /* SearchCanvasView.xib */; };
 		E8E34A5F2884C2A200467E4B /* SearchTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E34A5E2884C2A200467E4B /* SearchTestHelper.swift */; };
 		E8E34A612884CD2800467E4B /* SearchTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E34A602884CD2800467E4B /* SearchTestViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -227,7 +227,6 @@
 		5C08E4DC27F26B9700B017C6 /* ColorDialogueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorDialogueView.xib; sourceTree = "<group>"; };
 		5C08E4DE27F26BBB00B017C6 /* ColorDialogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDialogueView.swift; sourceTree = "<group>"; };
 		5C0D585627D81A4F008F03DA /* FieldResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FieldResultView.xib; sourceTree = "<group>"; };
-		5C0D585827D81A92008F03DA /* VisualCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisualCanvasView.xib; sourceTree = "<group>"; };
 		5C1817732752B5C300AEF0B0 /* TabbBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbBarViewController.swift; sourceTree = "<group>"; };
 		5C1817752752BA7300AEF0B0 /* Help.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
 		5C1817772752BB0C00AEF0B0 /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
@@ -292,18 +291,19 @@
 		5CEB0A0027CAF70600DDC612 /* SimpleBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleBarChart.h; sourceTree = "<group>"; };
 		5CEB0A0127CAF70700DDC612 /* SimpleBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleBarChart.m; sourceTree = "<group>"; };
 		C7E8398A2AEB561DA8D17155 /* Pods-readright.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-readright.debug.xcconfig"; path = "Target Support Files/Pods-readright/Pods-readright.debug.xcconfig"; sourceTree = "<group>"; };
+		D840498D290ADE7C009ECC3E /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlider.h; sourceTree = "<group>"; };
+		D840498E290ADE7C009ECC3E /* DragableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragableImageView.h; sourceTree = "<group>"; };
+		D840498F290ADE7C009ECC3E /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlider.m; sourceTree = "<group>"; };
+		D8404990290ADE7C009ECC3E /* DragableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragableImageView.m; sourceTree = "<group>"; };
+		D8404994290ADF43009ECC3E /* NeglectCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NeglectCanvasView.xib; sourceTree = "<group>"; };
+		D8404996290AE2FE009ECC3E /* SearchCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCanvasView.xib; sourceTree = "<group>"; };
+		D8B2D71629119C1400E27EBD /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
+		D8F413842912912B0001D021 /* VisualCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisualCanvasView.xib; sourceTree = "<group>"; };
 		E8192755287C3B4200FFB24C /* PrepareVisualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrepareVisualVC.swift; path = readright/tests/ReadingTest/PrepareVisualVC.swift; sourceTree = SOURCE_ROOT; };
 		E8192759287C3C4C00FFB24C /* InstructionsVisual.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InstructionsVisual.xib; path = readright/tests/ReadingTest/InstructionsVisual.xib; sourceTree = SOURCE_ROOT; };
-		E819275B287C45F100FFB24C /* CustomSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSlider.h; path = "../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/CustomSlider.h"; sourceTree = "<group>"; };
-		E819275C287C45F100FFB24C /* DragableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DragableImageView.m; path = "../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/DragableImageView.m"; sourceTree = "<group>"; };
-		E819275D287C45F100FFB24C /* CustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSlider.m; path = "../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/CustomSlider.m"; sourceTree = "<group>"; };
-		E819275E287C45F100FFB24C /* DragableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DragableImageView.h; path = "../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/DragableImageView.h"; sourceTree = "<group>"; };
-		E8192761287C462400FFB24C /* CustomPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomPageControl.m; path = "../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/CustomPageControl.m"; sourceTree = "<group>"; };
-		E8192762287C462400FFB24C /* CustomPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomPageControl.h; path = "../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/CustomPageControl.h"; sourceTree = "<group>"; };
 		E8227DBD28889F9000DC3180 /* VisualNeglectTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = VisualNeglectTest.storyboard; path = readright/tests/SearchTest/VisualNeglectTest.storyboard; sourceTree = SOURCE_ROOT; };
 		E82866202888D27D00C48D39 /* VisualNeglectTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualNeglectTestVC.swift; path = readright/tests/SearchTest/VisualNeglectTestVC.swift; sourceTree = SOURCE_ROOT; };
 		E82A4466289DC1B5009396B3 /* SearchCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCanvasView.swift; sourceTree = "<group>"; };
-		E8347C49288B85700098D910 /* NeglectCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NeglectCanvasView.xib; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/NeglectCanvasView.xib"; sourceTree = "<group>"; };
 		E840A3AF28880C79006F6130 /* SearchTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTest.storyboard; sourceTree = "<group>"; };
 		E849973C288AE839004B54BF /* NeglectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeglectViewModel.swift; sourceTree = "<group>"; };
 		E8555989287D8F8500F79FC8 /* VisualFieldTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VisualFieldTestVC.swift; path = readright/tests/ReadingTest/VisualFieldTestVC.swift; sourceTree = SOURCE_ROOT; };
@@ -320,7 +320,6 @@
 		E8B3613828836F98009C1C9A /* ADLTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ADLTest.storyboard; sourceTree = "<group>"; };
 		E8E34A522884B34800467E4B /* PrepareSearchTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareSearchTestVC.swift; sourceTree = "<group>"; };
 		E8E34A542884B61E00467E4B /* SearchTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestVC.swift; sourceTree = "<group>"; };
-		E8E34A5A2884BB5100467E4B /* SearchCanvasView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchCanvasView.xib; path = "../../../../ReadRight-iOS-vstbugs/ReadRight/ReadRight/SearchCanvasView.xib"; sourceTree = "<group>"; };
 		E8E34A5E2884C2A200467E4B /* SearchTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestHelper.swift; sourceTree = "<group>"; };
 		E8E34A602884CD2800467E4B /* SearchTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -391,14 +390,12 @@
 		5C24B261276011F40038F3E9 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				D840498D290ADE7C009ECC3E /* CustomSlider.h */,
+				D840498F290ADE7C009ECC3E /* CustomSlider.m */,
+				D840498E290ADE7C009ECC3E /* DragableImageView.h */,
+				D8404990290ADE7C009ECC3E /* DragableImageView.m */,
 				E8347C48288B85370098D910 /* NeglectCanvasView */,
 				E8E34A562884BB3300467E4B /* SearchCanvasView */,
-				E8192762287C462400FFB24C /* CustomPageControl.h */,
-				E8192761287C462400FFB24C /* CustomPageControl.m */,
-				E819275B287C45F100FFB24C /* CustomSlider.h */,
-				E819275D287C45F100FFB24C /* CustomSlider.m */,
-				E819275E287C45F100FFB24C /* DragableImageView.h */,
-				E819275C287C45F100FFB24C /* DragableImageView.m */,
 				5C08E4DB27F26B6F00B017C6 /* CustomColorDialogue */,
 				5CEB0A0727CB065600DDC612 /* VisualFieldResultView */,
 				5CEB0A0327CB05C700DDC612 /* VisualFieldCanvasView */,
@@ -407,6 +404,7 @@
 				5C24B262276012300038F3E9 /* CustomView.swift */,
 				5C24B264276012640038F3E9 /* CustomTextField.swift */,
 				E8791179287E5D92003E97E5 /* CustomAlert.swift */,
+				D8B2D71629119C1400E27EBD /* CustomPageControl.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -730,7 +728,7 @@
 		5CEB0A0327CB05C700DDC612 /* VisualFieldCanvasView */ = {
 			isa = PBXGroup;
 			children = (
-				5C0D585827D81A92008F03DA /* VisualCanvasView.xib */,
+				D8F413842912912B0001D021 /* VisualCanvasView.xib */,
 				5C3438A527DC0AE20006E6E5 /* VisualCanvasView.swift */,
 			);
 			path = VisualFieldCanvasView;
@@ -765,7 +763,7 @@
 		E8347C48288B85370098D910 /* NeglectCanvasView */ = {
 			isa = PBXGroup;
 			children = (
-				E8347C49288B85700098D910 /* NeglectCanvasView.xib */,
+				D8404994290ADF43009ECC3E /* NeglectCanvasView.xib */,
 				E870B5BB28AE9DDD00142D6C /* NeglectCanvasView.swift */,
 			);
 			path = NeglectCanvasView;
@@ -774,7 +772,7 @@
 		E8E34A562884BB3300467E4B /* SearchCanvasView */ = {
 			isa = PBXGroup;
 			children = (
-				E8E34A5A2884BB5100467E4B /* SearchCanvasView.xib */,
+				D8404996290AE2FE009ECC3E /* SearchCanvasView.xib */,
 				E82A4466289DC1B5009396B3 /* SearchCanvasView.swift */,
 			);
 			path = SearchCanvasView;
@@ -845,6 +843,7 @@
 				5C8032A52807C98D00E245B6 /* AdobeArabic-BoldItalic.otf in Resources */,
 				5C8032A62807C98D00E245B6 /* AdobeArabic-Italic.otf in Resources */,
 				5C8032A72807C98D00E245B6 /* AdobeArabic-Regular.otf in Resources */,
+				D8404995290ADF43009ECC3E /* NeglectCanvasView.xib in Resources */,
 				E8B3613928836F98009C1C9A /* ADLTest.storyboard in Resources */,
 				5C06305B2777642B007E8E59 /* readingQ2.mp3 in Resources */,
 				5C0630882777646D007E8E59 /* tour25.mp3 in Resources */,
@@ -863,7 +862,6 @@
 				5C0630922777646D007E8E59 /* tour9.mp3 in Resources */,
 				5C0630892777646D007E8E59 /* tour29.mp3 in Resources */,
 				5C0630BD27776ACE007E8E59 /* instructionsVisualField1.mp3 in Resources */,
-				E8347C4C288B85700098D910 /* NeglectCanvasView.xib in Resources */,
 				5C06306327776447007E8E59 /* prepareSearch.mp3 in Resources */,
 				5C0630592777642B007E8E59 /* readingQ5.mp3 in Resources */,
 				5C0630982777646D007E8E59 /* tour12.mp3 in Resources */,
@@ -885,7 +883,6 @@
 				5C08E4DD27F26B9700B017C6 /* ColorDialogueView.xib in Resources */,
 				5C0630AB277764EE007E8E59 /* prepareNeglect.mp3 in Resources */,
 				5C06305C2777642B007E8E59 /* readingQ1.mp3 in Resources */,
-				5C0D585927D81A92008F03DA /* VisualCanvasView.xib in Resources */,
 				5C06309D2777646D007E8E59 /* tour24.mp3 in Resources */,
 				5C24B2752760F8D00038F3E9 /* Results.storyboard in Resources */,
 				5C60BAB727521B9B00F35708 /* Assets.xcassets in Resources */,
@@ -903,13 +900,13 @@
 				5C0630942777646D007E8E59 /* tour14.mp3 in Resources */,
 				5C60BAB527521B9900F35708 /* Main.storyboard in Resources */,
 				5C06308C2777646D007E8E59 /* tour21.mp3 in Resources */,
+				D8F413852912912B0001D021 /* VisualCanvasView.xib in Resources */,
 				5C0630552777642B007E8E59 /* readingQ8.mp3 in Resources */,
 				5C06308E2777646D007E8E59 /* tour10.mp3 in Resources */,
 				5C0630972777646D007E8E59 /* tour19.mp3 in Resources */,
 				5C0D585727D81A4F008F03DA /* FieldResultView.xib in Resources */,
 				5C06305A2777642B007E8E59 /* instructionsVisualField2.mp3 in Resources */,
 				5C06308F2777646D007E8E59 /* tour5.mp3 in Resources */,
-				E8E34A5D2884BB5100467E4B /* SearchCanvasView.xib in Resources */,
 				5C0630AA277764EE007E8E59 /* instructionsNeglect.mp3 in Resources */,
 				5C7EB1FD278F3E8100F62206 /* Auth.storyboard in Resources */,
 				5C0630542777642B007E8E59 /* prepareReading.mp3 in Resources */,
@@ -922,6 +919,7 @@
 				5C0630582777642B007E8E59 /* readingQ11.mp3 in Resources */,
 				5C0630502777642B007E8E59 /* readingQ7.mp3 in Resources */,
 				5C18177A2752BBE100AEF0B0 /* OnBoarding.storyboard in Resources */,
+				D8404997290AE2FE009ECC3E /* SearchCanvasView.xib in Resources */,
 				E840A3B028880C79006F6130 /* SearchTest.storyboard in Resources */,
 				5C0630BE27776ACE007E8E59 /* instructionsVisualField_2.mp3 in Resources */,
 			);
@@ -984,14 +982,11 @@
 				5CE11B0F277F6CA800F7102F /* LoginVC.swift in Sources */,
 				5C0630C6277E0908007E8E59 /* RegisterViewModel.swift in Sources */,
 				E879117C287E5F11003E97E5 /* PrepareADLTestVC.swift in Sources */,
-				E8192760287C45F100FFB24C /* CustomSlider.m in Sources */,
 				5C0630C9277F0EBC007E8E59 /* NetworkModels.swift in Sources */,
 				5CEA903C27F3B97E00526A91 /* NSString+XMLEntities.m in Sources */,
 				E82866212888D27D00C48D39 /* VisualNeglectTestVC.swift in Sources */,
-				E819275F287C45F100FFB24C /* DragableImageView.m in Sources */,
 				E8E34A552884B61E00467E4B /* SearchTestVC.swift in Sources */,
 				5C24B2732760F67E0038F3E9 /* ReadingVC.swift in Sources */,
-				E8192763287C462400FFB24C /* CustomPageControl.m in Sources */,
 				5C229FDA275C025D00B63196 /* Helpers.swift in Sources */,
 				5CEA903E27F3B97E00526A91 /* MWFeedItem.m in Sources */,
 				5CEB09FB27CABC0D00DDC612 /* TherapyHistoryCell.swift in Sources */,
@@ -1004,12 +999,14 @@
 				5C229FD5275BF28000B63196 /* EndPoints.swift in Sources */,
 				5C60BAAE27521B9900F35708 /* AppDelegate.swift in Sources */,
 				E879117A287E5D92003E97E5 /* CustomAlert.swift in Sources */,
+				D8B2D71729119C1400E27EBD /* CustomPageControl.swift in Sources */,
 				5CEB0A0227CAF70700DDC612 /* SimpleBarChart.m in Sources */,
 				E8E34A5F2884C2A200467E4B /* SearchTestHelper.swift in Sources */,
 				5C24B2782760F9130038F3E9 /* ResultsVC.swift in Sources */,
 				E855598A287D8F8500F79FC8 /* VisualFieldTestVC.swift in Sources */,
 				5C7EB2042794541800F62206 /* MyAccountViewModel.swift in Sources */,
 				5C0630CB277F29B1007E8E59 /* Validator.swift in Sources */,
+				D8404992290ADE7C009ECC3E /* CustomSlider.m in Sources */,
 				5C625A7927F8B1B6003510A7 /* TherapyBookCell.swift in Sources */,
 				5CEB09F927CA8DA000DDC612 /* ResultsViewModel.swift in Sources */,
 				5C625A7727F8B0E1003510A7 /* TherapyChapterCell.swift in Sources */,
@@ -1039,6 +1036,7 @@
 				5C7EB1FB278F3E1000F62206 /* SplashVC.swift in Sources */,
 				E855598C287DAA9A00F79FC8 /* VisualFIeldTestViewModel.swift in Sources */,
 				E8AA95BD288053E2004016F5 /* ADLViewModel.swift in Sources */,
+				D8404993290ADE7C009ECC3E /* DragableImageView.m in Sources */,
 				5C3438AA27DCAC410006E6E5 /* FieldResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1188,9 +1186,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3RF38P885K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = readright/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1223,9 +1222,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3RF38P885K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = readright/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -184,7 +184,7 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         
         
         //Set all the undone tests yet with grey colors
-        for j in (pendingTestId + 1) ... Constants.NUMBER_OF_TESTS {
+        for j in stride(from: (pendingTestId + 1), through: Constants.NUMBER_OF_TESTS, by: 1){//(pendingTestId + 1) ... Constants.NUMBER_OF_TESTS {
             //Set the current pending test with grey color and make it clickable
             tempTestBtn = value(forKey: String(format: "TestBtn_%d", j)) as? UIButton
             tempTestLbl = value(forKey: String(format: "TestLabel_%d", j)) as? UILabel
@@ -880,7 +880,7 @@ extension ReadingVC: UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
-        return cell!
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

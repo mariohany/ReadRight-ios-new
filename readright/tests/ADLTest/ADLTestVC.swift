@@ -46,14 +46,14 @@ class ADLTestVC: UIViewController, CustomAlertViewDelegate {
     @IBOutlet weak private var ActivityImage5: UIImageView!
     let viewModel = ADLViewModel()
     var currentActivity:Int = 0
-    var percentages:[Int] = []
-    var visited:[Int] = []
-    var activitiesNames:[String] = []
-    var activitiesQuestions:[String] = []
-    var orangeImages:[String] = []
-    var greenImages:[String] = []
-    var largeOrangeImages:[String] = []
-    var largeGreenImages:[String] = []
+    var percentages:[Int] = Array(repeating: 0, count: NUMBER_OF_ACTIVITIES)
+    var visited:[Int] = Array(repeating: 0, count: NUMBER_OF_ACTIVITIES)
+    var activitiesNames:[String] = Array(repeating: "", count: NUMBER_OF_ACTIVITIES)
+    var activitiesQuestions:[String] = Array(repeating: "", count: NUMBER_OF_ACTIVITIES)
+    var orangeImages:[String] = Array(repeating: "", count: NUMBER_OF_ACTIVITIES)
+    var greenImages:[String] = Array(repeating: "", count: NUMBER_OF_ACTIVITIES)
+    var largeOrangeImages:[String] = Array(repeating: "", count: NUMBER_OF_ACTIVITIES)
+    var largeGreenImages:[String] = Array(repeating: "", count: NUMBER_OF_ACTIVITIES)
     var testFinished:Bool = false
     
     
@@ -84,9 +84,9 @@ class ADLTestVC: UIViewController, CustomAlertViewDelegate {
     
     func observeSuccess(){
         viewModel.result.subscribe { status in
-//            if let msg = status.element, msg != ""{
+            if let msg = status.element, msg != ""{
                 self.popToTestsController()
-//            }
+            }
         }
     }
     
@@ -150,7 +150,7 @@ func swipPlaces(){
 
     func handleActivitiesAlpha(){
         for i in 0 ..< NUMBER_OF_ACTIVITIES {
-            let ActivityButton:UIButton? = value(forKey: String(format: "%d", "Activity", i)) as? UIButton
+            let ActivityButton:UIButton? = value(forKey: String(format: "Activity%d", i)) as? UIButton
             if ( i == currentActivity){
                 ActivityButton?.alpha = 1.0
             }else{
@@ -351,7 +351,9 @@ func handleNextScenario(){
     }
     
     func popToTestsController(){
-        self.navigationController?.popViewController(animated: true)
+        if let destinationViewController = self.navigationController?.viewControllers.filter({$0 is ReadingVC}).first {
+            navigationController?.popToViewController(destinationViewController, animated: true)
+        }
     }
 
     

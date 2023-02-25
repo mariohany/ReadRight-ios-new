@@ -139,7 +139,7 @@ class ResultsVC: UIViewController {
                     self.HistoryTherapyTableResults.reloadData()
                 }
             }
-        }
+        }	
         
         viewModel.visualResult.asObservable().subscribe { res in
             if let res = res.element, let list = res {

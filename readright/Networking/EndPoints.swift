@@ -9,7 +9,7 @@ import Moya
 
 enum Endpoint {
     case Login(email: String, password: String)
-    case Register(email: String, password: String, confirmPassword: String, name: String, gender: Int, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?)
+    case Register(email: String, password: String, confirmPassword: String, name: String, gender: String, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?)
     case ForgetPassword(email: String)
     case GetUserInfo
     case UpdateUserInfo(email: String, password: String, confirmPassword: String, name: String, gender: Int, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?)
@@ -24,8 +24,8 @@ enum Endpoint {
     case SubmitReadingTest(stage:Int, passage1:Int, passage2:Int, passage3:Int, answer1:Int, answer2:Int, answer3:Int, readingSpeed:Int, idPassage1:Int, idPassage2:Int, idPassage3:Int)
     case SubmitVisualFieldTest(model: NetworkModels.VisualFieldTestRequest)
     case SubmitADLTest(driving:Int, readingNews:Int, hygiene:Int, readingBooks:Int, enjoyReading:Int, findThings:Int)
-    case SubmitSearchTest(score:Int, duration:Float)
-    case SubmitVisualNeglectTest(score:Int, duration:Int, targets:Int, distractors:Int, revisits:Int, x:Int, y:Int, numTotalTargets:Int, numTotalDistractors:Int, numTargetsMissed:Int, numTargetsMissedLeft:Int, numTargetsMissedRight:Int, numRevisits:Int, numRevisitsLeft:Int, numRevisitsRight:Int, meanXTargets:Int, meanYTargets:Int, elements:[NetworkModels.Elements], hitsPath:[NetworkModels.HitsPath])
+    case SubmitSearchTest(model: NetworkModels.SearchTestRequest)//score:Int, duration:Float)
+    case SubmitVisualNeglectTest(model:NetworkModels.VisualNeglectTestRequest)
 }
 
 
@@ -42,7 +42,7 @@ extension Endpoint: TargetType {
         case .GetUserInfo: return "user"
         case .UpdateUserInfo: return "user/info"
             
-        case .GetTherapyHistory: return "users/GetTherapyHistory"
+        case .GetTherapyHistory: return "therapy"
         case .GetReadingTestHistory: return "visualreading/history"
         case .GetFieldTestHistory: return "visualfield/hits/history"
         case .GetNeglectTestHistory: return "visualneglect/history"
@@ -78,7 +78,7 @@ extension Endpoint: TargetType {
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
             
         case .Register(let email, let password, let confirmPassword, let name, let gender, let yearOfBirth, let hemianopiaType, let vpSide, let vpCause, let vpStartDate, let vpExtraCause):
-            let params:[String : Any?] = ["email": email,
+            var params:[String : Any?] = ["email": email,
                           "password": password,
                           "password_confirm": confirmPassword,
                           "name" : name,
@@ -87,9 +87,11 @@ extension Endpoint: TargetType {
                           "ha_type": hemianopiaType,
                           "vp_side": vpSide,
                           "vp_cause": vpCause,
-                          "vp_start_date": vpStartDate,
-                          "vp_extra_cause": vpExtraCause,
+                          "vp_start_date": vpStartDate
             ]
+            if let extraCause = vpExtraCause {
+                params["vp_extra_cause"] = extraCause
+            }
             return .requestParameters(parameters: params as [String : Any], encoding: JSONEncoding.default)
             
         case .ForgetPassword(let email):
@@ -147,8 +149,7 @@ extension Endpoint: TargetType {
             ]
             return .requestParameters(parameters: params as [String : Any], encoding: JSONEncoding.default)
         case .SubmitVisualFieldTest(let model):
-            let dataRequest = try! JSONEncoder().encode(model)
-            return .requestJSONEncodable(dataRequest)
+            return .requestParameters(parameters: model.dictionary!, encoding: JSONEncoding.default)
         case .SubmitADLTest(let driving, let readingNews, let hygiene, let readingBooks, let enjoyReading, let findThings):
             let params:[String : Any] = ["driving": driving,
                                         "reading_news": readingNews,
@@ -158,37 +159,10 @@ extension Endpoint: TargetType {
                                         "find_things": findThings
             ]
             return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .SubmitSearchTest(let score, let duration):
-            let params:[String : Any] = ["score": score,
-                                        "duration": duration
-            ]
-            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
-        case .SubmitVisualNeglectTest(let score, let duration, let targets, let distractors, let revisits, let x, let y, let numTotalTargets, let numTotalDistractors, let numTargetsMissed, let numTargetsMissedLeft, let numTargetsMissedRight, let numRevisits, let numRevisitsLeft, let numRevisitsRight, let meanXTargets, let meanYTargets, let elements, let hitsPath):
-            
-            let elemntsData = try! JSONEncoder().encode(elements)
-            let hitsPathData = try! JSONEncoder().encode(hitsPath)
-            let params:[String : Any] = ["score": score,
-                                         "duration": duration,
-                                         "targets": targets,
-                                         "distractors": distractors,
-                                         "revisits" : revisits,
-                                         "x" : x,
-                                         "y" : y,
-                                         "num_total_targets" : numTotalTargets,
-                                         "num_total_distractors" : numTotalDistractors,
-                                         "num_total_missed" : numTargetsMissed,
-                                         "num_total_missed_l" : numTargetsMissedLeft,
-                                         "num_total_missed_r" : numTargetsMissedRight,
-                                         "num_revisits" : numRevisits,
-                                         "num_revisits_l" : numRevisitsLeft,
-                                         "num_revisits_r" : numRevisitsRight,
-                                         "mean_x_targets" : meanXTargets,
-                                         "mean_y_targets" : meanYTargets,
-                                         "elements" : elemntsData,
-                                         "hits_path" : hitsPathData
-            ]
-            
-            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
+        case .SubmitSearchTest(let model):
+            return .requestParameters(parameters: model.dictionary!, encoding: JSONEncoding.default)
+        case .SubmitVisualNeglectTest(let model):
+            return .requestParameters(parameters: model.dictionary!, encoding: JSONEncoding.default)
         }
     }
         

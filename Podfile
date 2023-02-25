@@ -16,4 +16,5 @@ target 'readright' do
   pod 'RNActivityView'#, :git => 'https://github.com/mtviewdave/RNActivityView.git', :commit => '50a0a79'
   pod "RxGesture"
   pod 'JWTDecode', '~> 2.6'
+  pod 'netfox', :configurations => ['Debug']
 end

@@ -29,15 +29,9 @@ class ADLViewModel {
                 self.isLoading.accept(false)
                 switch result {
                     case .success(let response):
-                    if let success = response.success, success {
                         if let msg = response.message {
-                            self.result.accept(msg)
+                            self.result.accept(msg.joined(separator: "\n"))
                         }
-                    }else{
-                        if let msg = response.message {
-                            self.error.accept(msg)
-                        }
-                    }
                     case .error(let error):
                         self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }

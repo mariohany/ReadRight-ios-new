@@ -370,8 +370,8 @@
         </view>
     </objects>
     <resources>
-        <image name="BlackSettingColor" width="70" height="70"/>
-        <image name="SettingColor" width="70" height="70"/>
+        <image name="BlackSettingColor" width="35" height="35"/>
+        <image name="SettingColor" width="35" height="35"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

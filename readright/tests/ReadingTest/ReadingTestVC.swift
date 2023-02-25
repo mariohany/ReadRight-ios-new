@@ -42,7 +42,7 @@ class ReadingTestVC: UIViewController{
     var _texts:[String] = []
     var _xLabels:[String] = []
     var _barColors:[UIColor] = []
-    var _currentBarColor:Int?
+    var _currentBarColor:Int = 0
     
     var isFinished:Bool = false
     
@@ -348,7 +348,7 @@ extension ReadingTestVC: SimpleBarChartDataSource, SimpleBarChartDelegate {
     }
     
     func barChart(_ barChart: SimpleBarChart!, colorForBarAt index: UInt) -> UIColor! {
-        return _barColors[Int(index)]
+        return _barColors[_currentBarColor]
     }
     
     func barChart(_ barChart: SimpleBarChart!, xLabelForBarAt index: UInt) -> String! {
@@ -361,7 +361,6 @@ extension ReadingTestVC: SimpleBarChartDataSource, SimpleBarChartDelegate {
         _texts = text
         _xLabels = labels
         _barColors = [UIColor(red: 119/255.0, green: 156/255.0, blue: 89/255.0, alpha: 1)]
-        _currentBarColor = 0
         
         let chartFrame = CGRect(x: 30.0, y: 60.0, width: 950.0, height: 470.0)
         _chart = SimpleBarChart(frame: chartFrame)

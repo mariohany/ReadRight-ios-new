@@ -47,7 +47,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="prepareVoiceOver:" destination="Wci-pt-EV1" eventType="touchUpInside" id="bN0-zm-41f"/>
+                                            <action selector="prepareVoiceOver" destination="Wci-pt-EV1" eventType="touchUpInside" id="V2T-ZU-Lho"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdP-Q4-Rxy">
@@ -57,7 +57,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="showInstructions:" destination="Wci-pt-EV1" eventType="touchUpInside" id="177-jk-FUW"/>
+                                            <action selector="showInstructions" destination="Wci-pt-EV1" eventType="touchUpInside" id="GUe-DZ-fb1"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="هل تؤثر مشكلتك البصرية علي حياتك الخاصة ؟" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCM-Gx-6be">
@@ -196,7 +196,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="instructionVoiceOver:" destination="Wci-pt-EV1" eventType="touchUpInside" id="HcZ-cH-v39"/>
+                                            <action selector="instructionVoiceOver" destination="Wci-pt-EV1" eventType="touchUpInside" id="Vai-WG-EbU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-6w-kfu">
@@ -206,7 +206,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="startReadingTest:" destination="Wci-pt-EV1" eventType="touchUpInside" id="w5l-1r-Us5"/>
+                                            <action selector="startReadingTest" destination="Wci-pt-EV1" eventType="touchUpInside" id="YvY-3x-NsH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRH-NF-EvX">
@@ -216,7 +216,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="backIntro:" destination="Wci-pt-EV1" eventType="touchUpInside" id="jlG-4g-PmZ"/>
+                                            <action selector="backIntro" destination="Wci-pt-EV1" eventType="touchUpInside" id="wgM-cY-9yw"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="سوف يطلب منك أن تقيم كل نشاط على حدة." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42l-GC-7LI">
@@ -366,7 +366,7 @@
                                 <rect key="frame" x="0.0" y="-32" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JS3-hu-2KK" userLabel="TestView" customClass="CustomView" customModule="CustomViews">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JS3-hu-2KK" userLabel="TestView" customClass="CustomView" customModule="readright" customModuleProvider="target">
                                 <rect key="frame" x="20" y="42" width="984" height="615"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -452,7 +452,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="noBtn:" destination="FTX-Ql-rAk" eventType="touchUpInside" id="qMJ-xK-iGk"/>
+                                                    <action selector="noBtn" destination="FTX-Ql-rAk" eventType="touchUpInside" id="WL6-g2-1Ia"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOT-QF-0qS">
@@ -462,7 +462,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="yesBtn:" destination="FTX-Ql-rAk" eventType="touchUpInside" id="3J6-xh-lc3"/>
+                                                    <action selector="yesBtn" destination="FTX-Ql-rAk" eventType="touchUpInside" id="heW-fX-tID"/>
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvz-JQ-wI5">
@@ -472,7 +472,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="moreInfoBtn:" destination="FTX-Ql-rAk" eventType="touchUpInside" id="7eZ-tP-eR2"/>
+                                                    <action selector="moreInfoBtn" destination="FTX-Ql-rAk" eventType="touchUpInside" id="gTr-qO-6df"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -500,7 +500,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="saveBtn:" destination="FTX-Ql-rAk" eventType="touchUpInside" id="DD8-qV-fHW"/>
+                                                    <action selector="saveBtn" destination="FTX-Ql-rAk" eventType="touchUpInside" id="Y3H-Cq-xrs"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvh-Pb-ntc">
@@ -510,7 +510,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="cancelBtn:" destination="FTX-Ql-rAk" eventType="touchUpInside" id="jzH-Lu-RD5"/>
+                                                    <action selector="cancelBtn" destination="FTX-Ql-rAk" eventType="touchUpInside" id="cRI-FI-Vci"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="peN-QO-yky" userLabel="CustomSlider" customClass="CustomSlider">
@@ -588,7 +588,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="changeBtn:" destination="FTX-Ql-rAk" eventType="touchUpInside" id="RP0-aG-OF9"/>
+                                                    <action selector="changeBtn" destination="FTX-Ql-rAk" eventType="touchUpInside" id="vHV-GO-mmF"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="27%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVo-uH-a9l">
@@ -608,7 +608,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="veFinishedBtn:" destination="FTX-Ql-rAk" eventType="touchUpInside" id="ngI-Ga-aVu"/>
+                                            <action selector="veFinishedBtn" destination="FTX-Ql-rAk" eventType="touchUpInside" id="J5X-fd-JoK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -625,7 +625,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qko-4o-Oe0" userLabel="TestEnd" customClass="CustomView" customModule="CustomViews">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qko-4o-Oe0" userLabel="TestEnd" customClass="CustomView" customModule="readright" customModuleProvider="target">
                                 <rect key="frame" x="20" y="42" width="984" height="615"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -667,7 +667,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="startNextTestBtn:" destination="FTX-Ql-rAk" eventType="touchUpInside" id="kxW-Bt-u96"/>
+                                            <action selector="startNextTestBtn" destination="FTX-Ql-rAk" eventType="touchUpInside" id="gAn-hz-Z4x"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csa-16-xbh">
@@ -677,7 +677,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="pressChangeBk:" destination="FTX-Ql-rAk" eventType="touchUpInside" id="Bc7-B3-ocb"/>
+                                            <action selector="pressChangeBk" destination="FTX-Ql-rAk" eventType="touchUpInside" id="yzr-rt-pLl"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="77%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0L-Sf-QKr">

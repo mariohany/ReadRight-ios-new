@@ -36,22 +36,18 @@ class NeglectViewModel {
     var result = BehaviorRelay<String>(value: "")
     
     func submitResult() {
+        let model = NetworkModels.VisualNeglectTestRequest(score: vnt_score, duration: vnt_duration, targets: vnt_targets, distractors: vnt_distractors, revisits: vnt_revisits, x: vnt_X, y: vnt_Y, numTotalTargets: numTotalTargets, numTotalDistractors: numTotalDistractors, numTargetsMissed: numTargetsMissed, numTargetsMissedLeft: numTargetsMissedLeft, numTargetsMissedRight: numTargetsMissedRight, numRevisits: numRevisits, numRevisitsLeft: numRevisitsLeft, numRevisitsRight: numRevisitsRight, meanXTargets: meanX, meanYTargets: meanY, elements: elements, hitsPath: hitsPath)
+        
         self.isLoading.accept(true)
-        provider.request(.SubmitVisualNeglectTest(score: vnt_score, duration: vnt_duration, targets: vnt_targets, distractors: vnt_distractors, revisits: vnt_revisits, x: vnt_X, y: vnt_Y, numTotalTargets: numTotalTargets, numTotalDistractors: numTotalDistractors, numTargetsMissed: numTargetsMissed, numTargetsMissedLeft: numTargetsMissedLeft, numTargetsMissedRight: numTargetsMissedRight, numRevisits: numRevisits, numRevisitsLeft: numRevisitsLeft, numRevisitsRight: numRevisitsRight, meanXTargets: meanX, meanYTargets: meanY, elements: elements, hitsPath: hitsPath))
+        provider.request(.SubmitVisualNeglectTest(model: model))
             .map(NetworkModels.SubmitTestsBaseResponse.self)
             .subscribe { (result) in
                 self.isLoading.accept(false)
                 switch result {
                     case .success(let response):
-                    if let success = response.success, success {
                         if let msg = response.message {
-                            self.result.accept(msg)
+                            self.result.accept(msg.joined(separator: "\n"))
                         }
-                    }else{
-                        if let msg = response.message {
-                            self.error.accept(msg)
-                        }
-                    }
                     case .error(let error):
                         self.error.accept((error as? NetworkModels.NetworkingError)?.getLocalizedDescription() ?? "")
                 }

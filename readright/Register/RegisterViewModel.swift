@@ -16,7 +16,7 @@ class RegisterViewModel {
     var isLoading = BehaviorRelay<Bool>(value: false)
     var loginResponse = BehaviorRelay<Bool>(value: false)
     
-    func register(email: String, password: String, confirmPassword: String, name: String, gender: Int, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?){
+    func register(email: String, password: String, confirmPassword: String, name: String, gender: String, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?){
         self.isLoading.accept(true)
         provider.request(.Register(email: email, password: password, confirmPassword: confirmPassword, name: name, gender: gender, yearOfBirth: yearOfBirth, hemianopiaType: hemianopiaType, vpSide: vpSide, vpCause: vpCause, vpStartDate: vpStartDate, vpExtraCause: vpExtraCause))
             .map(NetworkModels.LoginResponse.self)

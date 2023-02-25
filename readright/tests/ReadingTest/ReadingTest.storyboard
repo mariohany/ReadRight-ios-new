@@ -265,437 +265,457 @@
                         <outlet property="InstructionsView" destination="0hk-kB-bug" id="sex-tt-sG2"/>
                         <outlet property="MainTitle" destination="atg-Jn-Exm" id="Wh1-nZ-e4x"/>
                         <outlet property="PrepareView" destination="IMG-R6-tKb" id="SV9-ZK-YZ5"/>
-                        <segue destination="BuH-3K-Hve" kind="show" identifier="StartReadingTest" id="N7p-4g-jWA"/>
+                        <segue destination="owe-LR-nfH" kind="show" identifier="StartReadingTest" id="bfg-bU-BhD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47" y="84"/>
+            <point key="canvasLocation" x="693" y="84"/>
         </scene>
-        <!--Reading TestVC-->
-        <scene sceneID="cXW-mk-Um0">
+        <!--Reading Test-->
+        <scene sceneID="tW3-Dr-kLX">
             <objects>
-                <viewController id="BuH-3K-Hve" customClass="ReadingTestVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CVo-OH-Okn">
+                <viewController id="owe-LR-nfH" userLabel="Reading Test" customClass="ReadingTestVC" customModule="readright" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1eP-jP-aFN"/>
+                        <viewControllerLayoutGuide type="bottom" id="xhI-ZV-bxb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w2t-Wn-7U4">
                         <rect key="frame" x="0.0" y="0.0" width="704" height="728"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIg-g2-pB7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-s4-UbF">
                                 <rect key="frame" x="0.0" y="0.0" width="704" height="728"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LB-0f-BpU" userLabel="QuestionView" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="32" width="656" height="672"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-at-Okg">
-                                        <rect key="frame" x="0.0" y="0.0" width="704" height="728"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LB-0f-BpU" userLabel="QuestionView" customClass="CustomView" customModule="readright" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="32" width="656" height="672"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UT7-8M-Fp5">
+                                        <rect key="frame" x="579" y="8" width="55" height="73"/>
+                                        <state key="normal" image="ReadThis">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="questionReadingTestVoiceOver" destination="owe-LR-nfH" eventType="touchUpInside" id="ode-Pp-Jm7"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILe-CD-zzA">
+                                        <rect key="frame" x="258" y="8" width="140.5" height="50.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UT7-8M-Fp5">
-                                                <rect key="frame" x="579" y="8" width="55" height="73"/>
-                                                <state key="normal" image="ReadThis">
-                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="questionReadingTestVoiceOver" destination="BuH-3K-Hve" eventType="touchUpInside" id="zzA-nN-6S3"/>
-                                                </connections>
-                                            </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILe-CD-zzA">
-                                                <rect key="frame" x="258" y="8" width="140.5" height="50.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من ٣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R02-dI-mK5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="50.5"/>
-                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="١" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHi-lv-gRb">
-                                                        <rect key="frame" x="62.5" y="0.0" width="16.5" height="50.5"/>
-                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سؤال" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtw-uY-gr6">
-                                                        <rect key="frame" x="79" y="0.0" width="61.5" height="50.5"/>
-                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="8pH-dc-dud">
-                                                <rect key="frame" x="62.5" y="184.5" width="563.5" height="303"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="skF-uH-9g6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="209" height="142.5"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كان هذ النص حول ... ؟" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJA-Wd-GGa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="209" height="38.5"/>
-                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="35"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="23c-3D-QSy">
-                                                                <rect key="frame" x="0.0" y="78.5" width="209" height="64"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mjT-3B-VXJ">
-                                                                        <rect key="frame" x="154.5" y="0.0" width="54.5" height="26.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نعم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT8-Oe-K23">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="26.5"/>
-                                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
-                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-nK-PLv" userLabel="YesBtn">
-                                                                                <rect key="frame" x="32" y="0.0" width="22.5" height="26.5"/>
-                                                                                <state key="normal" image="OrangeUnCheck">
-                                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                </state>
-                                                                                <state key="selected" image="OrangeCheck"/>
-                                                                                <connections>
-                                                                                    <action selector="answerBtn:" destination="BuH-3K-Hve" eventType="touchUpInside" id="xYW-dA-EaK"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qbG-N2-Zoe">
-                                                                        <rect key="frame" x="168.5" y="37.5" width="40.5" height="26.5"/>
-                                                                        <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc4-S1-lBv">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="10" height="26.5"/>
-                                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
-                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYo-1s-dNU" userLabel="NoBtn">
-                                                                                <rect key="frame" x="18" y="0.0" width="22.5" height="26.5"/>
-                                                                                <state key="normal" image="OrangeUnCheck"/>
-                                                                                <state key="selected" image="OrangeCheck"/>
-                                                                                <connections>
-                                                                                    <action selector="answerBtn:" destination="BuH-3K-Hve" eventType="touchUpInside" id="fIz-zu-qyZ"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="ReadingQuestion" translatesAutoresizingMaskIntoConstraints="NO" id="ebU-Zj-1o7">
-                                                        <rect key="frame" x="263" y="0.0" width="300.5" height="303"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="UT7-8M-Fp5" secondAttribute="trailing" constant="22" id="3h4-i9-T0A"/>
-                                            <constraint firstItem="8pH-dc-dud" firstAttribute="centerY" secondItem="7LB-0f-BpU" secondAttribute="centerY" id="GRF-b5-egd"/>
-                                            <constraint firstAttribute="trailing" secondItem="8pH-dc-dud" secondAttribute="trailing" constant="30" id="N9g-j7-cfJ"/>
-                                            <constraint firstItem="UT7-8M-Fp5" firstAttribute="top" secondItem="7LB-0f-BpU" secondAttribute="top" constant="8" id="Rea-mn-jkS"/>
-                                            <constraint firstItem="ILe-CD-zzA" firstAttribute="top" secondItem="7LB-0f-BpU" secondAttribute="top" constant="8" id="UwT-RY-dE5"/>
-                                            <constraint firstItem="ILe-CD-zzA" firstAttribute="centerX" secondItem="7LB-0f-BpU" secondAttribute="centerX" id="ihJ-BL-7pH"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-Yw-pUX" userLabel="StoryView" customClass="CustomView" customModule="readright" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="32" width="656" height="672"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pod-bD-jl4">
-                                                <rect key="frame" x="579" y="8" width="55" height="73"/>
-                                                <state key="normal" image="ReadThis">
-                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="havingReadingVoiceOver" destination="BuH-3K-Hve" eventType="touchUpInside" id="YMc-Vv-YwM"/>
-                                                </connections>
-                                            </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrN-cx-eWT">
-                                                <rect key="frame" x="255" y="8" width="146" height="50.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من ٣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUM-zC-aM8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="50.5"/>
-                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="١" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snJ-PA-66F">
-                                                        <rect key="frame" x="62.5" y="0.0" width="16.5" height="50.5"/>
-                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قطعة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4y-Aj-hzF">
-                                                        <rect key="frame" x="79" y="0.0" width="67" height="50.5"/>
-                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="2Tt-rF-qv1">
-                                                <rect key="frame" x="0.0" y="105" width="632" height="450"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="GUu-Ah-5hh">
-                                                        <rect key="frame" x="0.0" y="37" width="285" height="413"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="EFN-Am-EdH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="285" height="141"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قبل أن تبدأ، تأكد من رؤية الإطار الأحمر كله." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-CC-KWA">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="285" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
-                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقر على الزر أدناه عندما تكون على استعداد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq7-er-CHS">
-                                                                        <rect key="frame" x="0.0" y="37.5" width="285" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
-                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لقراءة القطعة." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSa-AL-rz7">
-                                                                        <rect key="frame" x="0.0" y="75" width="285" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
-                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقر على مرة أخرى عند الانتهاء من القراءة." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiU-3a-TEb">
-                                                                        <rect key="frame" x="0.0" y="112.5" width="285" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
-                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-pj-wh2">
-                                                                <rect key="frame" x="42.5" y="213" width="200" height="200"/>
-                                                                <state key="normal" image="RoundStartBtn">
-                                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </state>
-                                                                <state key="selected" image="RoundFinishedBtn"/>
-                                                                <connections>
-                                                                    <action selector="startBtn" destination="BuH-3K-Hve" eventType="touchUpInside" id="CLZ-HI-9Kz"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4u-59-Kgm">
-                                                        <rect key="frame" x="285" y="0.0" width="347" height="450"/>
-                                                        <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedFrame" translatesAutoresizingMaskIntoConstraints="NO" id="KNe-Jf-76H">
-                                                                <rect key="frame" x="0.0" y="0.0" width="347" height="450"/>
-                                                            </imageView>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kI4-BM-QtN">
-                                                                <rect key="frame" x="10" y="8" width="327" height="433"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <string key="text">الحديث عن مثلث برمودا يشبة الحديث عن الحكايات الخرافية، ولكن يبقي الفرق هنا هو أن مثلث برمودا حقيقة واقعية لمسناها في عصرنا هذا، وقرأنا عنها في الصحف العربية والعالمية، ويمكن القول أن مثلث برمودا يعتبر التحدي الذي يواجه الإنسان في هذا القرن . وهو أحد الغرائب الطبيعية الذي تتحدث عنه الصحف.</string>
-                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="34"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                            </textView>
-                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVk-tf-dHl">
-                                                                <rect key="frame" x="139" y="145" width="69.5" height="160"/>
-                                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="117"/>
-                                                                <color key="textColor" red="0.83529411760000005" green="0.0" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="kI4-BM-QtN" firstAttribute="top" secondItem="d4u-59-Kgm" secondAttribute="top" constant="8" id="3Eh-i9-huL"/>
-                                                            <constraint firstItem="kI4-BM-QtN" firstAttribute="leading" secondItem="d4u-59-Kgm" secondAttribute="leading" constant="10" id="6xf-DL-x7Y"/>
-                                                            <constraint firstAttribute="trailing" secondItem="KNe-Jf-76H" secondAttribute="trailing" id="C31-5a-jQk"/>
-                                                            <constraint firstItem="KNe-Jf-76H" firstAttribute="leading" secondItem="d4u-59-Kgm" secondAttribute="leading" id="FLg-op-QGy"/>
-                                                            <constraint firstAttribute="trailing" secondItem="kI4-BM-QtN" secondAttribute="trailing" constant="10" id="MqM-WZ-BzW"/>
-                                                            <constraint firstItem="fVk-tf-dHl" firstAttribute="centerY" secondItem="d4u-59-Kgm" secondAttribute="centerY" id="Unf-Ea-vlD"/>
-                                                            <constraint firstAttribute="bottom" secondItem="kI4-BM-QtN" secondAttribute="bottom" constant="9" id="Vre-Mb-658"/>
-                                                            <constraint firstItem="KNe-Jf-76H" firstAttribute="top" secondItem="d4u-59-Kgm" secondAttribute="top" id="cCM-lO-xi5"/>
-                                                            <constraint firstItem="fVk-tf-dHl" firstAttribute="centerX" secondItem="d4u-59-Kgm" secondAttribute="centerX" id="gSF-Wq-fhf"/>
-                                                            <constraint firstAttribute="bottom" secondItem="KNe-Jf-76H" secondAttribute="bottom" id="jKD-1j-dIz"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="2Tt-rF-qv1" secondAttribute="trailing" constant="24" id="3wG-Q6-kTg"/>
-                                            <constraint firstAttribute="trailing" secondItem="pod-bD-jl4" secondAttribute="trailing" constant="22" id="C8v-5b-aoS"/>
-                                            <constraint firstItem="pod-bD-jl4" firstAttribute="top" secondItem="Rde-Yw-pUX" secondAttribute="top" constant="8" id="PQ3-Ok-sOm"/>
-                                            <constraint firstItem="2Tt-rF-qv1" firstAttribute="leading" secondItem="Rde-Yw-pUX" secondAttribute="leading" id="U4o-a5-gpl"/>
-                                            <constraint firstItem="XrN-cx-eWT" firstAttribute="centerX" secondItem="Rde-Yw-pUX" secondAttribute="centerX" id="jnM-m5-GNj"/>
-                                            <constraint firstItem="XrN-cx-eWT" firstAttribute="top" secondItem="Rde-Yw-pUX" secondAttribute="top" constant="8" id="nGY-he-E7H"/>
-                                            <constraint firstItem="2Tt-rF-qv1" firstAttribute="top" secondItem="pod-bD-jl4" secondAttribute="bottom" constant="24" id="qDz-4M-kCp"/>
-                                            <constraint firstAttribute="leading" secondItem="2Tt-rF-qv1" secondAttribute="leading" id="z8d-A9-tRb"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgk-IG-7iv" userLabel="ResultView" customClass="CustomView" customModule="readright" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="32" width="656" height="672"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نتائج الاختبار" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhl-9F-deB">
-                                                <rect key="frame" x="250.5" y="8" width="155" height="50.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من ٣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R02-dI-mK5">
+                                                <rect key="frame" x="0.0" y="0.0" width="62.5" height="50.5"/>
                                                 <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="متوسط الوقت في القراءة:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZD-Pz-94Z">
-                                                <rect key="frame" x="130" y="111" width="193" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="١" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHi-lv-gRb">
+                                                <rect key="frame" x="62.5" y="0.0" width="16.5" height="50.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ثانية لكل قطعة نصية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqc-Y9-Bht">
-                                                <rect key="frame" x="92" y="148" width="193" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="29"/>
-                                                <color key="textColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="٧.٧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8n-QD-HgU" userLabel="AverageSecs">
-                                                <rect key="frame" x="281" y="147" width="50" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="29"/>
-                                                <color key="textColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="٣٨٢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5f-fs-Wdt" userLabel="AverageWords">
-                                                <rect key="frame" x="273" y="285" width="50" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="29"/>
-                                                <color key="textColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="كلمة في الدقيقة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jW2-4u-p7Y">
-                                                <rect key="frame" x="81" y="286" width="193" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="29"/>
-                                                <color key="textColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="سرعة قرائتك:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUS-DZ-QT3">
-                                                <rect key="frame" x="130" y="253" width="193" height="33"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سؤال" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtw-uY-gr6">
+                                                <rect key="frame" x="79" y="0.0" width="61.5" height="50.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ReadingResult" translatesAutoresizingMaskIntoConstraints="NO" id="lDZ-Ia-5LS">
-                                                <rect key="frame" x="148" y="345" width="156" height="167"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="8pH-dc-dud">
+                                        <rect key="frame" x="62.5" y="184.5" width="563.5" height="303"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="skF-uH-9g6">
+                                                <rect key="frame" x="0.0" y="0.0" width="209" height="142.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كان هذ النص حول ... ؟" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJA-Wd-GGa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="209" height="38.5"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="35"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="23c-3D-QSy">
+                                                        <rect key="frame" x="0.0" y="78.5" width="209" height="64"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mjT-3B-VXJ">
+                                                                <rect key="frame" x="154.5" y="0.0" width="54.5" height="26.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نعم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT8-Oe-K23">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="26.5"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-nK-PLv" userLabel="YesBtn">
+                                                                        <rect key="frame" x="32" y="0.0" width="22.5" height="26.5"/>
+                                                                        <state key="normal" image="OrangeUnCheck">
+                                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </state>
+                                                                        <state key="selected" image="OrangeCheck"/>
+                                                                        <connections>
+                                                                            <action selector="answerBtn:" destination="owe-LR-nfH" eventType="touchUpInside" id="X4u-GA-VRu"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qbG-N2-Zoe">
+                                                                <rect key="frame" x="168.5" y="37.5" width="40.5" height="26.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc4-S1-lBv">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="26.5"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYo-1s-dNU" userLabel="NoBtn">
+                                                                        <rect key="frame" x="18" y="0.0" width="22.5" height="26.5"/>
+                                                                        <state key="normal" image="OrangeUnCheck"/>
+                                                                        <state key="selected" image="OrangeCheck"/>
+                                                                        <connections>
+                                                                            <action selector="answerBtn:" destination="owe-LR-nfH" eventType="touchUpInside" id="xTt-ur-mDp"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="ReadingQuestion" translatesAutoresizingMaskIntoConstraints="NO" id="ebU-Zj-1o7">
+                                                <rect key="frame" x="263" y="0.0" width="300.5" height="303"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t71-xo-erg" userLabel="NextBtn">
-                                                <rect key="frame" x="18" y="604" width="400" height="50"/>
-                                                <state key="normal" image="NextTestBtn">
-                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="nextTestBtn" destination="BuH-3K-Hve" eventType="touchUpInside" id="hsL-vA-n6s"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="وقت القراءة (بالثوانى)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6A-dq-99m">
-                                                <rect key="frame" x="370" y="113" width="124" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="17"/>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UT7-8M-Fp5" secondAttribute="trailing" constant="22" id="3h4-i9-T0A"/>
+                                    <constraint firstItem="8pH-dc-dud" firstAttribute="centerY" secondItem="7LB-0f-BpU" secondAttribute="centerY" id="GRF-b5-egd"/>
+                                    <constraint firstAttribute="trailing" secondItem="8pH-dc-dud" secondAttribute="trailing" constant="30" id="N9g-j7-cfJ"/>
+                                    <constraint firstItem="UT7-8M-Fp5" firstAttribute="top" secondItem="7LB-0f-BpU" secondAttribute="top" constant="8" id="Rea-mn-jkS"/>
+                                    <constraint firstItem="ILe-CD-zzA" firstAttribute="top" secondItem="7LB-0f-BpU" secondAttribute="top" constant="8" id="UwT-RY-dE5"/>
+                                    <constraint firstItem="ILe-CD-zzA" firstAttribute="centerX" secondItem="7LB-0f-BpU" secondAttribute="centerX" id="ihJ-BL-7pH"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-Yw-pUX" userLabel="StoryView" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="32" width="656" height="672"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pod-bD-jl4">
+                                        <rect key="frame" x="579" y="8" width="55" height="73"/>
+                                        <state key="normal" image="ReadThis">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="havingReadingVoiceOver" destination="owe-LR-nfH" eventType="touchUpInside" id="xYY-pw-hwx"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrN-cx-eWT">
+                                        <rect key="frame" x="255" y="8" width="146" height="50.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من ٣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUM-zC-aM8">
+                                                <rect key="frame" x="0.0" y="0.0" width="62.5" height="50.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0U9-Wm-MVs" userLabel="ChartContainer">
-                                                <rect key="frame" x="431" y="140" width="523" height="335"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="١" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snJ-PA-66F">
+                                                <rect key="frame" x="62.5" y="0.0" width="16.5" height="50.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قطعة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4y-Aj-hzF">
+                                                <rect key="frame" x="79" y="0.0" width="67" height="50.5"/>
+                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="2Tt-rF-qv1">
+                                        <rect key="frame" x="0.0" y="105" width="632" height="450"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="GUu-Ah-5hh">
+                                                <rect key="frame" x="0.0" y="37" width="285" height="413"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="EFN-Am-EdH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="285" height="141"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قبل أن تبدأ، تأكد من رؤية الإطار الأحمر كله." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-CC-KWA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="285" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقر على الزر أدناه عندما تكون على استعداد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq7-er-CHS">
+                                                                <rect key="frame" x="0.0" y="37.5" width="285" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لقراءة القطعة." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSa-AL-rz7">
+                                                                <rect key="frame" x="0.0" y="75" width="285" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقر على مرة أخرى عند الانتهاء من القراءة." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiU-3a-TEb">
+                                                                <rect key="frame" x="0.0" y="112.5" width="285" height="28.5"/>
+                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="26"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-pj-wh2">
+                                                        <rect key="frame" x="42.5" y="213" width="200" height="200"/>
+                                                        <state key="normal" image="RoundStartBtn">
+                                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="RoundFinishedBtn"/>
+                                                        <connections>
+                                                            <action selector="startBtn" destination="owe-LR-nfH" eventType="touchUpInside" id="Wp8-eH-q9w"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4u-59-Kgm">
+                                                <rect key="frame" x="285" y="0.0" width="347" height="450"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedFrame" translatesAutoresizingMaskIntoConstraints="NO" id="KNe-Jf-76H">
+                                                        <rect key="frame" x="0.0" y="0.0" width="347" height="450"/>
+                                                    </imageView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kI4-BM-QtN">
+                                                        <rect key="frame" x="10" y="8" width="327" height="433"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <string key="text">الحديث عن مثلث برمودا يشبة الحديث عن الحكايات الخرافية، ولكن يبقي الفرق هنا هو أن مثلث برمودا حقيقة واقعية لمسناها في عصرنا هذا، وقرأنا عنها في الصحف العربية والعالمية، ويمكن القول أن مثلث برمودا يعتبر التحدي الذي يواجه الإنسان في هذا القرن . وهو أحد الغرائب الطبيعية الذي تتحدث عنه الصحف.</string>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="34"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVk-tf-dHl">
+                                                        <rect key="frame" x="139" y="145" width="69.5" height="160"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="117"/>
+                                                        <color key="textColor" red="0.83529411760000005" green="0.0" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="kI4-BM-QtN" firstAttribute="top" secondItem="d4u-59-Kgm" secondAttribute="top" constant="8" id="3Eh-i9-huL"/>
+                                                    <constraint firstItem="kI4-BM-QtN" firstAttribute="leading" secondItem="d4u-59-Kgm" secondAttribute="leading" constant="10" id="6xf-DL-x7Y"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KNe-Jf-76H" secondAttribute="trailing" id="C31-5a-jQk"/>
+                                                    <constraint firstItem="KNe-Jf-76H" firstAttribute="leading" secondItem="d4u-59-Kgm" secondAttribute="leading" id="FLg-op-QGy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kI4-BM-QtN" secondAttribute="trailing" constant="10" id="MqM-WZ-BzW"/>
+                                                    <constraint firstItem="fVk-tf-dHl" firstAttribute="centerY" secondItem="d4u-59-Kgm" secondAttribute="centerY" id="Unf-Ea-vlD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="kI4-BM-QtN" secondAttribute="bottom" constant="9" id="Vre-Mb-658"/>
+                                                    <constraint firstItem="KNe-Jf-76H" firstAttribute="top" secondItem="d4u-59-Kgm" secondAttribute="top" id="cCM-lO-xi5"/>
+                                                    <constraint firstItem="fVk-tf-dHl" firstAttribute="centerX" secondItem="d4u-59-Kgm" secondAttribute="centerX" id="gSF-Wq-fhf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="KNe-Jf-76H" secondAttribute="bottom" id="jKD-1j-dIz"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="t71-xo-erg" secondAttribute="bottom" constant="18" id="7nQ-1Y-Kfk"/>
-                                            <constraint firstItem="Xhl-9F-deB" firstAttribute="top" secondItem="Lgk-IG-7iv" secondAttribute="top" constant="8" id="812-2s-FE7"/>
-                                            <constraint firstItem="Xhl-9F-deB" firstAttribute="centerX" secondItem="Lgk-IG-7iv" secondAttribute="centerX" id="D9d-tB-mh5"/>
-                                            <constraint firstItem="t71-xo-erg" firstAttribute="leading" secondItem="Lgk-IG-7iv" secondAttribute="leading" constant="18" id="GBX-Kp-tir"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="7LB-0f-BpU" firstAttribute="top" secondItem="LIg-g2-pB7" secondAttribute="top" constant="32" id="5a9-kz-nfb"/>
-                                    <constraint firstAttribute="trailing" secondItem="7LB-0f-BpU" secondAttribute="trailing" constant="24" id="8da-0Z-yWJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="Lgk-IG-7iv" secondAttribute="bottom" constant="24" id="9BE-oQ-dS3"/>
-                                    <constraint firstAttribute="trailing" secondItem="Rde-Yw-pUX" secondAttribute="trailing" constant="24" id="Abh-Tk-0WU"/>
-                                    <constraint firstItem="Rde-Yw-pUX" firstAttribute="top" secondItem="LIg-g2-pB7" secondAttribute="top" constant="32" id="EHk-zm-WtP"/>
-                                    <constraint firstItem="HHR-at-Okg" firstAttribute="top" secondItem="LIg-g2-pB7" secondAttribute="top" id="EnL-nE-AJS"/>
-                                    <constraint firstItem="7LB-0f-BpU" firstAttribute="leading" secondItem="LIg-g2-pB7" secondAttribute="leading" constant="24" id="Kdd-eJ-Rzo"/>
-                                    <constraint firstAttribute="trailing" secondItem="Lgk-IG-7iv" secondAttribute="trailing" constant="24" id="Kfm-Xh-S3W"/>
-                                    <constraint firstItem="Rde-Yw-pUX" firstAttribute="leading" secondItem="LIg-g2-pB7" secondAttribute="leading" constant="24" id="Maj-Om-GfN"/>
-                                    <constraint firstAttribute="bottom" secondItem="HHR-at-Okg" secondAttribute="bottom" id="XU8-8g-Yy9"/>
-                                    <constraint firstItem="HHR-at-Okg" firstAttribute="leading" secondItem="LIg-g2-pB7" secondAttribute="leading" id="ZTr-8Y-nMl"/>
-                                    <constraint firstItem="Lgk-IG-7iv" firstAttribute="top" secondItem="LIg-g2-pB7" secondAttribute="top" constant="32" id="bZN-nG-7XQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="HHR-at-Okg" secondAttribute="trailing" id="dan-c3-KAr"/>
-                                    <constraint firstItem="Lgk-IG-7iv" firstAttribute="leading" secondItem="LIg-g2-pB7" secondAttribute="leading" constant="24" id="mhv-yV-mCD"/>
-                                    <constraint firstAttribute="bottom" secondItem="7LB-0f-BpU" secondAttribute="bottom" constant="24" id="sAO-s4-Y8d"/>
-                                    <constraint firstAttribute="bottom" secondItem="Rde-Yw-pUX" secondAttribute="bottom" constant="24" id="uld-nu-Eoo"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Tt-rF-qv1" secondAttribute="trailing" constant="24" id="3wG-Q6-kTg"/>
+                                    <constraint firstAttribute="trailing" secondItem="pod-bD-jl4" secondAttribute="trailing" constant="22" id="C8v-5b-aoS"/>
+                                    <constraint firstItem="pod-bD-jl4" firstAttribute="top" secondItem="Rde-Yw-pUX" secondAttribute="top" constant="8" id="PQ3-Ok-sOm"/>
+                                    <constraint firstItem="2Tt-rF-qv1" firstAttribute="leading" secondItem="Rde-Yw-pUX" secondAttribute="leading" id="U4o-a5-gpl"/>
+                                    <constraint firstItem="XrN-cx-eWT" firstAttribute="centerX" secondItem="Rde-Yw-pUX" secondAttribute="centerX" id="jnM-m5-GNj"/>
+                                    <constraint firstItem="XrN-cx-eWT" firstAttribute="top" secondItem="Rde-Yw-pUX" secondAttribute="top" constant="8" id="nGY-he-E7H"/>
+                                    <constraint firstItem="2Tt-rF-qv1" firstAttribute="top" secondItem="pod-bD-jl4" secondAttribute="bottom" constant="24" id="qDz-4M-kCp"/>
+                                    <constraint firstAttribute="leading" secondItem="2Tt-rF-qv1" secondAttribute="leading" id="z8d-A9-tRb"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lju-Dk-ShJ" userLabel="ResultView" customClass="CustomView" customModule="readright" customModuleProvider="target">
+                                <rect key="frame" x="24" y="16" width="656" height="688"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="نتائج الاختبار" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xci-ca-lEd">
+                                        <rect key="frame" x="250.5" y="8" width="155" height="50.5"/>
+                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="46"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVE-OK-3yy" userLabel="NextBtn">
+                                        <rect key="frame" x="18" y="620" width="400" height="50"/>
+                                        <state key="normal" image="NextTestBtn">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextTestBtn" destination="owe-LR-nfH" eventType="touchUpInside" id="Wvf-6a-pbb"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="وقت القراءة (بالثوانى)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ds-0J-EuU">
+                                        <rect key="frame" x="280.5" y="106.5" width="95" height="19"/>
+                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleAspectFit" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bjn-gC-925" userLabel="ChartContainer">
+                                        <rect key="frame" x="280.5" y="143.5" width="357.5" height="412.5"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="8hE-Lx-Qhk">
+                                        <rect key="frame" x="116" y="106.5" width="204.5" height="449.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="rOw-d3-2AG">
+                                                <rect key="frame" x="0.0" y="0.0" width="204.5" height="207"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="FXt-1a-HzX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="204.5" height="71"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="متوسط الوقت في القراءة:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFz-US-6p3">
+                                                                <rect key="frame" x="9" y="0.0" width="186.5" height="32"/>
+                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="29"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="XWm-9T-hob">
+                                                                <rect key="frame" x="0.0" y="38" width="204.5" height="33"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ثانية لكل قطعة نصية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAY-Jb-Iy7">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="165" height="33"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="30"/>
+                                                                        <color key="textColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="٧.٧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHd-zB-62w" userLabel="AverageSecs">
+                                                                        <rect key="frame" x="179" y="0.0" width="25.5" height="33"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="29"/>
+                                                                        <color key="textColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="fuJ-A4-JIJ">
+                                                        <rect key="frame" x="19" y="135" width="166.5" height="72"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سرعة قرائتك:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYw-pI-YJN">
+                                                                <rect key="frame" x="33" y="0.0" width="100.5" height="33"/>
+                                                                <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="30"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="qIR-xr-dIK">
+                                                                <rect key="frame" x="0.0" y="39" width="166.5" height="33"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كلمة في الدقيقة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajL-n3-Iue">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="33"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="30"/>
+                                                                        <color key="textColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="٣٨٢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkH-dX-G3e" userLabel="AverageWords">
+                                                                        <rect key="frame" x="134.5" y="0.0" width="32" height="33"/>
+                                                                        <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="30"/>
+                                                                        <color key="textColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ReadingResult" translatesAutoresizingMaskIntoConstraints="NO" id="FM8-g9-jRD">
+                                                <rect key="frame" x="24.5" y="283.5" width="155.5" height="166"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="5ds-0J-EuU" firstAttribute="top" secondItem="xci-ca-lEd" secondAttribute="bottom" constant="48" id="0LD-mx-am1"/>
+                                    <constraint firstItem="bjn-gC-925" firstAttribute="top" secondItem="5ds-0J-EuU" secondAttribute="bottom" constant="18" id="7Uq-qp-fW1"/>
+                                    <constraint firstItem="tVE-OK-3yy" firstAttribute="leading" secondItem="Lju-Dk-ShJ" secondAttribute="leading" constant="18" id="B3T-Ar-3tk"/>
+                                    <constraint firstItem="5ds-0J-EuU" firstAttribute="centerX" secondItem="xci-ca-lEd" secondAttribute="centerX" id="Cpb-UY-RB0"/>
+                                    <constraint firstItem="xci-ca-lEd" firstAttribute="centerX" secondItem="Lju-Dk-ShJ" secondAttribute="centerX" id="Gcv-i5-aDx"/>
+                                    <constraint firstItem="8hE-Lx-Qhk" firstAttribute="centerX" secondItem="tVE-OK-3yy" secondAttribute="centerX" id="Hqd-8W-G1y"/>
+                                    <constraint firstItem="tVE-OK-3yy" firstAttribute="top" secondItem="8hE-Lx-Qhk" secondAttribute="bottom" constant="64" id="Ko5-1z-Gtl"/>
+                                    <constraint firstItem="8hE-Lx-Qhk" firstAttribute="top" secondItem="xci-ca-lEd" secondAttribute="bottom" constant="48" id="ZmH-4s-vXU"/>
+                                    <constraint firstItem="xci-ca-lEd" firstAttribute="top" secondItem="Lju-Dk-ShJ" secondAttribute="top" constant="8" id="cBe-kr-D9E"/>
+                                    <constraint firstItem="tVE-OK-3yy" firstAttribute="top" secondItem="bjn-gC-925" secondAttribute="bottom" constant="64" id="dFn-5G-CUJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="tVE-OK-3yy" secondAttribute="bottom" constant="18" id="ebn-0u-OdM"/>
+                                    <constraint firstItem="bjn-gC-925" firstAttribute="leading" secondItem="5ds-0J-EuU" secondAttribute="leading" id="tfK-wF-mEm"/>
+                                    <constraint firstAttribute="trailing" secondItem="bjn-gC-925" secondAttribute="trailing" constant="18" id="xXr-ax-zWe"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="1DB-O6-tDQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="nxb-L7-cNT"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LIg-g2-pB7" firstAttribute="bottom" secondItem="CVo-OH-Okn" secondAttribute="bottom" id="4yo-XR-Jo5"/>
-                            <constraint firstItem="LIg-g2-pB7" firstAttribute="leading" secondItem="CVo-OH-Okn" secondAttribute="leading" id="H2w-yV-wb8"/>
-                            <constraint firstAttribute="trailing" secondItem="LIg-g2-pB7" secondAttribute="trailing" id="O43-Dr-F8Z"/>
-                            <constraint firstItem="LIg-g2-pB7" firstAttribute="bottom" secondItem="1DB-O6-tDQ" secondAttribute="bottom" id="SET-4p-VIE"/>
-                            <constraint firstItem="LIg-g2-pB7" firstAttribute="leading" secondItem="1DB-O6-tDQ" secondAttribute="leading" id="mt6-7U-cBn"/>
-                            <constraint firstItem="LIg-g2-pB7" firstAttribute="top" secondItem="CVo-OH-Okn" secondAttribute="top" id="wNa-m6-ulI"/>
+                            <constraint firstItem="Rde-Yw-pUX" firstAttribute="leading" secondItem="nxb-L7-cNT" secondAttribute="leading" constant="24" id="2fL-Re-3u4"/>
+                            <constraint firstItem="7LB-0f-BpU" firstAttribute="top" secondItem="nxb-L7-cNT" secondAttribute="top" constant="32" id="2lm-7z-QoG"/>
+                            <constraint firstItem="nxb-L7-cNT" firstAttribute="trailing" secondItem="7LB-0f-BpU" secondAttribute="trailing" constant="24" id="91Q-Q5-shn"/>
+                            <constraint firstItem="nxb-L7-cNT" firstAttribute="bottom" secondItem="Rde-Yw-pUX" secondAttribute="bottom" constant="24" id="FVV-Vg-37D"/>
+                            <constraint firstItem="Lju-Dk-ShJ" firstAttribute="leading" secondItem="nxb-L7-cNT" secondAttribute="leading" constant="24" id="KaD-w5-Dio"/>
+                            <constraint firstItem="nxb-L7-cNT" firstAttribute="trailing" secondItem="Lju-Dk-ShJ" secondAttribute="trailing" constant="24" id="V4z-SU-NEY"/>
+                            <constraint firstItem="7LB-0f-BpU" firstAttribute="leading" secondItem="nxb-L7-cNT" secondAttribute="leading" constant="24" id="Yzr-2E-Xgs"/>
+                            <constraint firstItem="nxb-L7-cNT" firstAttribute="trailing" secondItem="Rde-Yw-pUX" secondAttribute="trailing" constant="24" id="ehx-DG-Zhh"/>
+                            <constraint firstItem="Rde-Yw-pUX" firstAttribute="top" secondItem="nxb-L7-cNT" secondAttribute="top" constant="32" id="hN7-gd-Nxd"/>
+                            <constraint firstItem="Lju-Dk-ShJ" firstAttribute="top" secondItem="nxb-L7-cNT" secondAttribute="top" constant="16" id="hnP-Ur-fM4"/>
+                            <constraint firstItem="WH2-s4-UbF" firstAttribute="top" secondItem="w2t-Wn-7U4" secondAttribute="top" id="kLB-RO-36N"/>
+                            <constraint firstItem="nxb-L7-cNT" firstAttribute="bottom" secondItem="7LB-0f-BpU" secondAttribute="bottom" constant="24" id="ogl-Ax-qZB"/>
+                            <constraint firstItem="nxb-L7-cNT" firstAttribute="bottom" secondItem="Lju-Dk-ShJ" secondAttribute="bottom" constant="24" id="sQV-S2-176"/>
+                            <constraint firstItem="WH2-s4-UbF" firstAttribute="trailing" secondItem="nxb-L7-cNT" secondAttribute="trailing" id="tts-b3-VII"/>
+                            <constraint firstItem="WH2-s4-UbF" firstAttribute="leading" secondItem="nxb-L7-cNT" secondAttribute="leading" id="uhr-Nk-uwa"/>
+                            <constraint firstItem="nxb-L7-cNT" firstAttribute="bottom" secondItem="WH2-s4-UbF" secondAttribute="bottom" id="wWp-iI-TAK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MCQ-3N-J7g"/>
+                    <navigationItem key="navigationItem" id="ZgS-Ry-sm4"/>
                     <connections>
-                        <outlet property="ChartContainer" destination="0U9-Wm-MVs" id="IVR-Mw-Wmy"/>
-                        <outlet property="CountDownLabel" destination="fVk-tf-dHl" id="onm-WI-9MI"/>
-                        <outlet property="CurrentQuestionLabel" destination="qHi-lv-gRb" id="YC1-TW-z7s"/>
-                        <outlet property="CurrentStoryLabel" destination="snJ-PA-66F" id="uJ8-6e-hUy"/>
-                        <outlet property="QuestionText" destination="KJA-Wd-GGa" id="yOK-wq-9bR"/>
-                        <outlet property="QuestionView" destination="7LB-0f-BpU" id="R0Y-KB-Cw6"/>
-                        <outlet property="ResultAverageSecs" destination="U8n-QD-HgU" id="5gl-5c-Z11"/>
-                        <outlet property="ResultAverageWords" destination="O5f-fs-Wdt" id="BiP-VO-mG3"/>
-                        <outlet property="ResultView" destination="Lgk-IG-7iv" id="ypn-ad-ijr"/>
-                        <outlet property="StartFinishBtn" destination="T1K-pj-wh2" id="IJ5-jX-iWM"/>
-                        <outlet property="StoryText" destination="kI4-BM-QtN" id="ff7-Ps-cN6"/>
-                        <outlet property="StoryView" destination="Rde-Yw-pUX" id="XnF-Sa-mwa"/>
+                        <outlet property="ChartContainer" destination="bjn-gC-925" id="Wh2-ls-neE"/>
+                        <outlet property="CountDownLabel" destination="fVk-tf-dHl" id="8t5-s6-151"/>
+                        <outlet property="CurrentQuestionLabel" destination="qHi-lv-gRb" id="XKB-2p-clG"/>
+                        <outlet property="CurrentStoryLabel" destination="snJ-PA-66F" id="60s-ar-4OP"/>
+                        <outlet property="QuestionText" destination="KJA-Wd-GGa" id="3BC-sz-txS"/>
+                        <outlet property="QuestionView" destination="7LB-0f-BpU" id="Dnx-eU-opj"/>
+                        <outlet property="ResultAverageSecs" destination="WHd-zB-62w" id="wq2-up-Ce2"/>
+                        <outlet property="ResultAverageWords" destination="JkH-dX-G3e" id="14k-qF-MBN"/>
+                        <outlet property="ResultView" destination="Lju-Dk-ShJ" id="VzN-Sd-pKH"/>
+                        <outlet property="StartFinishBtn" destination="T1K-pj-wh2" id="RmP-xA-3Kl"/>
+                        <outlet property="StoryText" destination="kI4-BM-QtN" id="G5U-ZU-6Gd"/>
+                        <outlet property="StoryView" destination="Rde-Yw-pUX" id="X45-tz-Ytf"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ja-9Q-0OX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C1e-qy-hho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796.77891654465589" y="83.203125"/>
+            <point key="canvasLocation" x="1464" y="84"/>
         </scene>
     </scenes>
     <resources>

@@ -9,6 +9,7 @@ PODS:
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
+  - netfox (1.21.0)
   - RNActivityView (0.0.8)
   - RxCocoa (5.1.3):
     - RxRelay (~> 5)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - LKAlertController
   - Moya (= 14.0.0)
   - Moya/RxSwift
+  - netfox
   - RNActivityView
   - RxCocoa (~> 5.1)
   - RxGesture
@@ -36,6 +38,7 @@ SPEC REPOS:
     - JWTDecode
     - LKAlertController
     - Moya
+    - netfox
     - RNActivityView
     - RxCocoa
     - RxGesture
@@ -47,12 +50,13 @@ SPEC CHECKSUMS:
   JWTDecode: 33e5e26e5ddbd21b2065820894c08fef0cad9509
   LKAlertController: 10c7e8627e5d4757d03b4f53469f35ded14c378f
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  netfox: 9d5cc727fe7576c4c7688a2504618a156b7d44b7
   RNActivityView: a47d2fd9ae790369dddc8d878bfea359135fceac
   RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
 
-PODFILE CHECKSUM: 941eab5227ca75b7f800654fd273078573df7d37
+PODFILE CHECKSUM: 31306c0bfd1cd91acb092398f2f731a4aa143785
 
 COCOAPODS: 1.11.3

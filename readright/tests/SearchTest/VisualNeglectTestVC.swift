@@ -188,7 +188,7 @@ extension VisualNeglectTestVC : CustomAlertViewDelegate {
         switch (tag) {
             case 0: // Showing target alert
                 if (index == 0) {
-                    updatingTimer =  Timer(timeInterval:1, target:self, selector:#selector(updateTimeLabel), userInfo:nil, repeats:true)
+                    updatingTimer =  Timer.scheduledTimer(timeInterval:1, target:self, selector:#selector(updateTimeLabel), userInfo:nil, repeats:true)
                 }
                 break
                 

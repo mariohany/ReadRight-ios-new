@@ -282,12 +282,13 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         }else if blindCauseIndex == 4 {
             cause = self.RegisterProblemOtherCause.text
         }
+        let gender = genderIndex == 1 ? "M" : "F"
         
         viewModel.register(email: email,
                            password: password1,
                            confirmPassword: password2,
                            name: name,
-                           gender: genderIndex,
+                           gender: gender,
                            yearOfBirth: self.RegisterYearBirth.text!,
                            hemianopiaType: blindTypeIndex,
                            vpSide: blindWithIndex,

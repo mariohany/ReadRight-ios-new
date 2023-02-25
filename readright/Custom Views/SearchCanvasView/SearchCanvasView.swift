@@ -23,9 +23,9 @@ import UIKit
     }
     
     
-    @IBAction private func selectItem(sender:UIButton) {
+    @IBAction private func selectItem(_ sender:UIButton) {
         let itemBtn = sender
-        if let parent = self.parent, responds(to: #selector(parent.didSelectItemWithTag)) {
+        if let parent = self.parent {
             parent.didSelectItemWithTag(itemBtn.tag)
         }
     }
@@ -72,19 +72,19 @@ import UIKit
         
         //    [[self viewWithTag: itemBtn.tag] setHidden:YES];
         itemBtn.isSelected = true
-        self.perform(#selector(undoWrongItem), with: tag, afterDelay: 1)
+        self.perform(#selector(self.undoWrongItem), with: itemBtn , afterDelay: 1)
     }
 
-    @objc func undoWrongItem(_ tag:Int){
-        let itemBtn:UIButton = viewWithTag(tag) as! UIButton
-        let itemName:String = SearchTestHelper.getItemName(itemBtn.tag)
+    @objc func undoWrongItem(_ btn:UIButton){
+//        let itemBtn:UIButton = viewWithTag(tag) as! UIButton
+        let itemName:String = SearchTestHelper.getItemName(btn.tag)
         let normalImageName:String = String(format:"%@",itemName)
-        itemBtn.setImage(UIImage(named:normalImageName), for:.normal)
+        btn.setImage(UIImage(named:normalImageName), for:.normal)
 
         let wrongMark = viewWithTag(100) as! UIImageView
         wrongMark.removeFromSuperview()
         
-        itemBtn.isSelected = false
+        btn.isSelected = false
     }
 
     func removeTargets(){
@@ -132,7 +132,7 @@ import UIKit
             candidateView.frame = CGRect(x:CGFloat(Float(arc4random_uniform(UInt32(xEndBoundry!))) + xStartBoundry), y:CGFloat(arc4random_uniform(UInt32(yBoundry!))), width:CGFloat(candidatateWidth!), height:CGFloat(candidateHeight!))
             candidateView.tag = targetNumber
             candidateView.setImage(img, for:.normal)
-            candidateView.addTarget(self, action: #selector(selectItem), for: .touchUpInside)
+            candidateView.addTarget(self, action: #selector(self.selectItem), for: .touchUpInside)
             candidateView.contentMode = .scaleToFill
             randomDegree = Float(arc4random_uniform(360))
             candidateView.transform = CGAffineTransform(rotationAngle: Double((randomDegree ?? 0)) * .pi / 180)

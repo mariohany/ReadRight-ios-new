@@ -24,15 +24,15 @@ class VisualFieldTestVC : UIViewController, CustomAlertViewDelegate {
     @IBOutlet weak private var AnswerBtn2:UIButton!
     @IBOutlet weak private var AnswerBtn3:UIButton!
     
-    var results:[Int] = []
-    var dotsHitted:[Int] = []
-    var answersIDs:[Int] = []
-    var answersFlow:[Int] = []
-    var answers:[String] = []
+    var results:[Int] = Array(repeating: 0, count: NUMBER_OF_QUESTIONS)
+    var dotsHitted:[Int] = Array(repeating: 0, count: 16)
+    var answersIDs:[Int] = Array(repeating: 0, count: NUMBER_OF_QUESTIONS)
+    var answersFlow:[Int] = Array(repeating: 0, count: NUMBER_OF_QUESTIONS)
+    var answers:[String] = Array(repeating: "", count: NUMBER_OF_QUESTIONS)
     var currentQuestion:Int = 0
     var currentStage:Int = 0
     var isFinished:Bool = false
-    var canvasView:VisualCanavasView = .fromNib()
+    var canvasView:VisualCanvasView = .fromNib()
     var resultView:FieldResultView = .fromNib()
     var stopWatch:Date = Date()
     var vftDuration:Float = 0.0
@@ -53,9 +53,6 @@ class VisualFieldTestVC : UIViewController, CustomAlertViewDelegate {
         fillReadyAnswers()
         self.TestView.isHidden = false
         self.AnswersView.isHidden = true
-        
-        
-        canvasView = VisualCanavasView.fromNib()
         
         canvasView.layer.borderColor = UIColor.black.cgColor
         canvasView.layer.borderWidth = 1.0
@@ -146,9 +143,7 @@ class VisualFieldTestVC : UIViewController, CustomAlertViewDelegate {
        
    }
 
-   func showResults(){
-       resultView = FieldResultView.fromNib()
-       
+   func showResults(){       
        resultView.layer.borderColor = UIColor.black.cgColor
        resultView.layer.borderWidth = 1.0
        
