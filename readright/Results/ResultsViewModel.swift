@@ -20,7 +20,7 @@ class ResultsViewModel {
     var isLoading = BehaviorRelay<Bool>(value: false)
     var searchResult = BehaviorRelay<[NetworkModels.SearchTestHistory]?>(value: nil)
     var readingResult = BehaviorRelay<[NetworkModels.ReadingResults]?>(value: nil)
-    var neglectResult = BehaviorRelay<[NetworkModels.HistoryItem]?>(value: nil)
+    var neglectResult = BehaviorRelay<[NetworkModels.NeglectResultItem]?>(value: nil)
     var therapyResult = BehaviorRelay<NetworkModels.ResultsBaseModel?>(value: nil)
     var visualResult = BehaviorRelay<[NetworkModels.HistoryItem]?>(value: nil)
     
@@ -57,12 +57,12 @@ class ResultsViewModel {
     func getNeglectFieldHistory(){
         self.isLoading.accept(true)
         provider.request(.GetNeglectTestHistory)
-            .map(NetworkModels.ResultsBaseModel.self)
+            .map([NetworkModels.NeglectResultItem]?.self)
             .subscribe { (result) in
                 self.isLoading.accept(false)
                 switch result {
                     case .success(let response):
-                        if let response = response.History {
+                        if let response = response {
                             self.neglectResult.accept(response)
                         }
                     case .error(let error):

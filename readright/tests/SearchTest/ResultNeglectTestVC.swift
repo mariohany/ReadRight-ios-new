@@ -11,7 +11,7 @@ import Foundation
 class ResultNeglectTestVC: UIViewController{
     
     @IBOutlet weak private var ScoreTextField:UILabel!
-    var ResultScore:Float = 0.0
+    var ResultScore:Int = 0
     
     
     override func viewDidLoad() {
@@ -21,11 +21,13 @@ class ResultNeglectTestVC: UIViewController{
         let barButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(popToTestsController))
         
         self.navigationItem.leftBarButtonItem = barButtonItem
-        self.ScoreTextField.text = String(format:"%d%%", self.ResultScore)
+        self.ScoreTextField.text = "\(String(self.ResultScore))%"
     }
     
     @objc func popToTestsController(){
-        self.navigationController?.popViewController(animated: true)
+        if let destinationViewController = self.navigationController?.viewControllers.filter({$0 is ReadingVC}).first {
+            navigationController?.popToViewController(destinationViewController, animated: true)
+        }
     }
 
 

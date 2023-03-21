@@ -39,7 +39,9 @@ class PrepareVisualVC: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func popToTestsController(){
-        self.navigationController?.popViewController(animated: true)
+        if let destinationViewController = self.navigationController?.viewControllers.filter({$0 is ReadingVC}).first {
+            navigationController?.popToViewController(destinationViewController, animated: true)
+        }
     }
 
 

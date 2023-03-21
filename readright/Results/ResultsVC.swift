@@ -116,7 +116,7 @@ class ResultsVC: UIViewController {
                     Helpers.handleErrorMessages(message: Constants.HISTORY_EMPTY)
                 }
                 self.chart.removeFromSuperview()
-                self.loadChartBarWithValues(value: list.map { $0.Score ?? 0.0 }, text: list.map{ String(describing: $0.Score) }, labels: list.map{ $0.date ?? "" }, incrementalValue: self.getIncrementalStepFromArray(array: list.map { $0.Score ?? 0.0 }), containerView: self.ChartView)
+                self.loadChartBarWithValues(value: list.map { CGFloat($0.score ?? 0) }, text: list.map{ String(describing: $0.score!) }, labels: list.map{ ($0.date ?? "").toFormatedDate() }, incrementalValue: self.getIncrementalStepFromArray(array: list.map { CGFloat($0.score ?? 0) }), containerView: self.ChartView)
                 self.chart.reloadData()
             }
         }
@@ -135,7 +135,7 @@ class ResultsVC: UIViewController {
                     }
                     
                     self.therapyHistoryList = list
-                    self.TherapyTotalDurationLabel.text = String(describing: res?.TherapySpentTime)
+                    self.TherapyTotalDurationLabel.text = String(describing: res?.TherapySpentTime ?? 0)
                     self.HistoryTherapyTableResults.reloadData()
                 }
             }
@@ -282,8 +282,10 @@ extension ResultsVC : UITableViewDelegate, UITableViewDataSource {
             }
             case HISTORY_FIELD_VIEW: //Field Test results
             do {
-                cell = FieldHistoryCell.init(style: .default, reuseIdentifier: "FieldHistoryCell")
-                (cell as? FieldHistoryCell)?.FieldDate?.text = Helpers.convertDate(visualFieldsResult[indexPath.row].date)
+                cell = tableView.dequeueReusableCell(withIdentifier: "FieldHistoryCell") as! FieldHistoryCell
+                       
+//                cell = FieldHistoryCell.init(style: .default, reuseIdentifier: "FieldHistoryCell")
+                (cell as? FieldHistoryCell)?.dateLabel?.text = Helpers.convertDate(visualFieldsResult[indexPath.row].date)
                 let bgView: UIView = UIView()
                 bgView.backgroundColor = UIColor(red: 221.0/255.0, green: 134.0/255.0, blue: 89.0/255.0, alpha: 1)
                 (cell as? FieldHistoryCell)?.selectedBackgroundView = bgView
@@ -306,7 +308,7 @@ extension ResultsVC : UITableViewDelegate, UITableViewDataSource {
             visualFieldResultCanvas.renderResultViewWithAlldots(results: dotesValues ?? [])
             visualFieldResultCanvas.removeFromSuperview()
             self.VisualFieldResultContainer.addSubview(visualFieldResultCanvas)
-            self.VisualFieldDateLabel.text = visualFieldsResult[indexPath.row].date
+            self.VisualFieldDateLabel.text = visualFieldsResult[indexPath.row].date?.toFormatedDate()
         }
     }
 }
@@ -377,5 +379,17 @@ extension ResultsVC: SimpleBarChartDataSource, SimpleBarChartDelegate {
         }
         let step:Int = Int(pow(10,i) / 2)
         return (step != 0) ? step : 1
+    }
+}
+
+extension String {
+    func toFormatedDate() -> String {
+        let currentFormatter = DateFormatter()
+//        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        currentFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let date = currentFormatter.date(from:self)!
+        let newFormatter = DateFormatter()
+        newFormatter.dateFormat = "dd/MM/YYYY"
+        return newFormatter.string(from: date)
     }
 }

@@ -141,10 +141,10 @@ class VisualNeglectTestVC: UIViewController {
     }
 
     func handleNeglectViewModel() {
-        viewModel.vnt_score = (uniqueTargetsCount / Constants.NUMBER_NEGLECT_TARGETS) * 100
+        viewModel.vnt_score = Int((Float(uniqueTargetsCount) / Float(Constants.NUMBER_NEGLECT_TARGETS)) * 100)
         
-        viewModel.vnt_targets = (allTargetsVisitsCount / Constants.NUMBER_NEGLECT_TARGETS) * 100
-        viewModel.vnt_distractors = (allDistractorsVisitsCount / Constants.NUMBER_NEGLECT_DISTRACTORS) * 100
+        viewModel.vnt_targets = Int((Float(allTargetsVisitsCount) / Float(Constants.NUMBER_NEGLECT_TARGETS)) * 100)
+        viewModel.vnt_distractors = Int((Float(allDistractorsVisitsCount) / Float(Constants.NUMBER_NEGLECT_DISTRACTORS)) * 100)
         viewModel.vnt_revisits = targetRevisitsCount + distractorsRevisitsCount
         viewModel.vnt_duration = TEST_DURATION - totalTime
         if(allClicksCount  == 0){
@@ -215,7 +215,9 @@ extension VisualNeglectTestVC : CustomAlertViewDelegate {
     }
     
     func popToTestsController(){
-        self.navigationController?.popViewController(animated: true)
+        if let destinationViewController = self.navigationController?.viewControllers.filter({$0 is ReadingVC}).first {
+            navigationController?.popToViewController(destinationViewController, animated: true)
+        }
     }
 
 }
@@ -269,5 +271,16 @@ extension VisualNeglectTestVC: NeglectCanvasViewDelegate {
     func didMissTarget(leftMissedTargetsCount: Int, rightMissedTargetsCount: Int) {
         numTargetsMissedLeft = leftMissedTargetsCount
         numTargetsMissedRight = rightMissedTargetsCount
+    }
+    
+}
+
+extension VisualNeglectTestVC {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "FinishNeglectTest"){
+            // Get reference to the destination view controller
+            let vc = segue.destination as? ResultNeglectTestVC
+            vc?.ResultScore = Int((Float(uniqueTargetsCount) / Float(Constants.NUMBER_NEGLECT_TARGETS)) * 100)
+        }
     }
 }

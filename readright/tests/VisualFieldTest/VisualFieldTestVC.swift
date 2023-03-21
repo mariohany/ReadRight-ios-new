@@ -118,7 +118,7 @@ class VisualFieldTestVC : UIViewController, CustomAlertViewDelegate {
 
    func showAnswers(){
        let answersImagesNames = answers[currentQuestion].split(separator: ",")
-       let correctAnswer:String = String(format:"%d_%d", "answer", (currentQuestion / 9 + 1) , (currentQuestion % 9 + 1))
+       let correctAnswer:String = String(format:"answer%d_%d", (currentQuestion / 9 + 1) , (currentQuestion % 9 + 1))
        
        self.AnswerBtn0.setImage(UIImage(named: String(answersImagesNames[0])), for: .normal)
        self.AnswerBtn1.setImage(UIImage(named: String(answersImagesNames[1])), for: .normal)
@@ -202,7 +202,9 @@ class VisualFieldTestVC : UIViewController, CustomAlertViewDelegate {
     }
     
     func popToTestsController(){
-        self.navigationController?.popViewController(animated: true)
+        if let destinationViewController = self.navigationController?.viewControllers.filter({$0 is ReadingVC}).first {
+            navigationController?.popToViewController(destinationViewController, animated: true)
+        }
     }
 
 

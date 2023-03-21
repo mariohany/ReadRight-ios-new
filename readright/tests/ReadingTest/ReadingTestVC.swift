@@ -258,7 +258,9 @@ class ReadingTestVC: UIViewController{
     }
     
     func popToTestsController(){
-        self.navigationController?.popViewController(animated: true)
+        if let destinationViewController = self.navigationController?.viewControllers.filter({$0 is ReadingVC}).first {
+            navigationController?.popToViewController(destinationViewController, animated: true)
+        }
     }
     
 
@@ -362,7 +364,7 @@ extension ReadingTestVC: SimpleBarChartDataSource, SimpleBarChartDelegate {
         _xLabels = labels
         _barColors = [UIColor(red: 119/255.0, green: 156/255.0, blue: 89/255.0, alpha: 1)]
         
-        let chartFrame = CGRect(x: 30.0, y: 60.0, width: 950.0, height: 470.0)
+        let chartFrame = CGRect(x: 30.0, y: 60.0, width: containerView.frame.width, height: containerView.frame.height)
         _chart = SimpleBarChart(frame: chartFrame)
         //_chart.center                     = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
         _chart.delegate = self

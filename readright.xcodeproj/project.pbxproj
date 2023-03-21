@@ -632,7 +632,6 @@
 				5CBB0FA7282152280015E2C3 /* SearchTest */,
 				5CBB0FA6282152100015E2C3 /* ADLTest */,
 				5CBB0FA5282151FE0015E2C3 /* NeglectTest */,
-				5CBB0FA4282151F00015E2C3 /* VisualFieldTest */,
 				5CBB0FA3282151DE0015E2C3 /* ReadingTest */,
 			);
 			path = tests;
@@ -647,13 +646,6 @@
 				E88D8CDF287A423C007506E6 /* ReadingTestViewModel.swift */,
 			);
 			path = ReadingTest;
-			sourceTree = "<group>";
-		};
-		5CBB0FA4282151F00015E2C3 /* VisualFieldTest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = VisualFieldTest;
 			sourceTree = "<group>";
 		};
 		5CBB0FA5282151FE0015E2C3 /* NeglectTest */ = {

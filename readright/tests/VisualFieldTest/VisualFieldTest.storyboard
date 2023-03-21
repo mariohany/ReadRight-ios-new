@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VAP-il-G1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VAP-il-G1W">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -299,11 +299,8 @@
                                 <rect key="frame" x="18" y="24" width="668" height="680"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HuM-fi-tfM">
-                                        <rect key="frame" x="100" y="82.5" width="468" height="245"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="HuM-fi-tfM" secondAttribute="height" multiplier="736:385" id="ekE-OW-lUy"/>
-                                        </constraints>
+                                        <rect key="frame" x="100" y="82.5" width="468" height="466.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نتائج الاختبار" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVz-Yx-fRg">
                                         <rect key="frame" x="256.5" y="8" width="155" height="50.5"/>
@@ -312,20 +309,24 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="DQ9-RS-6UH">
-                                        <rect key="frame" x="-5" y="345.5" width="678" height="50"/>
+                                        <rect key="frame" x="32.5" y="567" width="603" height="25"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ypU-k4-jfg">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="25"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نقطة مرئية " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idt-B8-JSY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="25"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="38"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="qyI-CB-k4g" customClass="CustomView" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="125" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="125" y="0.0" width="25" height="25"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="25" id="ASZ-qq-GQm"/>
+                                                            <constraint firstAttribute="height" constant="25" id="jFE-sl-KUH"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" red="0.4039215686" green="0.55294117649999996" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -341,17 +342,21 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e2C-6f-HWk">
-                                                <rect key="frame" x="229" y="0.0" width="224.5" height="50"/>
+                                                <rect key="frame" x="204" y="0.0" width="199.5" height="25"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نقطة مرئية جزئيا" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rV2-MJ-Sbm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="166.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="166.5" height="25"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="38"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view alpha="0.25" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="sZ0-3w-L4B" customClass="CustomView" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="174.5" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="174.5" y="0.0" width="25" height="25"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="25" id="6IN-uH-jkc"/>
+                                                            <constraint firstAttribute="height" constant="25" id="mEe-3m-gKg"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -367,17 +372,21 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hlI-IW-YyW">
-                                                <rect key="frame" x="507.5" y="0.0" width="170.5" height="50"/>
+                                                <rect key="frame" x="457.5" y="0.0" width="145.5" height="25"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نقطة عمياء" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnR-OU-m3x">
-                                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="25"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="38"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="1Yf-gF-BZL" customClass="CustomView" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="120.5" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="120.5" y="0.0" width="25" height="25"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="AMJ-yP-6h4"/>
+                                                            <constraint firstAttribute="width" constant="25" id="BC7-SX-oQf"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -395,7 +404,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoJ-TW-vbi">
-                                        <rect key="frame" x="24" y="606" width="400" height="50"/>
+                                        <rect key="frame" x="14" y="616" width="400" height="50"/>
                                         <state key="normal" image="NextTestBtn">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -407,15 +416,16 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="HuM-fi-tfM" firstAttribute="top" secondItem="oVz-Yx-fRg" secondAttribute="bottom" constant="24" id="2Hw-6S-qhb"/>
-                                    <constraint firstItem="DoJ-TW-vbi" firstAttribute="leading" secondItem="iP6-qV-oz9" secondAttribute="leading" constant="24" id="7yo-4P-rsZ"/>
-                                    <constraint firstItem="HuM-fi-tfM" firstAttribute="leading" secondItem="iP6-qV-oz9" secondAttribute="leading" constant="100" id="FyS-Zx-ijo"/>
+                                    <constraint firstItem="DoJ-TW-vbi" firstAttribute="leading" secondItem="iP6-qV-oz9" secondAttribute="leading" constant="14" id="7yo-4P-rsZ"/>
                                     <constraint firstItem="DQ9-RS-6UH" firstAttribute="top" secondItem="HuM-fi-tfM" secondAttribute="bottom" constant="18" id="JAA-dR-Zig"/>
                                     <constraint firstItem="DQ9-RS-6UH" firstAttribute="centerX" secondItem="iP6-qV-oz9" secondAttribute="centerX" id="LNU-hW-gEU"/>
-                                    <constraint firstAttribute="bottom" secondItem="DoJ-TW-vbi" secondAttribute="bottom" constant="24" id="XRU-6L-4cJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="DoJ-TW-vbi" secondAttribute="bottom" constant="14" id="XRU-6L-4cJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="HuM-fi-tfM" secondAttribute="trailing" constant="100" id="fqv-Ec-EMM"/>
                                     <constraint firstItem="oVz-Yx-fRg" firstAttribute="top" secondItem="iP6-qV-oz9" secondAttribute="top" constant="8" id="mHs-yD-eBo"/>
                                     <constraint firstItem="oVz-Yx-fRg" firstAttribute="centerX" secondItem="iP6-qV-oz9" secondAttribute="centerX" id="mop-vv-9Rd"/>
-                                    <constraint firstAttribute="trailing" secondItem="HuM-fi-tfM" secondAttribute="trailing" constant="100" id="ojq-ca-2Gp"/>
-                                    <constraint firstItem="HuM-fi-tfM" firstAttribute="centerX" secondItem="iP6-qV-oz9" secondAttribute="centerX" id="xap-Z5-jCX"/>
+                                    <constraint firstItem="HuM-fi-tfM" firstAttribute="centerX" secondItem="iP6-qV-oz9" secondAttribute="centerX" id="ucA-ML-aZp"/>
+                                    <constraint firstItem="DoJ-TW-vbi" firstAttribute="top" secondItem="DQ9-RS-6UH" secondAttribute="bottom" constant="24" id="vCa-zx-Bg6"/>
+                                    <constraint firstItem="HuM-fi-tfM" firstAttribute="leading" secondItem="iP6-qV-oz9" secondAttribute="leading" constant="100" id="yMG-vz-XxH"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">

@@ -80,6 +80,16 @@ struct NetworkModels {
         }
     }
     
+    struct NeglectResultItem:Codable {
+        let score: Float?
+        let date: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case score
+            case date = "created_at"
+        }
+    }
+    
     struct HistoryItem: Codable {
         let date,Title,TherapyTime: String?
         let ReactionTime, ReadingSpeed, Score: CGFloat?

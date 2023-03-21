@@ -25,7 +25,9 @@ class PreReadingTestVC: UIViewController{
     }
     
     @objc func popToTestsController(){
-        self.navigationController?.popViewController(animated: true)
+        if let destinationViewController = self.navigationController?.viewControllers.filter({$0 is ReadingVC}).first {
+            navigationController?.popToViewController(destinationViewController, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

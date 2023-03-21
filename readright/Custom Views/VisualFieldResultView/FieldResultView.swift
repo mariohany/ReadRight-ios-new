@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable public class FieldResultView: UIView {
+class FieldResultView: UIView {
     
     @IBOutlet weak var dot1_1: CustomView!
     @IBOutlet weak var dot1_2: CustomView!
@@ -34,8 +34,9 @@ import UIKit
         super.init(coder: coder)
     }
     
-//    convenience init(){
-//    }
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
     public func renderResultViewWithAllScenarios(results:[Int]) {
         for circle in 1...Constants.NUMBER_OF_CIRCLES {

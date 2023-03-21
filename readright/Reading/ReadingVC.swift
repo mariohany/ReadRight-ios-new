@@ -551,7 +551,7 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
                 while (txt?[baseIndex + extender] != " " && (baseIndex + extender) < txt!.count - 1){
                     extender+=1
                 }
-                txtSegment = txt?[Range(uncheckedBounds: (startTxtIndex, TEXTVIEW_SEGMENT_WIDTH + extender))]
+                txtSegment = txt?[Range(uncheckedBounds: (startTxtIndex, (startTxtIndex+TEXTVIEW_SEGMENT_WIDTH+extender)))]
             }else{
                 txtSegment = txt?.substring(fromIndex: startTxtIndex)
             }
@@ -666,7 +666,7 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
                 while (txt[baseIndex + extender] != " " && (baseIndex + extender) < txt.count - 1){
                     extender+=1
                 }
-                txtSegment = txt[Range(uncheckedBounds: (startTxtIndex, TEXTVIEW_SEGMENT_WIDTH + extender))]
+                txtSegment = txt[Range(uncheckedBounds: (startTxtIndex, startTxtIndex+TEXTVIEW_SEGMENT_WIDTH+extender))]
             } else {
                 txtSegment =  txt.substring(fromIndex: startTxtIndex)
             }
@@ -709,7 +709,7 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         
         repeat {
             if((startTxt + TEXTVIEW_SEGMENT_WIDTH) < txt.count){
-                txtSegment = txt[Range(uncheckedBounds: (startTxt, TEXTVIEW_SEGMENT_WIDTH))]
+                txtSegment = txt[Range(uncheckedBounds: (startTxt, (startTxt+TEXTVIEW_SEGMENT_WIDTH)))]
             }else{
                 txtSegment = txt.substring(fromIndex: startTxt)
             }

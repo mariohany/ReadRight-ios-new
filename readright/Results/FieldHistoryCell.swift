@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class FieldHistoryCell: UITableViewCell {
-    @IBOutlet weak var FieldDate: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override class func awakeFromNib() {
         super.awakeFromNib()
