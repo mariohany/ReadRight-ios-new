@@ -70,6 +70,10 @@ struct NetworkModels {
         let remains: Int?
     }
     
+    struct SubmitTherapyRequest: Codable {
+        let duration: Int
+    }
+    
     struct ResultsBaseModel: Codable {
         let TherapySpentTime: Int?
         let History: [HistoryItem]?

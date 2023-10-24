@@ -176,7 +176,7 @@ protocol NeglectCanvasViewDelegate {
                 var oldClickCount:Int = temp.numClicks ?? 0
                 oldClickCount+=1
                 elementsArray[i].numClicks = oldClickCount
-                let tmpPath = NetworkModels.HitsPath(itemId: hitsPath.count + 1, index: temp.itemId!)
+                let tmpPath = NetworkModels.HitsPath(itemId: temp.itemId!, index: hitsPath.count + 1)
                 hitsPath.append(tmpPath)
             }
         }

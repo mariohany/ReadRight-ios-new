@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.4.4)
+  - Alamofire (5.6.4)
   - JWTDecode (2.6.3)
   - LKAlertController (1.12.2)
   - Moya (14.0.0):
@@ -46,7 +46,7 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
-  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   JWTDecode: 33e5e26e5ddbd21b2065820894c08fef0cad9509
   LKAlertController: 10c7e8627e5d4757d03b4f53469f35ded14c378f
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
@@ -59,4 +59,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 31306c0bfd1cd91acb092398f2f731a4aa143785
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

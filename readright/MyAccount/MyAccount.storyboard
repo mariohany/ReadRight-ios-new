@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QH6-et-KV9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QH6-et-KV9">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,10 +30,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="6W8-NZ-6IC" customClass="CustomView" customModule="readright" customModuleProvider="target">
-                                <rect key="frame" x="24" y="36" width="976" height="708"/>
+                                <rect key="frame" x="24" y="24" width="976" height="720"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UF-lc-lS8">
-                                        <rect key="frame" x="363" y="634" width="250" height="56"/>
+                                        <rect key="frame" x="363" y="646" width="250" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="N4b-U9-gXx"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="O8e-k1-uNk"/>
@@ -51,19 +51,19 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7t3-rM-ubm">
-                                        <rect key="frame" x="544" y="166.5" width="400" height="375.5"/>
+                                        <rect key="frame" x="544" y="172.5" width="400" height="375.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="dyf-0P-t47">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البريد الألكتروني" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8I-k2-dzs">
-                                                        <rect key="frame" x="213.5" y="0.0" width="186.5" height="45"/>
+                                                        <rect key="frame" x="214" y="0.0" width="186" height="45"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" enabled="NO" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" borderStyle="line" placeholder="البريد الألكتروني" minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="VzQ-Vy-GdC" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="213.5" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="214" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="LMs-m3-Ojg"/>
                                                         </constraints>
@@ -198,13 +198,13 @@
                                                 <rect key="frame" x="0.0" y="273.5" width="400" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="كلمة السر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwY-hg-Pf3">
-                                                        <rect key="frame" x="267.5" y="9" width="132.5" height="26.5"/>
+                                                        <rect key="frame" x="268" y="9" width="132" height="26.5"/>
                                                         <fontDescription key="fontDescription" name="AdobeArabic-Regular" family="Adobe Arabic" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="right" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" placeholder="كلمة السر الجديدة" minimumFontSize="17" background="Field" translatesAutoresizingMaskIntoConstraints="NO" id="Jqv-ec-7x7" customClass="CustomTextField" customModule="readright" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="267.5" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="268" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="9dj-GB-2od"/>
                                                         </constraints>
@@ -250,7 +250,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Uv-jT-p5K">
-                                        <rect key="frame" x="42" y="166.5" width="445" height="375.5"/>
+                                        <rect key="frame" x="42" y="172.5" width="445" height="375.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="apc-lu-TxE" userLabel="blined type">
                                                 <rect key="frame" x="0.0" y="0.0" width="445" height="23"/>
@@ -665,7 +665,7 @@
                             <constraint firstItem="Kyb-i5-hei" firstAttribute="bottom" secondItem="6W8-NZ-6IC" secondAttribute="bottom" constant="24" id="BWM-tZ-uvD"/>
                             <constraint firstItem="Kyb-i5-hei" firstAttribute="trailing" secondItem="6W8-NZ-6IC" secondAttribute="trailing" constant="24" id="IbB-P4-YOg"/>
                             <constraint firstAttribute="bottom" secondItem="3QB-18-orc" secondAttribute="bottom" id="NqS-cZ-dQd"/>
-                            <constraint firstItem="6W8-NZ-6IC" firstAttribute="top" secondItem="Kyb-i5-hei" secondAttribute="top" constant="16" id="Q7m-tj-IRb"/>
+                            <constraint firstItem="6W8-NZ-6IC" firstAttribute="top" secondItem="iYr-jN-3ww" secondAttribute="top" constant="24" id="Q7m-tj-IRb"/>
                             <constraint firstItem="3QB-18-orc" firstAttribute="top" secondItem="iYr-jN-3ww" secondAttribute="top" id="TjO-aB-cMf"/>
                             <constraint firstItem="6W8-NZ-6IC" firstAttribute="leading" secondItem="Kyb-i5-hei" secondAttribute="leading" constant="24" id="bVN-P3-jFO"/>
                             <constraint firstAttribute="trailing" secondItem="3QB-18-orc" secondAttribute="trailing" id="lzq-4k-Ebf"/>
@@ -705,10 +705,10 @@
     </scenes>
     <designables>
         <designable name="7EY-Ue-RCt">
-            <size key="intrinsicContentSize" width="131" height="25"/>
+            <size key="intrinsicContentSize" width="131.5" height="25"/>
         </designable>
         <designable name="Jqv-ec-7x7">
-            <size key="intrinsicContentSize" width="125" height="25"/>
+            <size key="intrinsicContentSize" width="126" height="25"/>
         </designable>
         <designable name="MJM-q0-LSS">
             <size key="intrinsicContentSize" width="41.5" height="26"/>
@@ -717,7 +717,7 @@
             <size key="intrinsicContentSize" width="77.5" height="26"/>
         </designable>
         <designable name="VzQ-Vy-GdC">
-            <size key="intrinsicContentSize" width="107.5" height="26"/>
+            <size key="intrinsicContentSize" width="108" height="26"/>
         </designable>
         <designable name="Ydl-va-mkP">
             <size key="intrinsicContentSize" width="9" height="26"/>

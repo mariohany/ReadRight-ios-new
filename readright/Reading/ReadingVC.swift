@@ -130,7 +130,7 @@ class ReadingVC: UIViewController, ColorDialogueDelegate {
         self.BooksTableView.delegate = self
         self.ChaptersTableView.dataSource = self
         self.ChaptersTableView.delegate = self
-        textBgView = UIView(frame: CGRect(x: 0.0, y: TEXT_Y_POSITION, width: self.TherapyVew.frame.size.width, height: TEXT_HEIGHT))
+        textBgView = UIView(frame: CGRect(x: 0.0, y: TEXT_Y_POSITION, width: self.view.frame.size.width, height: TEXT_HEIGHT))
         textBgView?.backgroundColor = UIColor(ciColor: .black)
         TherapyVew.addSubview(textBgView!)
         step = 0.5 * Float(MAX_SPEED)
@@ -920,8 +920,11 @@ extension ReadingVC: UITableViewDelegate, UITableViewDataSource {
                     
                     currentChapterId = chapters[indexPath.row].chapterId ?? 0
                     
-                    if let url = URL(string: chapters[indexPath.row].url ?? "") {
-                        let req = URLRequest(url: url)
+                    if let url = URL(string: "\(Constants.baseURL)therapy-books-chapter/read/\(chapters[indexPath.row].chapterId ?? 0)") {
+                        var req = URLRequest(url: url)
+                        if let token = SharedPref.shared.accessToken {
+                            req.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+                        }
                         self.view.showActivityView()
                         let session:URLSessionDataTask = URLSession.shared.dataTask(with: req, completionHandler: { data, response, error in
                             DispatchQueue.main.async {

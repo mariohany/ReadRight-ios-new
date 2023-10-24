@@ -26,6 +26,7 @@ enum Endpoint {
     case SubmitADLTest(driving:Int, readingNews:Int, hygiene:Int, readingBooks:Int, enjoyReading:Int, findThings:Int)
     case SubmitSearchTest(model: NetworkModels.SearchTestRequest)//score:Int, duration:Float)
     case SubmitVisualNeglectTest(model:NetworkModels.VisualNeglectTestRequest)
+    case SubmitTherapy(model:NetworkModels.SubmitTherapyRequest)
 }
 
 
@@ -43,6 +44,7 @@ extension Endpoint: TargetType {
         case .UpdateUserInfo: return "user/info"
             
         case .GetTherapyHistory: return "therapy"
+        case .SubmitTherapy: return "therapy"
         case .GetReadingTestHistory: return "visualreading/history"
         case .GetFieldTestHistory: return "visualfield/hits/history"
         case .GetNeglectTestHistory: return "visualneglect/history"
@@ -62,7 +64,7 @@ extension Endpoint: TargetType {
         switch self {
         case .ForgetPassword, .GetUserInfo, .GetSearchTestHistory, .GetNeglectTestHistory, .GetReadingTestHistory, .GetTherapyHistory, .GetFieldTestHistory, .GetBooks, .GetChaptersByBook : return .get
         case .UpdateUserInfo : return .put
-        case .Login, .Register, .SubmitReadingTest, .SubmitVisualFieldTest, .SubmitADLTest, .SubmitSearchTest, .SubmitVisualNeglectTest : return .post
+        case .Login, .Register, .SubmitReadingTest, .SubmitVisualFieldTest, .SubmitADLTest, .SubmitSearchTest, .SubmitVisualNeglectTest, .SubmitTherapy : return .post
         }
     }
     
@@ -162,6 +164,8 @@ extension Endpoint: TargetType {
         case .SubmitSearchTest(let model):
             return .requestParameters(parameters: model.dictionary!, encoding: JSONEncoding.default)
         case .SubmitVisualNeglectTest(let model):
+            return .requestParameters(parameters: model.dictionary!, encoding: JSONEncoding.default)
+        case .SubmitTherapy(let model):
             return .requestParameters(parameters: model.dictionary!, encoding: JSONEncoding.default)
         }
     }

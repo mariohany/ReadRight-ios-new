@@ -134,7 +134,7 @@ class ResultsVC: UIViewController {
                         }
                     }
                     
-                    self.therapyHistoryList = list
+                    self.therapyHistoryList = list.reversed()
                     self.TherapyTotalDurationLabel.text = String(describing: res?.TherapySpentTime ?? 0)
                     self.HistoryTherapyTableResults.reloadData()
                 }
@@ -271,8 +271,8 @@ extension ResultsVC : UITableViewDelegate, UITableViewDataSource {
         switch (selectedSegment) {
             case HISTORY_THERAPY_VIEW: //Therapy results
             do {
-                cell = TherapyHistoryCell.init(style: .default, reuseIdentifier: "TherapyHistoryCell")
-                (cell as? TherapyHistoryCell)?.HistoryDate.text =  therapyHistoryList[indexPath.row].date
+                cell = tableView.dequeueReusableCell(withIdentifier: "TherapyHistoryCell") as! TherapyHistoryCell
+                (cell as? TherapyHistoryCell)?.HistoryDate.text =  Helpers.convertDate(therapyHistoryList[indexPath.row].date)
                 (cell as? TherapyHistoryCell)?.HistoryTime.text =  therapyHistoryList[indexPath.row].TherapyTime
                 (cell as? TherapyHistoryCell)?.HistoryTitle.text = therapyHistoryList[indexPath.row].Title
 //                if (!isTherapyFull && indexPath.row >= therapyHistoryList.count-2 && !isTherapyLoaded) {
@@ -284,7 +284,6 @@ extension ResultsVC : UITableViewDelegate, UITableViewDataSource {
             do {
                 cell = tableView.dequeueReusableCell(withIdentifier: "FieldHistoryCell") as! FieldHistoryCell
                        
-//                cell = FieldHistoryCell.init(style: .default, reuseIdentifier: "FieldHistoryCell")
                 (cell as? FieldHistoryCell)?.dateLabel?.text = Helpers.convertDate(visualFieldsResult[indexPath.row].date)
                 let bgView: UIView = UIView()
                 bgView.backgroundColor = UIColor(red: 221.0/255.0, green: 134.0/255.0, blue: 89.0/255.0, alpha: 1)
