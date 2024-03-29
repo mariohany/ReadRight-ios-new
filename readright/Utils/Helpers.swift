@@ -221,13 +221,13 @@ class Helpers{
     }
     
     static func handleErrorMessages(message: String) {
-        Alert(title: "Error", message: message)
-            .addAction("Ok")
+        Alert(title: "عذراً", message: message)
+            .addAction("حسناً")
             .show()
     }
     static func alert(title: String, message: String) {
         Alert(title: title, message: message)
-            .addAction("Ok")
+            .addAction("حسناً")
             .show()
     }
     static func convertTime(time: String) -> String?{

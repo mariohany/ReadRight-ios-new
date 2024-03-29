@@ -12,7 +12,7 @@ enum Endpoint {
     case Register(email: String, password: String, confirmPassword: String, name: String, gender: String, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?)
     case ForgetPassword(email: String)
     case GetUserInfo
-    case UpdateUserInfo(email: String, password: String, confirmPassword: String, name: String, gender: Int, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?)
+    case UpdateUserInfo(email: String, password: String, confirmPassword: String, name: String, gender: String, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?)
     case GetTherapyHistory(from:Int, to:Int)
     case GetReadingTestHistory
     case GetFieldTestHistory(from:Int, to:Int)

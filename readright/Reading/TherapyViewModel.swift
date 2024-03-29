@@ -26,7 +26,7 @@ class TherapyViewModel {
     
     func submitTherapyInterval(){
         self.isLoading.accept(true)
-        provider.request(.SubmitTherapy(model: NetworkModels.SubmitTherapyRequest(duration: therapy_duration)))
+        provider.request(.SubmitTherapy(model: NetworkModels.SubmitTherapyRequest(duration: therapy_duration, title: therapyItemTitle)))
             .map(NetworkModels.SubmitTherapyResponse.self)
             .subscribe { (result) in
                 self.isLoading.accept(false)

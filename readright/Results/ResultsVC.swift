@@ -135,7 +135,13 @@ class ResultsVC: UIViewController {
                     }
                     
                     self.therapyHistoryList = list.reversed()
-                    self.TherapyTotalDurationLabel.text = String(describing: res?.TherapySpentTime ?? 0)
+                    self.hmsFrom(seconds: res?.TherapySpentTime ?? 0) { hours, minutes, seconds in
+                        let h = self.getStringFrom(seconds: hours)
+                        let m = self.getStringFrom(seconds: minutes)
+                        let s = self.getStringFrom(seconds: seconds)
+
+                        self.TherapyTotalDurationLabel.text = "\(h):\(m):\(s)"
+                    }
                     self.HistoryTherapyTableResults.reloadData()
                 }
             }
@@ -161,6 +167,14 @@ class ResultsVC: UIViewController {
                 }
             }
         }
+    }
+    
+    func hmsFrom(seconds: Int, completion: @escaping (_ hours: Int, _ minutes: Int, _ seconds: Int)->()) {
+            completion(seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+
+    func getStringFrom(seconds: Int) -> String {
+        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
     
     func observeLoading() {
@@ -273,8 +287,14 @@ extension ResultsVC : UITableViewDelegate, UITableViewDataSource {
             do {
                 cell = tableView.dequeueReusableCell(withIdentifier: "TherapyHistoryCell") as! TherapyHistoryCell
                 (cell as? TherapyHistoryCell)?.HistoryDate.text =  Helpers.convertDate(therapyHistoryList[indexPath.row].date)
-                (cell as? TherapyHistoryCell)?.HistoryTime.text =  therapyHistoryList[indexPath.row].TherapyTime
-                (cell as? TherapyHistoryCell)?.HistoryTitle.text = therapyHistoryList[indexPath.row].Title
+                self.hmsFrom(seconds: Int(therapyHistoryList[indexPath.row].duration ?? 0.0)) { hours, minutes, seconds in
+                    let h = self.getStringFrom(seconds: hours)
+                    let m = self.getStringFrom(seconds: minutes)
+                    let s = self.getStringFrom(seconds: seconds)
+
+                    (cell as? TherapyHistoryCell)?.HistoryTime.text = "\(h):\(m):\(s)"
+                }
+                (cell as? TherapyHistoryCell)?.HistoryTitle.text = therapyHistoryList[indexPath.row].title
 //                if (!isTherapyFull && indexPath.row >= therapyHistoryList.count-2 && !isTherapyLoaded) {
 //                    loadMoreTherapyHistory()
 //                }

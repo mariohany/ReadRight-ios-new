@@ -292,12 +292,13 @@ class MyAccountVC: UIViewController, UITextFieldDelegate{
         }else if blindCauseIndex == 4 {
             cause = self.problemOtherCauseField.text
         }
+        let gender = genderIndex == 1 ? "M" : "F"
         
         viewModel.updateUserInfo(email: email,
                            password: password1,
                            confirmPassword: password2,
                            name: name,
-                           gender: genderIndex,
+                           gender: gender,
                            yearOfBirth: self.yearBirthField.text!,
                            hemianopiaType: blindTypeIndex,
                            vpSide: blindWithIndex,

@@ -34,7 +34,7 @@ class MyAccountViewModel {
             }.disposed(by: disposeBag)
     }
     
-    func updateUserInfo(email: String, password: String, confirmPassword: String, name: String, gender: Int, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?){
+    func updateUserInfo(email: String, password: String, confirmPassword: String, name: String, gender: String, yearOfBirth: String, hemianopiaType:Int, vpSide:Int?, vpCause:Int?, vpStartDate:String?, vpExtraCause:String?){
         self.isLoading.accept(true)
         provider.request(.UpdateUserInfo(email: email, password: password, confirmPassword: confirmPassword, name: name, gender: gender, yearOfBirth: yearOfBirth, hemianopiaType: hemianopiaType, vpSide: vpSide, vpCause: vpCause, vpStartDate: vpStartDate, vpExtraCause: vpExtraCause))
             .map(NetworkModels.UserInfo.self)

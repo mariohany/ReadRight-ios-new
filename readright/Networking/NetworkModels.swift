@@ -72,6 +72,7 @@ struct NetworkModels {
     
     struct SubmitTherapyRequest: Codable {
         let duration: Int
+        let title: String
     }
     
     struct ResultsBaseModel: Codable {
@@ -95,7 +96,8 @@ struct NetworkModels {
     }
     
     struct HistoryItem: Codable {
-        let date,Title,TherapyTime: String?
+        let date,title: String?
+        let duration: Float?
         let ReactionTime, ReadingSpeed, Score: CGFloat?
         let NodeHits: [Int]?
     }
